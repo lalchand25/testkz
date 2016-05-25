@@ -1,0 +1,44 @@
+﻿<div id="rest2">
+      
+       <div class="course-buttons">
+                       <ul class="nav nav-tabs">
+                    @Html.Raw(ViewData["buttons"]) 
+            </ul>
+
+           
+        </div>   
+      
+            @Html.Raw(ViewData["slidedata"])  @*comming for slide from tb_LessionMasterSlides *@
+            <br />
+            @Html.Raw(ViewData["SlideDescription"])  @*nothing comming *@
+            <br />
+            @Html.Raw(ViewData["startbutton"]) @*it comming blank *@
+           
+       
+
+
+        <div class="course-buttons">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+             
+                      @Html.Raw(ViewData["pageLinks"])
+              
+        
+            </ul>
+            <!-- Tab panes -->
+
+        </div>
+
+          
+        @*    @Html.Raw(ViewData["buttons"]) *@@*buttons at bottom to create *@
+      
+
+        @if (ViewData["comments"] != null)
+        { 
+            @Html.Raw(ViewData["comments"])
+        }
+ 
+
+</div>
+
+

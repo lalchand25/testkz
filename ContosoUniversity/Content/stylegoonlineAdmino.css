@@ -1,0 +1,368 @@
+﻿.textBox_full
+{
+    padding: 0px 10px 10px 10px;
+    width: 100%;
+    background: #f6f6f6 url(../../images/title_bg.gif) repeat-x top left;
+    position: relative;
+    color: #000;
+    border: 1px solid #d0d0d0;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    behavior: url(PIE.htc);
+    float: left;
+}
+.textBox_full h2, .Courses h2 {
+        margin: 0px 0px 15px 0px;
+        padding: 0px;
+        font-size: 18px;
+        color: #fff;
+        font-weight: normal;
+        line-height: 30px;
+}
+
+/*for training*/
+
+.Courses {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+}
+.btn-grey {
+    text-align: center;
+	color: #fff;
+	 margin: 0 5px;
+}
+.Courses .topdiv {
+        margin: 0px;
+        padding: 5px 0 0px 15px;
+        background: #e8424e;
+        border: 0px solid #c4c4c4;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 8px 8px 0px 0px;
+        -moz-border-radius: 8px 8px 0px 0px;
+        border-radius: 8px 8px 0px 0px;
+        behavior: url(PIE.htc);
+		float:left;
+		width:100%;
+}
+.middiv1 > h2 {
+color:#000;
+}
+.display-label {
+    float: left;
+    width: 50%;
+}
+.Courses .topdiv .heading{
+            margin: 0px;
+            padding: 0px 0px 0px 30px;
+            background: url(../../images/user-icon.png) no-repeat left center;
+            float: left;
+            font-size: 20px;
+            color: #fff;
+}
+.Courses .topdiv .bred
+        {
+            margin: 20px 0px;
+            padding: 0px;
+            float: left;
+            font-size: 20px;
+            color: #fff;
+        }
+
+.buttons {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+.title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.text_img1 {
+    float: left;
+    width: 40%;
+}
+.text_img {
+width:60%;
+float:left;
+}
+.results_table {
+width:100%;
+background-color:FFFFCC;
+text-align:center;
+}
+.results_table td {
+margin: 10px 0;
+padding: 5px 0;
+}
+.Courses .middiv {
+      margin: 0px;
+ 		padding: 10px 15px;
+        background: #c0c0c0;
+        height: 500px;
+}
+.Courses .middiv1 {
+        margin: 0px;
+        padding: 10px 15px;
+        background-color: White;
+        border-color: #C0C0C0;
+        text-align: left;
+        border: #333333 solid 10px;
+		float: left; 
+    width: 100%;
+}
+ .Courses .middiv1 .box4
+        {
+           width: 100%;
+            
+        }
+
+        .Courses .middiv1 .box5
+        {
+            border: #efefef solid 1px;
+            float: right;
+            margin: 0 0 10px 10px;
+            background: #333333;
+        }
+
+
+
+
+    .Courses .middiv p
+    {
+        margin: 0px;
+        padding: 10px 10px 0px 10px;
+    }
+
+    .Courses .middiv h2
+    {
+        margin: 0px;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: normal;
+        color: #fff;
+    }
+
+    .Courses .middiv .level
+    {
+        margin: 0px 35px 0px 0px;
+        padding: 0px;
+        width: 300px;
+        float: left;
+        background: #fff url(../images/grey-bg.png) repeat-x top left;
+        border: 0px solid #c4c4c4;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        behavior: url(PIE.htc);
+        overflow: scroll;
+        height: 500px;
+    }
+
+    .Courses .middiv .unit
+    {
+        margin: 0px 35px 0px 0px;
+        padding: 0px;
+        width: 300px;
+        float: left;
+        background: #fff url(../images/green-bg.png) repeat-x top left;
+        border: 0px solid #c4c4c4;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        behavior: url(PIE.htc);
+        overflow: scroll;
+        height: 500px;
+    }
+
+    .Courses .middiv .activity
+    {
+        margin: 0px;
+        padding: 0px;
+        width: 300px;
+        float: left;
+        background: #fff url(../images/orange-bg.png) repeat-x top left;
+        border: 0px solid #c4c4c4;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        behavior: url(PIE.htc);
+        overflow: scroll;
+        height: 500px;
+    }
+
+        .Courses .middiv .activity h4
+        {
+            margin: 0px;
+            padding: 0px;
+            color: #d26800;
+            font-size: 18px;
+        }
+
+    .Courses .middiv ul
+    {
+        margin: 0px;
+        padding: 0px;
+    }
+
+        .Courses .middiv ul li
+        {
+            margin: 0px;
+            padding: 0px 10px;
+            list-style-type: none;
+            line-height: 30px;
+        }
+
+            .Courses .middiv ul li ul
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+
+                .Courses .middiv ul li ul li
+                {
+                    margin: 0px;
+                    padding: 0px 0px 0px 15px;
+                    line-height: 27px;
+                    background: url(../images/bullet.png) no-repeat left center;
+                }
+
+            .Courses .middiv ul li a
+            {
+                font-size: 14px;
+                text-decoration: none;
+                color: #000;
+                display: block;
+            }
+
+                .Courses .middiv ul li a:hover
+                {
+                    color: #A50000;
+                    font-weight: bold;
+                }
+
+.Courses .bottomdiv
+    {
+        margin: 0px;
+        padding: 6px 15px;
+        background: #e8424e;
+        border: 0px solid #c4c4c4;
+        z-index: 2;
+        -webkit-border-radius: 0px 0px 8px 8px;
+        -moz-border-radius: 0px 0px 8px 8px;
+        border-radius: 0px 0px 8px 8px;
+        behavior: url(PIE.htc);
+		float:left;
+		width:100%;
+    }
+
+
+.right
+{
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    width: 230px;
+    float: left;
+}
+
+    .right .ad1
+    {
+        margin: 0px;
+        padding: 5px;
+        width: 214px;
+        border: 1px solid #cfcfcf;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        behavior: url(PIE.htc);
+    }
+
+    .right .follow
+    {
+        margin: 10px 0px;
+        padding: 0px;
+    }
+
+    .right .services
+    {
+        margin: 0px;
+        padding: 0px;
+        width: 224px;
+        background: url(../images/heading_bg.gif) repeat-x top left;
+        border: 1px solid #cfcfcf;
+        position: relative;
+        z-index: 2;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        behavior: url(PIE.htc);
+    }
+
+        .right .services h3
+        {
+            margin: 0px;
+            padding: 8px;
+            font-size: 18px;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .right .services ul
+        {
+            margin: 0px 5px;
+            padding: 0px;
+        }
+
+            .right .services ul li
+            {
+                margin: 0px;
+                padding: 8px 0px;
+                list-style-type: none;
+                display: block;
+                border-bottom: 1px solid #efeded;
+            }
+
+                .right .services ul li img
+                {
+                    margin: 0px 10px 0px 0px;
+                    padding: 0px;
+                    border: 0px;
+                    float: left;
+                }
+
+                .right .services ul li div.text
+                {
+                    margin: 0px;
+                    padding: 0px;
+                    float: left;
+                }
+
+                    .right .services ul li div.text h6
+                    {
+                        margin: 0px;
+                        padding: 0px;
+                        font-size: 14px;
+                        color: #000;
+                        font-weight: normal;
+                    }
+
+                    .right .services ul li div.text p
+                    {
+                        margin: 0px;
+                        padding: 0px;
+                        font-size: 12px;
+                        color: #8c949a;
+                        font-weight: normal;
+                    }

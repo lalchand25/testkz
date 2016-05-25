@@ -1,0 +1,92 @@
+﻿@{ Layout = "~/Views/Shared/layouttraining.cshtml";
+}
+
+@* @Session["projectmetatags"]*@
+
+
+<!--BANNER START-->
+<div class="page-heading">
+    <div class="container">
+        <h2>My Certificates</h2>
+        <p>Home / Profile / My Certificates</p>
+    </div>
+</div>
+<!--BANNER END-->
+<!--CONTANT START-->
+<div class="contant">
+    <section class="gray-bg">
+        <div class="container">
+            <div class="tabs">
+                <div class="row">
+                    <div class="span12">
+                        <div class="message-box">
+                            <h4>Please check Your Certificate List.</h4>
+                            <p>If you cannot find a course you are studying in the table below, you need to check what topics/modules you have not studied/passed yet. For more information on this, please see our Knowledge Base.</p>
+
+                            <p>Once you are certified, you can order the certificate(s) by making a payment (If you do not want to order your certificates, no worries, you are still certified and you can always verify it online free of charge). Some courses have free PDF certificates.</p>
+
+                            <p>All that you need to know about KZONLINE.ORG Certificates can be found here.</p>
+                            <br />
+                            <a class="btn-style" href="/Profile/studentProfile">Return to My Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--tabs end-->
+        </div>
+    </section>
+
+
+    <section class="gray-bg">
+        <div class="container">
+            <div class="tabs">
+                <div class="row">
+                    <div class="span12">
+                        <div class="message-box">
+                            <h2>Your Certificate Details</h2>
+                            <br />
+                            <div class="result-display">
+                                <table>
+
+                                    <thead>
+                                        <th>
+                                            <p class="color">Course</p>
+                                        </th>
+                                        <th>
+                                            <p class="color">Date</p>
+                                        </th>
+                                      
+                                    
+                                        <th>
+                                            <p class="color">View</p>
+                                        </th>
+                                        <th>
+                                            <p class="color">Download</p>
+                                        </th>
+                                    </thead>
+                                    <tbody>
+
+                                    
+                                        @Html.Raw(ViewBag.certificatelist)
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--tabs end-->
+        </div>
+    </section>
+
+
+
+
+    <div class="clearfix"></div>
+
+
+
+
+    <!--CONTANT END-->

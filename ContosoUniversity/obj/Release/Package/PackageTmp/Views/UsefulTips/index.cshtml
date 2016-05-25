@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OLProject.Models.tb_UsefulTips>
+
+
+@Session["projectmetatags"]
+
+
+
+<h2>List Of UsefulTips</h2>
+
+<p>
+</p>
+
+<table width="100%">
+
+    <tr>
+        <td colspan="7" align="right">&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td colspan="7" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+    </tr>
+
+    <tr>
+
+        <th style="text-align: left">Sender</th>
+
+        <th style="text-align: left">Heading</th>
+        <th style="text-align: left">Descripation
+        </th>
+        <th style="text-align: left">Subject
+        </th>
+        <th>Class
+        </th>
+        <th>Lesson
+        </th>
+    </tr>
+    <tr>
+        <td colspan="7" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+    </tr>
+    @Html.Raw(ViewData["data"])
+    <tr>
+        <td colspan="7" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+    </tr>
+</table>
+
+
+
+

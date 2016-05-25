@@ -1,0 +1,292 @@
+﻿@model OLProject.Models.tb_LessionMaster
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+<link href="../../content/NewStyle.css" rel="stylesheet" type="text/css" />
+<script src="../../jscripts/tiny_mce/tiny_mce_src.js" type="text/javascript"></script>
+<script type="text/javascript">
+    tinyMCE.init({
+        // General options
+        mode: "textareas",
+        theme: "advanced",
+        plugins: "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
+
+        // Theme options
+        theme_advanced_buttons1: "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+        theme_advanced_buttons4: "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak,restoredraft",
+        theme_advanced_toolbar_location: "top",
+        theme_advanced_toolbar_align: "left",
+        theme_advanced_statusbar_location: "bottom",
+        theme_advanced_resizing: true,
+
+        // Example content CSS (should be your site CSS)
+        content_css: "css/content.css",
+
+        // Drop lists for link/image/media/template dialogs
+        template_external_list_url: "lists/template_list.js",
+        external_link_list_url: "lists/link_list.js",
+        external_image_list_url: "lists/image_list.js",
+        media_external_list_url: "lists/media_list.js",
+
+        // Style formats
+        style_formats: [
+			{ title: 'Bold text', inline: 'b' },
+			{ title: 'Red text', inline: 'span', styles: { color: '#ff0000' } },
+			{ title: 'Red header', block: 'h1', styles: { color: '#ff0000' } },
+			{ title: 'Example 1', inline: 'span', classes: 'example1' },
+			{ title: 'Example 2', inline: 'span', classes: 'example2' },
+			{ title: 'Table styles' },
+			{ title: 'Table row 1', selector: 'tr', classes: 'tablerow1' }
+        ],
+
+        // Replace values for the template plugin
+        template_replace_values: {
+            username: "Some User",
+            staffid: "991234"
+        }
+    });
+</script>
+<!-- /TinyMCE -->
+<script src="../../jscripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    onload = function () {
+        var url = '/Lessons/ClassList/' + ViewData["SubjectId"] + "?id1=" + ViewData["ClassesId"];
+        $("#tasklistResult").load(url);
+
+
+        var url1 = '/Lessons/UnitList/' + ViewData["ClassesId"] + "?id1=" + ViewData["UnitId"];
+        $("#tasklistResult1").load(url1);
+
+
+    }
+</script>
+
+<script type="text/javascript">
+    //function UpdateClassList() {
+    //    destElement = document.getElementById("SubjectId");
+    //    id = destElement.value
+    //    var url = '/Lessons/ClassList/' + id;
+
+    //    $("#tasklistResult").load(url);
+    //}
+
+
+    //function UpdateUnitList() {
+    //    //destElement = document.getElementById("ClassId");
+    //    destElement = document.getElementById("SubjectId");
+
+    //    id = destElement.value
+    //    var url = '/Lessons/UnitList/' + id;
+
+    //    $("#tasklistResult1").load(url);
+    //}
+
+</script>
+
+
+<h2>Lessons </h2>
+
+
+
+<table width="95%" align="center">
+
+
+    <tr>
+        <td style="Width: 20%">
+            <label>Subject</label></td>
+        <td style="Width: 80%">
+
+            @*     @Html.DropDownList("SubjectId", (SelectList)ViewData["SubjectList"], "Select", new { @class = "form-control", onchange = "UpdateClassList();" })*@
+
+            @Html.DropDownList("SubjectId", (SelectList)ViewData["SubjectList"], "Select", new { @class = "form-control", onchange = "UpdateUnitList();" })
+            <b>@Html.ValidationMessageFor(model => model.SubjectId)</b>
+        </td>
+    </tr>
+
+    @*  <tr>
+                    <td><label>Classes</label>
+                    </td>
+                    <td>
+
+                        @if (ViewData["LessonClassName"] == null)
+                        {
+                            <div id="tasklistResult" title="Inner Container">
+                              
+
+                                <select id="ClassId" class="form-control">
+                                    <option>Select</option>
+                                </select>
+
+                            </div>  
+                        }
+                        else
+                        {
+                
+                            @Html.HiddenFor(model => model.ClassId, new { @class = "form-control" })
+                            <b>@Html.Raw(ViewData["LessonClassName"])</b>
+
+                        }
+                    </td>
+                </tr>*@
+
+ @*   <tr>
+        <td>
+            <label>Unit</label>
+        </td>
+        <td>
+            @if (ViewData["LessonClassName"] == null)
+            {  <div id="tasklistResult1" title="Inner Container">
+
+
+                     
+
+                            <select id="UnitId" class="form-control">
+                                <option>Select</option>
+                            </select>
+
+
+                        </div>  
+            }
+            else
+            { 
+                    
+                @Html.HiddenFor(model => model.UnitId, new { @class = "form-control" })
+                <b>@Html.Raw(ViewData["LessonUnitName"])</b>
+
+            }
+        </td>
+    </tr>*@
+
+
+
+    <tr>
+        <td>
+            <label>Title</label>
+        </td>
+        <td>@Html.TextBoxFor(model => model.LessionHeading, new { @class = "form-control" })
+            <b>@Html.ValidationMessageFor(model => model.LessionHeading)</b>
+        </td>
+    </tr>
+
+
+
+       @*       <tr>
+                    <td><label>Description For First Page</label></td>
+
+                    <td>
+       
+
+                           @Html.TextBoxFor(model => model.LessionDesc, new { @class = "form-control" })
+                        <b>@Html.ValidationMessageFor(model => model.LessionDesc)</b>
+
+                    </td>
+                </tr>*@
+
+
+    <tr>
+        <td>
+            <label>Image Path</label></td>
+        <td>
+            <input type="file" id="FileUpload0" name="file" />
+            <p>Formats : png,jpg,gif,jpeg. Maximum Size : 10kb , Width 420 Height 390 Approximate</p>
+        </td>
+    </tr>
+@*    <tr>
+        <td>
+            <label>Lesson Introduction Graphics</label></td>
+        <td>
+            <input type="file" id="FileUpload1" name="file" />
+        
+            <p>Formats : png,jpg,gif,jpeg. Maximum Size : 200kb , Width 420 Height 390 Approximate</p>
+        </td>
+    </tr>*@
+
+@*    <tr>
+        <td>
+            <label>Slide After Lesson</label></td>
+
+        <td>
+            <input type="file" id="FileUpload2" name="file" />
+
+            <p>Formats : png,jpg,gif,jpeg. Maximum Size : 200kb </p>
+        </td>
+    </tr>*@
+
+    <tr>
+        <td>
+            <label>Description </label></td>
+        <td>@Html.TextAreaFor(model => model.SlideDescription, new { @class = "ckeditor  form-control", @id = "editor1" })
+            <b>@Html.ValidationMessageFor(model => model.SlideDescription)</b>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <label>Display Order No.</label></td>
+        <td>@Html.TextBoxFor(model => model.DisplayOrder, new { @class = "form-control" })
+
+            <b>@Html.ValidationMessageFor(model => model.DisplayOrder)</b>
+
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+            <label>Passing Score:</label></td>
+        <td>@Html.TextBoxFor(model => model.PassingScore, new { @class = "form-control" })
+
+            <b>@Html.ValidationMessageFor(model => model.PassingScore)</b>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b>Publish:.</b></td>
+        <td>
+            @Html.CheckBox("Publish")
+        </td>
+    </tr>
+
+
+
+
+    <tr>
+        <td></td>
+        <td>
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+            { 
+                <button class="btn btn-success" type="submit"><i class="fa fa-plus"></i>Submit</button>
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+            { 
+                <button class="btn btn-primary" type="submit"><i class="fa fa-pencil"></i>Save</button>
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+            { 
+                <button class="btn btn-danger" type="submit"><i class="fa fa-trash"></i>Delete</button>
+            }
+
+
+            <a href='/lessons/Index'    class="btn btn-warning" ><i class="fa fa-trash"></i>Back to List </a>
+
+
+            @Html.Raw(ViewData["errorMsg"]) </td>
+    </tr>
+
+
+</table>
+
+
+

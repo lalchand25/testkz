@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title  Kin Zin Degital Media Inc</title>
+    @*    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+
+    <link href="~/Content/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="~/Content/dist/css/timeline.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="~/Content/bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Content/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/stylegoonlineAdmin.css" rel="stylesheet" />
+    @using OLProject.Models;
+
+
+
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=1000,height=1200,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=1160,height=730,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        function OpenPopup1(url, windoname) {
+            window.open(url, windoname, 'target=blank,width=900,height=500,top=250,screenY=250,left=350,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+    </script>
+
+</head>
+<body>
+
+    @using OLProject.Models;
+    @if (Session["pmsUserID"] == null)
+    {
+
+        Response.Redirect("/account/login");
+
+
+    }
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+                <div class="textBox_full">
+
+                    @RenderBody()
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <script src="../../ckeditor/ckeditor.js"></script>
+    <script src="../../ckeditor/adapters/jqueryEdit.js"></script>
+    @*    <script src="~/ckeditorFull_4_5_3/ckeditor.js"></script>
+    <script src="~/ckeditorFull_4_5_3/adapters/jquery.js"></script>*@
+</body>
+</html>

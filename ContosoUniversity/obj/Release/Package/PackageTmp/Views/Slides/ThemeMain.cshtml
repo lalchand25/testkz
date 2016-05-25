@@ -1,0 +1,40 @@
+﻿@model OLProject.Models.tb_LessionMasterSlides
+@*@@ Page Title="" Language="C#"   MasterPageFile="~/Views/Shared/Security.Master" Inherits="System.Web.Mvc.ViewPage<OLProject.Models.tb_LessionMasterSlides>" *@
+
+@*@{ Layout = "~/Views/Shared/adminpopup.cshtml"; }*@
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+
+<h2>Select Theme </h2>
+
+
+
+
+
+<div class="Courses">
+  
+
+
+    <div class="middiv1">
+        <table align='left' style="width: 100%;">
+            @Html.Raw(ViewData["themes"])
+        </table>
+
+    
+        <div class="clr"></div>
+    </div>
+  
+    <p>  &nbsp;</p>
+    
+    
+    <a href='/slides/Index/?LessonId=@Session["clessionid"]' class="btn btn-warning"> Back to List </a>
+
+
+
+
+</div>
+
+
+
+

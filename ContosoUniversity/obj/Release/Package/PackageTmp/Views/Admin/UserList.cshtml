@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OLProject.Models.tb_UserMaster> 
+@using OLProject.Models;
+
+  @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+
+
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+	<h2>User List : @Html.Raw(ViewData["category"])</h2>
+<div class="panel-body">
+ 
+                            <div class="dataTable_wrapper">
+							
+							<div style="margin:0 0 10px 0;">
+														
+							<a href="javascript:OpenPopup('/usermaster/create/');" id='contract' runat='server'>
+            <button class="btn btn-success" type="button"><i class="fa fa-plus"></i>Create</button></a>
+			
+			</div>			
+
+      <table class="table table-striped table-bordered table-hover" id="resultForm:result_table">
+        
+     @Html.Raw(clsCommon.getHeader(22) )
+    @Html.Raw(ViewData["userlist"]) 
+    </table>
+</div>
+</div>
+     
+
+
+

@@ -1,0 +1,50 @@
+﻿@model OLProject.Models.tb_CategoryMaster
+
+<br />
+<b>@Html.Raw(ViewData["lstatus"])</b><br />
+<fieldset>
+    <form method="post" runat="server">
+        <table width="95%" align="center" class='form2'>
+            <tr>
+                <td style="Width: 20%"></td>
+                <td style="Width: 80%"></td>
+
+            </tr>
+
+            @using (Html.BeginForm())
+       {
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>
+                        <b>Category Name</b> </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.CategoryName)
+                            <b>@Html.ValidationMessageFor(model => model.CategoryName)</b>
+                        </div>
+                    </td>
+                </tr>
+            <tr>
+                <td></td>
+                <td>@if (Convert.ToInt32( ViewData["buttonname"]) == 1)
+              { 
+                            <input type="image" src="../../siteimages/submit.png" /><br />
+                    }
+                        @if (Convert.ToInt32( ViewData["buttonname"]) == 2)
+              { 
+                            <input type="submit" value="Update" /><br />
+                    }
+                        @if (Convert.ToInt32( ViewData["buttonname"]) == 3)
+              { 
+                            <input type="submit" value="Delete" /><br />
+                    }
+
+
+
+                        @Html.Raw(ViewData["errorMsg"])
+                        &nbsp;</td>
+            </tr>
+            }
+        </table>
+    </form>
+</fieldset>

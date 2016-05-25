@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OLProject.Models.tb_Keywords>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminsecurity.cshtml";
+}
+
+	@Session["projectmetatags"]
+
+
+
+
+    <h2>Keywords&nbsp; Information</h2>
+
+    <table width="100%">
+    <tr>
+              <td colspan="3" align="right"><a href="javascript:OpenPopup('/Keywords/create/');" id='contract' runat='server' ><img src="@Url.Content("~/siteImages/create.png")" border="0" alt="edit" style="width: 74px;height: 28px;" /></a></td>
+            </tr>
+
+     <tr>
+              <td colspan="3" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+
+
+        <tr>
+          
+            <td>
+                <b>Keywords Name
+            </b>
+            </td>
+
+            <td align='center'><b style="text-align: center">Edit</b></td>
+            <td align='center'><b>Delete</b></td>
+        </tr>
+
+        <tr>
+              <td colspan="3" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+
+
+         @Html.Raw(ViewData["data"])
+     
+    </table>
+ 
+
+
+

@@ -1,0 +1,68 @@
+﻿@model OLProject.Models.tb_SubTitleMaster
+
+
+
+
+
+@Html.ValidationSummary(true)
+<table width="95%" align="center">
+    <tr>
+        <td style="Width: 20%"></td>
+        <td style="Width: 80%"></td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            <b>Name</b> </td>
+        <td>
+            @Html.TextBoxFor(model => model.SubTitle, new { Style = "Width:500px" })
+            @Html.ValidationMessageFor(model => model.SubTitle)
+        </td>
+
+    </tr>
+
+
+    <tr>
+        <td>
+            <b>Image Path</b></td>
+        <td>
+            @Html.TextBoxFor(model => model.SubImage, new { Style = "Width:100px" })
+            <input type="file" id="fileToUpload0" name="file" />
+            @*    <asp:FileUpload ID="FileUpload0" runat="server" class="multi" accept="png" />*@
+            <br />
+            Formats : png,jpg,gif,jpeg. 
+                Maximum Size : 100kb</td>
+
+    </tr>
+
+
+
+
+    <tr>
+        <td></td>
+
+
+        <td>
+
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+            { 
+                <input type="image" src="../../siteimages/submit.png" /><br />
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+            { 
+                <input type="image" src="../../siteimages/update.png" /><br />
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+            { 
+                <input type="image" src="../../siteimages/delete.png" /><br />
+            }
+
+
+
+        </td>
+    </tr>
+</table>
+
+

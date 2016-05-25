@@ -1,0 +1,65 @@
+﻿@model IEnumerable<OLProject.Models.LessonInformation>
+
+@{ Layout = "~/Views/Shared/adminpopup.cshtml";
+}
+
+
+
+	@Session["projectmetatags"]
+
+
+
+
+    <h2>LessonList</h2>
+
+    <table width="100%">
+     <tr>
+              <td colspan="2">
+                  Total Records:@Html.Raw(ViewData["totalrecords"] )  
+                  @Html.Raw(ViewData["pageLinks"]) </td>
+        </tr>
+
+      
+
+       <tr>
+              <td colspan="2" style="border-bottom:1px solid #c2c2c2;"></td>
+            </tr>
+            
+             <tr>
+           
+                 <td>
+                Course  Name
+            </td>
+           
+            <td>
+                Lesson Name
+            </td>
+         
+            
+        </tr>
+          <tr>
+              <td colspan="2" style="border-bottom:1px solid #c2c2c2;"></td>
+            </tr>
+            
+
+    @foreach (var item in Model) { 
+    
+        <tr>
+           
+             <td>
+                @item.SubjectName 
+            </td>
+            <td>
+                @item.LessonName 
+            </td>
+
+          
+           
+        </tr>
+    
+     } 
+
+    </table>
+ 
+
+

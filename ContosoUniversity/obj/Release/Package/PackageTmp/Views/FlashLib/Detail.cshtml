@@ -1,0 +1,28 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/QuizSecurity.Master" Inherits="System.Web.Mvc.ViewPage<OLProject.Models.tb_FlashLibMaster>" 
+
+
+    	@Session["projectmetatags"]
+
+
+
+<fieldset>
+    <div class="display-label"><b>Flash Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FlashName) 
+    </div>
+    <br />
+<br />
+
+    <div class="display-label"><b>Description</b></div>
+    <div class="display-field">
+        
+         @Html.Raw(ViewData["desc"] 
+    </div>
+<br />
+<br />
+
+    
+</fieldset>
+ 
+
+

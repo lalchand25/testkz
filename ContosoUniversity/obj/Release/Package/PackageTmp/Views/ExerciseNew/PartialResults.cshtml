@@ -1,0 +1,125 @@
+﻿@Session["projectmetatags"]
+
+   <h2>Hello @Session["pmsusername"], @Html.Raw(ViewData["starstring"])</h2>
+            
+        
+       
+            <div id="rt" name="rt" style="display: none">
+                @Html.Raw(ViewData["mp3"])
+            </div>
+      
+       
+<div class="result-display">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <div class="rating2">
+                      <p style="text-align:center;">   @Html.Raw(ViewData["resultsuser"]) </p> </div> </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <strong>Date of Completion</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["DateOfComplete"])</td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong> Course Name</strong>:</td>
+                    <td>
+                       @Html.Raw(Session["subjectname"])</td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Lesson Name</strong></td>
+                    <td>
+                        @Html.Raw(Session["lessonName"]) </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>No. of Questions Attempt</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["total"])  </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Correct Answers</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["totalcorrect"])</td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Wrong Answers</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["totalWrong"]) </td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <strong>Your Score</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["totalScrore"])</td>
+
+                </tr>
+
+                <tr>
+                    <td style="width: 50%; text-align: right;">&nbsp;</td>
+                    <td style="width: 50%;">&nbsp;</td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Want to learn again?</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["startSlideShow"])</td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong>Quiz Start Again?</strong></td>
+                    <td>
+                        @Html.Raw(ViewData["startQuiz"])</td>
+
+                </tr>
+                      <tr>
+                    <td>
+                        <strong>Back to List</strong></td>
+                    <td>
+
+                   
+                        
+                  <a href="/mytraining/courseSubject/@ViewBag.subjectid" style="border: medium none; background-color: #e8424e; border-radius: 5px; color: #fff; font-size: 16px; font-weight: 600; padding:10px 20px; float:left; margin:0px;"> Back to List</a>
+
+
+                    </td>
+
+                </tr>
+		
+		
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+
+                </tr>
+
+            </table>
+			</div>

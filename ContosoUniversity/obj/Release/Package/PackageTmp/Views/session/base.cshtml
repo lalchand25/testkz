@@ -1,0 +1,131 @@
+﻿@model ContosoUniversity.Models.tb_sessionMaster
+
+
+
+ <div class="form-horizontal">
+        <h4>Course</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.SessionYear, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SessionYear, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SessionYear, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+      @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+            {
+                 <input class="btnSubmit" value="Submit" type="submit" name="btnSubmit" style="width: 150px;">
+               
+            }
+
+            @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+            {
+                 <input class="btnUpdate" value="Update" type="submit" name="btnSubmit" style="width: 150px;">
+            
+            }
+            @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+                
+            {
+                 <input class="btnDelete" value="Delete" type="submit" name="btnSubmit" style="width: 150px;">
+                
+                   
+            }
+            <input class="btnClose" value="Cancel" type="submit" name="btnSubmit" style="width: 150px;">
+
+        
+    </div>
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+@*<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Session
+                        <br />
+            @Html.EditorFor(model => model.SessionYear)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.SessionYear) </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+      <br />
+
+    
+        
+
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+        
+            @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+            {
+                 <input class="btnSubmit" value="Submit" type="submit" name="btnSubmit" style="width: 150px;">
+               
+            }
+
+            @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+            {
+                 <input class="btnUpdate" value="Update" type="submit" name="btnSubmit" style="width: 150px;">
+            
+            }
+            @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+                
+            {
+                 <input class="btnDelete" value="Delete" type="submit" name="btnSubmit" style="width: 150px;">
+                
+                   
+            }
+            <input class="btnClose" value="Cancel" type="submit" name="btnSubmit" style="width: 150px;">
+     
+  
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+*@
+
+
+
+
+
+
+
+
+
+

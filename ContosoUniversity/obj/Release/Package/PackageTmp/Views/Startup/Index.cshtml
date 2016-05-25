@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OLProject.Models.tb_SubjectMaster>
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+@Session["projectmetatags"]
+
+
+<h2>Subjects Information</h2>
+@*@--<p>
+       <a href="javascript:OpenPopup('http://demo.gsmmastersonline.com/#/MainStart');" id='contract' runat='server' >Start Reading</a>
+       </p>
+--*@
+
+
+
+<table class="table table-striped table-bordered table-hover">
+
+ <thead>
+
+    <tr>
+
+        <td style="text-align: left" width="30%">Subject Imge
+        </td>
+        <td width="70%">Description
+        </td>
+        <td width="10%">Select
+        </td>
+
+       
+    </tr>
+	</thead>
+	<tbody>
+
+    @Html.Raw(ViewData["data"])
+	
+	</tbody>
+
+</table>
+
+
+
+
+@*  @-- <object data="data:application/x-silverlight" type="application/x-silverlight" width="100%" height="600px">
+        <param name="source" value="@Session["siteurl"] " />
+        <param name="initParams" value="page=MainStart" />
+        <param name="background" value="white" />
+        <param name="minRuntimeVersion" value="4.0.50826.0" />
+        <param name="autoUpgrade" value="true" />
+    </object> --*@
+
+

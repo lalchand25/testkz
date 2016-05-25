@@ -1,0 +1,231 @@
+﻿@model ContosoUniversity.Models.tb_InvoiceMaster
+@using ContosoUniversity.Models;
+
+
+<script language="javascript" type="text/javascript">
+    function OpenPopupCenter(pageURL, title, w, h) {
+        var left = (screen.width - w) / 2;
+        var top = (screen.height - h) / 4;  // for 25% - devide by 4  |  for 33% - devide by 3
+        var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
+</script>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Invoice No
+            <br />
+        @ViewBag.InvoiceNo
+        @* @Html.EditorFor(model => model.InvoiceNo)*@
+
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.InvoiceNo) </div>
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Invoice Date
+           <br />
+
+
+        @Html.TextBoxFor(m => m.InvoiceDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.InvoiceDate) </div>
+
+    </div>
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    </div>
+
+
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Student
+            <br />
+        @Html.DropDownList("StudentID", (SelectList)ViewData["listStu"], "Select")
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.StudentID) </div>
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Prepare By
+           <br />
+
+        @Html.EditorFor(model => model.PreparedBy)
+    </div>
+
+
+
+    <div class="msgValidation">@Html.ValidationMessageFor(model => model.PreparedBy) </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Program
+            <br />
+        @Html.DropDownList("ProgramID", (SelectList)ViewData["listProg"], "Select")
+
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgramID) </div>
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Agent
+           <br />
+
+        @Html.DropDownList("AgentID", (SelectList)ViewData["listAgent"], "Select")
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.AgentID) </div>
+
+    </div>
+
+
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    </div>
+
+
+
+</div>
+
+<br />
+<br />
+
+@if (Convert.ToInt32(ViewBag.buttonname) == 2)
+{
+           
+    <button class="btn btn-danger" onclick="OpenPopupCenter('/payment/InvoiceDetailCreate/@ViewBag.InvoiceID', 'Delete!?', 400, 300);" type="button">
+        <i class="fa glyphicon-remove"></i>
+        Add Invoice Detail
+    </button>
+
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-lg-10">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                <thead>
+
+                    <tr style="background: #449d44; color: #FFFFFF;">
+                        <th>Unit</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @{
+            
+    string strItem = "";
+    scidataEntities db = new scidataEntities();
+    if (ViewBag.InvoiceID != null)
+    {
+        int invoiceid = ViewBag.InvoiceID;
+        var invDetail = from m in db.tb_InvoiceDetail where m.InvoiceID == invoiceid && m.DeletedStatus != true select m;
+        decimal total = 0;
+        foreach (var item in invDetail)
+        {
+            strItem += "<tr> <td> " + item.Unit + "</td>  <td> " + item.Description + "</td>  <td> " + item.Amount + "</td> <td> " + item.Unit * item.Amount + "</td>    ";
+
+            strItem += " <td> <button class=\"btn btn-danger\" onclick=\"OpenPopupCenter('/payment/InvoiceDetailEdit/" + item.InvoiceDetailID + "', 'Delete!?', 400, 300);\" type=\"button\">     <i class=\"fa glyphicon-remove\"></i>            Edit        </button>  </td>";
+            strItem += "  <td> <button class=\"btn btn-danger\" onclick=\"OpenPopupCenter('/payment/InvoiceDetailDelete/" + item.InvoiceDetailID + "', 'Delete!?', 400, 300);\" type=\"button\">     <i class=\"fa glyphicon-remove\"></i>            Delete        </button> </td> ";
+
+            strItem += "</tr> ";
+            total += Convert.ToDecimal(item.Amount * item.Unit);
+        }
+
+        strItem += "<tr> <td> </td> <td> </td><td> Total </td><td>" + total + "</td> <td> </td><td> </td> </tr>";
+    }
+
+                        @Html.Raw(strItem);
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+
+}
+
+
+
+
+<br />
+<br />
+
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit" formnovalidate name="btnSubmit" style="width: 120px;">
+        }
+
+        <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

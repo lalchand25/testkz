@@ -1,0 +1,108 @@
+﻿
+
+  <!--HEADER START-->
+    <header>
+    	<!--TOP STRIP START-->
+        <div class="top-strip">
+        	<div class="container">
+            	<div class="account">
+                	<ul>
+                        <li><a href="/register/signin">Login</a></li>
+                    	<li><a href="/login/logon">Admin Login</a></li>
+
+                     <!--   <li>
+                        	<div class="dropdown">
+                                <a class="dropdown-toggle" id="account" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                                My Account
+                                <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="account">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Account Setting</a></li>
+                                </ul>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+                <!--ACCOUNT SECTION START-->
+            </div>
+        </div>
+        <!--TOP STRIP END-->
+        <!--NAVIGATION START-->
+        <div class="navigation-bar">
+        	<div class="container">
+            	<div class="logo">
+                	<a href="~/home/index"><img src="~/images/site-logo.png" alt=""></a>
+                </div>
+                <div class="navigation">
+					<div class="navbar">
+					  <div class="navbar-inner" >
+						<div class="container">
+						  <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <div class="nav-collapse collapse">
+							<ul>
+								     	<li><a href="~/home/index">Home</a></li>
+                                        <li><a href="~/home/aboutNew">About us</a></li>
+                               			<li><a href="~/home/services">Services</a></li>
+										<li><a href="~/course/course">Courses</a></li>
+										<li><a href="~/home/faq">FAQs</a></li>
+										<li><a href="~/home/contactnew">Contact Us</a></li>
+
+                                  @*     <li><a href="main-admin.html">Admin Dashboard</a></li>*@
+							</ul>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <!--NAVIGATION END-->
+    </header>
+    <!--HEADER END-->
+
+    
+@*@using OLProject.Models
+<div class="main_top_menu">
+    <div class="top_menu2">
+        <ul>
+
+            @if (Session["pmsuserid"] != null && Session["moduleid"] != null)
+                {
+                @Html.Raw(clsCommon.getTab(Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["moduleid"])));
+            
+                <li><a href='/Login/logoff'>Log off</a> </li>
+            
+         
+                }
+                else
+                {
+                    @Html.Raw(clsCommon.getTab(0, 0));
+            
+                <li><a href="/Register/package">Register</a></li>
+                <li>| </li>
+
+                <li><a href="/register/index?regtype=2&pkgid=0">Register free for Demo </a></li>
+                <li>| </li>
+
+                   
+
+                <li><a href="/login/logon">Login</a></li>
+               
+      
+                }
+
+        </ul>
+    </div>
+</div>
+<div class="main_top_header">
+    <div class="top_header">
+  
+     
+      
+    </div>
+</div>*@

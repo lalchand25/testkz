@@ -1,0 +1,404 @@
+﻿@model ContosoUniversity.Models.tb_ApplicationForm
+
+
+
+
+Program Applying for: 
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Last Name
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            First Name and Middle Name&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Usual First Name  &nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Personal Education Number&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Previous Last Name (if applicable)&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Previous First Name (if applicable)
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Personal Education Number&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <b> CONTACT INFORMATION </b>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            BC Mailing Address &nbsp; 
+            <br />
+            @Html.TextAreaFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Postal Code&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Permanent Mailing Address (if different from above)
+            <br />
+            @Html.TextAreaFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Postal Code&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+    </div>
+    
+    <div class="row">
+
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            Telephone Number&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            Alternative Telephone Number&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            Student Main Email Address&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+    </div>
+    
+    <div class="row">
+
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            International Student:&nbsp;
+                        <br />
+            @Html.RadioButtonFor(x => x.Gender, "Yes") Yes &nbsp;&nbsp;
+            @Html.RadioButtonFor(x => x.Gender, "No") No
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            Date of Birth:&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            Gender&nbsp;
+                        <br />
+            @Html.RadioButtonFor(x => x.Gender, "Male") Male &nbsp;&nbsp;
+            @Html.RadioButtonFor(x => x.Gender, "Female") Female
+
+           
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+    </div>
+        <br />
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <b>PROGRAM INFORMATION </b>
+        </div>
+    </div>
+   
+    <div class="row">
+
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            Duration in Hours:&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            Duration in Weeks &nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            Start Date&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            End Date:&nbsp;
+                        <br />
+            @Html.EditorFor(model => model.FirstName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+
+    </div>
+    
+        
+    <div class="row">
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Credential Issued on Graduation:&nbsp;
+                        <br />
+            @Html.RadioButtonFor(x => x.Gender, "Male") Diploma &nbsp;&nbsp;
+            @Html.RadioButtonFor(x => x.Gender, "Female") Certificate
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Program Delivery Method
+(select all that apply)
+:&nbsp;
+                        <br />
+
+            @Html.CheckBox("Chq") On-Site &nbsp;&nbsp;
+               @Html.CheckBox("Chq") Distance &nbsp;&nbsp;
+             @Html.CheckBox("Chq") On-line &nbsp;&nbsp;
+             
+         
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+        </div>
+    </div>
+
+@*  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>First Name &nbsp;</label>
+                    </td>
+                    <td>@Html.EditorFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>Last Name &nbsp; </label>
+                    </td>
+                    <td>@Html.EditorFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>Last Name &nbsp; </label>
+                    </td>
+                    <td>@Html.EditorFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>Last Name &nbsp; </label>
+                    </td>
+                    <td>@Html.TextAreaFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>
+
+           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>Last Name &nbsp; </label>
+                    </td>
+                    <td>@Html.EditorFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <table width="100%">
+                <tr>
+                    <td width="30%">
+                        <label>Last Name &nbsp; </label>
+                    </td>
+                    <td>@Html.EditorFor(model => model.FirstName)    @Html.ValidationMessageFor(model => model.FirstName)</td>
+                </tr>
+            </table>
+        </div>*@
+
+
+
+@*  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Country  </label>
+                            @Html.DropDownList("CountryID", (SelectList)ViewData["ddCountryList"], "Select", new { onchange = "UpdateCatList();" })
+
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <div id="tasklistResult" style="width: 100%;">
+                                <label for="name1">State</label>
+
+
+                                @Html.DropDownList("StateID", (SelectList)ViewData["subStateList"], "Select")
+                            </div>
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.StateID)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <div id="cityDiv" style="width: 100%; ">
+                                <label for="name1">City </label>
+
+
+                                @Html.DropDownList("CityID", (SelectList)ViewData["subCity"], "Select")
+
+
+                            </div>
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.CityID)
+                        </div>*@
+
+
+@*    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Date of Birth </label>
+
+                            @Html.TextBox("DateofBirth")
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.DateofBirth)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <label for="name1">Upload Photo </label>
+                                    </td>
+                                    <td>
+                                        <input type="file" id="fileToUpload" name="file" />
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+
+                        </div>*@
+    <br />
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+            <input class="btnSubmit" value="Submit" type="submit" style="width: 150px;">
+            <input class="btnClose" value="Cancel" type="submit" style="width: 150px;">
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

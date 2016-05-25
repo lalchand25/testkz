@@ -1,0 +1,26 @@
+﻿@model ContosoUniversity.Models.tb_InvoiceDetail
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Edit Course Details</h2>
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+
+@using (Html.BeginForm("InvoiceDetailEdit", "payment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("InvoiceDetailBase")
+    
+}
+

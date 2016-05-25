@@ -1,0 +1,1402 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using OLProject.Models
+
+@Session["projectmetatags"]
+<!--BANNER START-->
+<div class="banner">
+    <ul class="bxslider">
+        <li>
+            <img src="../Images/banner1.jpg" alt="">
+        </li>
+        <li>
+            <img src="../Images/banner2.jpg" alt=""></li>
+        <li>
+            <img src="../Images/banner3.jpg" alt=""></li>
+        <li>
+            <img src="../Images/banner4.jpg" alt=""></li>
+    </ul>
+    <div class="newsletters">
+        <h1>Online Courses from the World’s Top Publishers</h1>
+        <h4>Search for online courses on Web development, Project Management, Mobile Application, or anything else.</h4>
+        <div class="subscribe">
+
+
+
+            @using (Html.BeginForm())
+            {
+                <input type="text" class="input-block-level" name="SearchString" id="SearchString" />
+              <button value="Search">Search</button>
+                
+                
+            }
+        </div>
+
+
+    </div>
+</div>
+<!--BANNER END-->
+<div class="contant">
+    <!--COURSES TOPIC SECTION START-->
+    <section>
+        <div class="container">
+            <!--SECTION HEADER START-->
+            <div class="sec-header">
+                <h2>Courses Topic</h2>
+                <p>Discover courses by topic</p>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--SECTION HEADER END-->
+            <div class="tabs-text">
+                <p>Choose from hundreds of free online courses from top universities and specialist organisations. Find the right course with our collections or categories, or view all courses starting soon.</p>
+            </div>
+        </div>
+        <div class="course-tabs">
+
+            <!-- Nav tabs -->
+
+            @* lcp 29/04/2016  <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#web"><i class="fa fa-globe"></i>Web &amp; Mobile</a></li>
+                <li><a data-toggle="tab" href="#music"><i class="fa fa-bell-o"></i>Business &amp; Management</a></li>
+                <li><a data-toggle="tab" href="#math"><i class="fa fa-bolt"></i>Health &amp; Safety</a></li>
+                <li><a data-toggle="tab" href="#Production"><i class="fa fa-bullhorn"></i>Music &amp; Production </a></li>
+                <li><a data-toggle="tab" href="#Photography"><i class="fa fa-camera"></i>Photography</a></li>
+                <li><a data-toggle="tab" href="#Geography"><i class="fa fa-cubes"></i>Geography</a></li>
+                <li><a data-toggle="tab" href="#Arts"><i class="fa fa-link"></i>Arts &amp; Crafts </a></li>
+            </ul>*@
+
+            <!-- Tab panes -->
+            <div class="tab-content container">
+                @* lcp 29/04/2016 <div id="web" class="tab-pane fade active in">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Web Tools-Automation</h4>
+                                <p>In this course, you’ll learn how to setup your development environment</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Designing RESTful APIs</h4>
+                                <p>Build and secure a web server with a RESTful Developer-Friendly API</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Intro to HTML and CSS</h4>
+                                <p>Learn how to convert digital design mockups into static web pages</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Intro to Computer Science</h4>
+                                <p>Learn key computer science concepts in this introductory Python</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>JavaScript Basics</h4>
+                                <p>Learn JavaScript syntax and coding conventions</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Linux Command Line Basics</h4>
+                                <p>An introduction to the Linux command line interface.</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="music" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Communication &amp; Teamwork</h4>
+                                <p>Learn how to create and deliver high-impact communications</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Leadership for Engineers</h4>
+                                <p>Learn how to effectively lead in a technology-driven world</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Introduction to Marketing</h4>
+                                <p>Learn the fundamentals of marketing, including strategies and tools</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Accountant in Business</h4>
+                                <p>Understand the role of accountants in ensuring businesses operate effectively</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Financial Accounting</h4>
+                                <p>Learn the underlying concepts of financial accounting and its techniques</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Management Accounting</h4>
+                                <p>Learn management accounting techniques to support businesses to plan</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="math" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Biomedical Imaging</h4>
+                                <p>Discover how medical imaging technologies are complementary</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Introduction to Urology</h4>
+                                <p>Urology will set you on a path to a basic understanding</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Solar Energy</h4>
+                                <p>Learn how to design a complete photovoltaic system.</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Epidemics</h4>
+                                <p>Explore the science, prevention and control of epidemics</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>Food for Thought</h4>
+                                <p>A scientific framework for understanding food and its impact</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>e-Psychology</h4>
+                                <p>Learn about e-based promotion of physical, mental and social health</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="Production" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="Photography" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="Geography" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>
+                <div id="Arts" class="tab-pane fade">
+                    <ul class="course-topics row">
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic1.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic2.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic3.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic4.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="images/topic5.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                        <!--LIST ITEM START-->
+                        <li class="span4">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/topic6.jpg" alt=""></a>
+                            </div>
+                            <div class="text">
+                                <h4>HTML5 Programming</h4>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                <span>$ 199</span>
+                            </div>
+                        </li>
+                        <!--LIST ITEM START-->
+                    </ul>
+                </div>*@
+            </div>
+        </div>
+
+        <!--COURSES TOPIC SECTION END-->
+        <!--SERVICES SECTION START-->
+
+        <div class="container">
+            <!--SECTION HEADER START-->
+            <div class="sec-header">
+                <h2>Welcome to Kin Zin Digital Media Inc</h2>
+                <p>Your New Online Learning Management System</p>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--SECTION HEADER END-->
+            <div class="row">
+                <!--SERVICE ITEM START-->
+                <div class="span4">
+                    <div class="services">
+                        <div class="header">
+                            <i class="fa fa-tablet"></i>
+                            <i class="fa fa-user inner-icon"></i>
+                        </div>
+                        <div class="text">
+                            <h3><a>Study What Matters</a></h3>
+                            <p>100+ online courses that teach you what matters to build your future. Save your time and money with KZonline.org</p>
+                        </div>
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+                <!--SERVICE ITEM START-->
+                <div class="span4">
+                    <div class="services">
+                        <div class="header">
+                            <i class="fa fa-tablet"></i>
+                            <i class="fa fa-list-alt inner-icon"></i>
+                        </div>
+                        <div class="text">
+                            <h3><a>Career-focused</a></h3>
+                            <p>Comprehensive range of online courses that teach you the skills with images, videos, quizs for your specific job titles.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+                <!--SERVICE ITEM START-->
+                <div class="span4">
+                    <div class="services">
+                        <div class="header">
+                            <i class="fa fa-tablet"></i>
+                            <i class="fa fa-cogs inner-icon"></i>
+                        </div>
+                        <div class="text">
+                            <h3><a>Online Access</a></h3>
+                            <p>Study what you want, where you want and whenever you want! Access the course content on mobile, tablet or desktop.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--SERVICE ITEM END-->
+            </div>
+        </div>
+    </section>
+    <!--SERVICES SECTION END-->
+    <!--LATEST COURSES SECTION START-->
+    <section class="gray-bg">
+        <div class="container">
+            <!--SECTION HEADER START-->
+            <div class="sec-header">
+                <h2>Latest Courses</h2>
+                <p>Check Our Featured Courses</p>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--SECTION HEADER END-->
+            <div class="customNavigation">
+                <a class="btn prev"><i class="fa fa-angle-left"></i></a>
+                <a class="btn next"><i class="fa fa-angle-right"></i></a>
+            </div>
+            <div id="owl-carousel" class="owl-carousel owl-theme">
+
+                @Html.Raw(ViewBag.topcours)
+
+                <!--COURSE ITEM START-->
+                @*    <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/course1.jpg" alt=""></a>
+                                <div class="price"><span>$</span>9</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Management</h4>
+                                  
+                                </div>
+                                <div class="course-name">
+                                 
+                                    <span>$800</span>
+                                      <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>*@
+
+                @* <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course2.jpg" alt=""></a>
+                                <div class="price"><span>$</span>51</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Music</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>How to play the guitar</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course3.jpg" alt=""></a>
+                                <div class="price"><span>$</span>20</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Marketing</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Marketing Management</p>
+                                    <span>$1200</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../Images/course4.jpg" alt=""></a>
+                                <div class="price"><span>$</span>8</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Holidays Education</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Holidays Education Course</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course1.jpg" alt=""></a>
+                                <div class="price"><span>$</span>15</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Management</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Build a Business Plan</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course2.jpg" alt=""></a>
+                                <div class="price"><span>$</span>63</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Music</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>How to play the guitar</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course3.jpg" alt=""></a>
+                                <div class="price"><span>$</span>19</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Marketing</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Marketing Management</p>
+                                    <span>$1200</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course4.jpg" alt=""></a>
+                                <div class="price"><span>$</span>25</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Holidays Education</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Holidays Education Course</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course1.jpg" alt=""></a>
+                                <div class="price"><span>$</span>13</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Management</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Build a Business Plan</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course2.jpg" alt=""></a>
+                                <div class="price"><span>$</span>17</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Music</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>How to play the guitar</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course3.jpg" alt=""></a>
+                                <div class="price"><span>$</span>31</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Marketing</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Marketing Management</p>
+                                    <span>$1200</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->
+                        <!--COURSE ITEM START-->
+                        <div class="course">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="../images/course4.jpg" alt=""></a>
+                                <div class="price"><span>$</span>36</div>
+                            </div>
+                            <div class="text">
+                                <div class="header">
+                                    <h4>Holidays Education</h4>
+                                    <div class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </div>
+                                </div>
+                                <div class="course-name">
+                                    <p>Holidays Education Course</p>
+                                    <span>$800</span>
+                                </div>
+                                <div class="course-detail-btn">
+                                    <a href="#">Subscribe</a>
+                                    <a href="#">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--COURSE ITEM END-->*@
+            </div>
+        </div>
+    </section>
+    <!--LATEST COURSES SECTION END-->
+    <!--STUDENT FORM SECTION START-->
+    <section class="form">
+        <div class="form-contant relative">
+            <div class="container form-fields">
+                <div class="row">
+                    <div class="span6">
+                        <img src="../images/student.png" alt="">
+                    </div>
+                    <div class="span6">
+                        <div class="student-form">
+                            <div class="header">
+                                <h2>Have a Question?</h2>
+                                <p>Learn us help you in choosing the right course for your career.</p>
+                            </div>
+                            @using (Html.BeginForm())
+                            {
+                    
+                    
+                                <div class="form-data">
+                                    <ul>
+                                        <li>
+                                            <input type="text" class="input-block-level" name="name"  placeholder="Name"></li>
+                                        <li>
+                                            <input type="text" class="input-block-level" name="emailid" placeholder="Email ID"></li>
+                                        <li>
+                                            <input type="text" class="input-block-level" name ="phonenuber" placeholder="Phone Number"></li>
+                                        <li>
+                                            <input type="text" class="input-block-level" name="course" placeholder="Course"></li>
+                                        <li>
+                                          @*  <div class="gender">
+                                                <span>
+                                                    <input name="gender" type="radio" value="" id="male">
+                                                    <label for="male">Male</label>
+                                                </span>
+                                                <span>
+                                                    <input name="gender" type="radio" value="" id="female">
+                                                    <label for="female">Female</label>
+                                                </span>
+                                            </div>*@
+                                         
+                                             <button type="submit"  name="buttonName" value="haveaquestion" >Submit</button>
+
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:0px -1000px;"></div>
+            <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:0px -1500px;"></div>
+            <div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:0px -900px;"></div>
+        </div>
+    </section>
+    <!--STUDENT FORM SECTION END-->
+    <!--PAPULAR POSTS SECTION START-->
+    <section class="papular-post">
+        <div id="bg4" data-0="background-position:0px 0px;" data-end="background-position:0px -1000px;"></div>
+        <div class="container post-contant">
+            <!--SECTION HEADER START-->
+            <div class="sec-header">
+                <h2>Popular Posts</h2>
+                <p>Latest From Blog</p>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--SECTION HEADER END-->
+            <div class="row">
+                <div class="span6">
+                    <div class="post">
+                        <div class="thumb">
+                            <img src="../Images/blog1.jpg" alt="">
+                        </div>
+                        <!--POST HEADER START-->
+                        <div class="header">
+                            <!--POST DATE START-->
+                            <div class="post-date">
+                                <p>May<span>11</span>2014</p>
+                            </div>
+                            <!--POST DATE START-->
+                            <div class="icons">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-heart-o"></i></a><span class="notification">25</span></li>
+                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-comments-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--POST HEADER END-->
+                        <div class="text">
+                            <h2>Code Wars: Ruby vs Python vs PHP [Infographic]</h2>
+                            <h5>Admin / Programming</h5>
+                            <p>Just as the Japanese, Spanish and French languages are uniquely different, programming languages also have their variations, some more popular and easier to use than others. With the recent introduction of some new ones,</p>
+                            <a href="#" class="more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="post">
+                        <div class="thumb">
+                            <img src="../Images/blog2.jpg" alt="">
+                        </div>
+                        <!--POST HEADER START-->
+                        <div class="header">
+                            <!--POST DATE START-->
+                            <div class="post-date">
+                                <p>May<span>11</span>2014</p>
+                            </div>
+                            <!--POST DATE START-->
+                            <div class="icons">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-heart-o"></i></a><span class="notification">25</span></li>
+                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-comments-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--POST HEADER END-->
+                        <div class="text">
+                            <h2>Top 10 Programming Languages to Learn in 2014</h2>
+                            <h5>Admin / Programming</h5>
+                            <p>This is a question that is asked by beginners, as well as experts. As with many important questions, the answer is not simple. There are many factors that should be taken into account while deciding a programming language to learn.</p>
+                            <a href="#" class="more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--PAPULAR POSTS SECTION END-->
+    <!--GALLERY AND NEXT COURSES SECTION START-->
+    <section class="gray-bg">
+        <div class="container">@*
+            <div class="row">
+                <div class="span4">
+                    <div class="box">
+                        <h2>Most Viewed Courses</h2>
+                        <ul class="event-galley">
+                            @*   @Html.Partial("~/views/home/partialevent.cshtml")*lcp@
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../Images/event1.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4>Project Management</h4>
+                                    <p>Tags</p>
+                                    <a href="#" class="tags">Business</a>
+                                    <a href="#" class="tags">Technology</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../Images/event2.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4>Business Management</h4>
+                                    <p>Tags</p>
+                                    <a href="#" class="tags">Business</a>
+                                    <a href="#" class="tags">Management</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../Images/event3.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4>Website Design</h4>
+                                    <p>Tags</p>
+                                    <a href="#" class="tags">IT</a>
+                                    <a href="#" class="tags">Computers</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../Images/event4.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4>Reverse Engineering</h4>
+                                    <p>Tags</p>
+                                    <a href="#" class="tags">Mechanical</a>
+                                    <a href="#" class="tags">Engineering</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box lesson">
+                        <h2>About Trial Lessons</h2>
+                        <iframe src="https://www.youtube.com/embed/cgYP3bOERw4"></iframe>
+                        <div class="text">
+                            <h3 class="pull-left">UX Design</h3>
+                            <span class="pull-right">$6 Per Hour</span>
+                            <p>The most successful products and services offer rich and colorful user experiences that take into account social and cultural patterns. Learn how to create excellent user experience (UX) designs which are user-centered and consider factors such as consumer demand, ability and cultural background.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box">
+                        <h2>Our Next Courses</h2>
+                        <ul class="event-galley next-course">
+                            <!--LIST ITEM START-->
+
+                            @Html.Raw(ViewBag.ForNextCouse)
+
+                            @*  <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img alt="" src="../Images/event1.png"></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Android Developer</a></h4>
+                                            <p>Learn to develop for Android and transform your career outlook!</p>
+                                            <span class="rate"><small>$</small> 27</span>
+                                        </div>
+                                    </li>
+                                    <!--LIST ITEM START-->
+                                    <!--LIST ITEM START-->
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img alt="" src="../Images/event2.png"></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Machine Learning</a></h4>
+                                            <p>Machine learning represents a key evolution in the fields of computer science</p>
+                                            <span class="rate"><small>$</small> 27</span>
+                                        </div>
+                                    </li>
+                                    <!--LIST ITEM START-->
+                                    <!--LIST ITEM START-->
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img alt="" src="../Images/event3.png"></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Tech Entrepreneur</a></h4>
+                                            <p>Learn the skills you need to build your very own business</p>
+                                            <span class="rate"><small>$</small> 27</span>
+                                        </div>
+                                    </li>
+                                    <!--LIST ITEM START-->
+                                    <!--LIST ITEM START-->
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img alt="" src="../Images/event4.png"></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Mobile Game Developer</a></h4>
+                                            <p>Over the last decade, mobile gaming has grown into a huge market</p>
+                                            <span class="rate"><small>$</small> 27</span>
+                                        </div>
+                                    </li>
+                                    <!--LIST ITEM START-->*lcp@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            *@
+        </div>
+    </section>
+    <!--GALLERY AND NEXT COURSES SECTION END-->
+    <!--TESTIMONIALS SECTION START-->
+    <section class="testimonials">
+        <div class="container testimonial-contant">
+            <div class="sec-header">
+                <h2>Read Our Testimonials</h2>
+                <p>What Students say</p>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="testimonial-data">
+                <ul class="bxslider2">
+                    <li>
+                        <div class="testimonial-text">
+                            <p>KZonline.org’s courses have become one of these small, but really important chances for me. Online studies are one of these precious seeds that start a real change in the world. </p>
+                            <a href="#">Naiana Ansa</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="testimonial-text">
+                            <p>Microbiology is my dream subject. Learning the course “DNA - From Structure to Therapy” with iversity has made my dream come true-I am loving it.</p>
+                            <a href="#">Jasmine Dou</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="testimonial-text">
+                            <p>KZOnline has changed the way I view the responsibilities of educational institutes everywhere in providing world-class and accessible education. </p>
+                            <a href="#">David john</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="testimonial-text">
+                            <p>I believe that online education will be an important building block of teaching in the future. (...) I see great potential in having the opportunity to learn no matter where you are. You don’t need to be in school or in a lecture hall of a university anymore and therefore I believe that this will dramatically change our lives.</p>
+                            <a href="#">Roth Brown</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="testimonial-text">
+                            <p>With the skills I’ve been able to develop on my own, I’ve got paid internships, beating out other college kids, because they don’t usually have the same skill-sets I do when it comes to iOS app development.</p>
+                            <a href="#">Timothy Smith</a>
+                        </div>
+                    </li>
+                </ul>
+                <div id="bx-pager">
+                    <a data-slide-index="0" href="">
+                        <div class="thumb">
+                            <img src="../Images/41.jpg" alt="">
+                        </div>
+                        <p>Naiana Ansa</p>
+                        <p class="color">guitarist</p>
+                    </a>
+                    <a data-slide-index="1" href="">
+                        <div class="thumb">
+                            <img src="../Images/42.jpg" alt="">
+                        </div>
+                        <p>Jasmine Dou</p>
+                        <p class="color">student</p>
+                    </a>
+                    <a data-slide-index="2" href="">
+                        <div class="thumb">
+                            <img src="../Images/43.jpg" alt="">
+                        </div>
+                        <p>David john</p>
+                        <p class="color">student</p>
+                    </a>
+                    <a data-slide-index="3" href="">
+                        <div class="thumb">
+                            <img src="../Images/44.jpg" alt="">
+                        </div>
+                        <p>Roth Brown</p>
+                        <p class="color">Artist</p>
+                    </a>
+                    <a data-slide-index="4" href="">
+                        <div class="thumb">
+                            <img src="../Images/46.jpg" alt="">
+                        </div>
+                        <p>Timothy Smith</p>
+                        <p class="color">Smithies</p>
+                    </a>
+                </div>
+            </div>
+            <div class="side-imgage">
+                <img src="../Images/testimonials-bg2.png" alt="">
+            </div>
+        </div>
+        <div id="bg5" data-0="background-position:0px 0px;" data-end="background-position:0px -1800px;"></div>
+    </section>
+    <!--TESTIMONIALS SECTION END-->

@@ -1,0 +1,25 @@
+﻿@Session["projectmetatags"]
+
+
+
+@{
+    Layout = "~/Views/Shared/adminpopup.cshtml";
+    }
+
+
+
+
+
+
+@if (ViewData["msgStatus"] == null)
+{ 
+    @Html.Partial("BaseCategory");
+}
+else
+{
+
+    <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+}
+
+

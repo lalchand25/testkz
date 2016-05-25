@@ -1,0 +1,41 @@
+﻿@model OLProject.Models.tb_TeacherHelp
+
+
+
+    @Html.ValidationSummary(true)
+    
+    
+    <table width="95%" align="center">
+
+        <tr>
+            <td align="left"><b>Subject</b></td>
+        </tr>
+
+        <tr>
+            <td>@Html.Raw(ViewData["subject"])</td>
+        </tr>
+        <tr>
+            <td align="left"><b>Description</b></td>
+        </tr>
+        <tr>
+            <td>@Html.Raw(ViewData["desc"])</td>
+        </tr>
+        <tr>
+            <td align="left" style="Width: 100%"><b>Reply</b></td>
+        </tr>
+        <tr>
+            <td>@Html.TextAreaFor(model => model.Teacherreply, new { Style = "Width:90%;Height:100px", Readonly = "readonly" })
+                <b><span style="color: Red">@Html.ValidationMessageFor(model => model.Teacherreply)</span></b></td>
+        </tr>
+        <tr>
+
+            <td align="left">
+                <br />
+                <br />
+                <br />
+                <input type="image" src="../../siteimages/update.png" /><br />
+
+            </td>
+        </tr>
+    </table>
+ 

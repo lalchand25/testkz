@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "close";
+     Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+}
+
+
+
+
+
+<script>
+    window.onunload = refreshParent;
+    function refreshParent() {
+        window.opener.location.reload();
+    }
+</script>
+
+    <script type="text/javascript">
+        window.close();
+    </script>

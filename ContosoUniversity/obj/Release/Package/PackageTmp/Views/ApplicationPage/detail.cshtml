@@ -1,0 +1,29 @@
+﻿
+@model OLProject.Models.tb_ApplicationPage
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0"> 
+     
+    
+   <tr>
+            
+          
+            <tr><td colspan="2">
+                Title : @Model.Title
+            </td></tr>
+           
+           <tr> <td colspan="2" width="100%">
+                Descirption : @Html.Raw(Model.Description)
+            </td></tr>
+            
+              <tr> <td align="center" valign="top"><br />
+               <a href="@Url.Action("Edit", "applicationPage",new {id=Model.Pageid})"><img src="@Url.Content("~/SiteImages/edit.png") "      border="0" alt="edit" style="width:50px;Height:50px;"/></a>
+                </td>
+              <td align="center" valign="top"><br />
+               <a href="@Url.Action("Delete", "applicationPage",new {id=Model.Pageid})"><img src="@Url.Content("~/SiteImages/delete.png") " border="0"   alt="Delete" style="width:50px;Height:50px;"/></a>
+     </td>
+        </tr>
+    
+    
+
+    </table>
+   

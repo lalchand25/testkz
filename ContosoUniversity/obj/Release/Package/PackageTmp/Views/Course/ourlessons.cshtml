@@ -1,0 +1,66 @@
+﻿@model  OLProject.Models.tb_UserMaster
+
+   @{ Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<!--BANNER START-->
+    <div class="page-heading">
+     <div class="container">
+            <h2> </h2>
+            <p></p>
+        </div>
+    </div>
+    <!--BANNER END-->
+      <!--CONTANT START-->
+    <div class="contant">
+    	<div class="container">
+        	<div class="our-lessons">
+            	<div class="course-tabs">
+                <!-- Nav tabs -->
+                
+                
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#web" data-toggle="tab"><i class="fa fa-book"></i>  @Session["currentSubject"]</a></li>
+                  
+                  
+                </ul>
+                
+             
+                <!-- Tab panes -->
+                
+                <div class="tab-content container">
+                  <div class="tab-pane fade active in" id="web">
+                    <ul class="course-topics row">
+
+                        @Html.Raw(ViewData["Classlist"])
+
+                   
+                 
+                 
+                     
+                      
+                        <!--LIST ITEM START-->
+                    @*	<li class="span4">
+                        	<div class="thumb">
+                            	<a href="/course/coursesemdetail"><img alt="" src="../../images/topic6.jpg"></a>
+                            </div>
+                            <div class="text">
+                            	<h4><a href="/course/coursesemdetail">Sem 6</a></h4>
+                                <p>Scrum Training</p>
+                              
+                            </div>
+                        </li>*@
+                     
+                    	
+                        <!--LIST ITEM START-->
+                    </ul>
+                  </div>
+              
+                </div>
+            </div>
+            </div>
+                 
+        </div>
+       
+
+    <!--CONTANT END-->

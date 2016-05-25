@@ -1,0 +1,35 @@
+﻿@@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+@@ Register src="PopHeader.ascx" tagname="PopHeader" tagprefix="uc1" 
+@@ Register src="PopFooter.ascx" tagname="PopFooter" tagprefix="uc3" 
+@@ Register src="CheckUser.ascx" tagname="CheckUser" tagprefix="uc2" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" /> 
+      <link href="../../Content/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+  <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+    
+     
+ 
+</head>
+<body>
+   <uc1:PopHeader ID="PopHeader2" runat="server" />
+        <div id="body-text">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+               
+            </asp:ContentPlaceHolder>
+   
+    </div>             
+    
+ 
+      
+    
+    <uc3:PopFooter ID="PopFooter1" runat="server" />
+      
+ 
+  
+      
+ 
+</body>
+</html>

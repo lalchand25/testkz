@@ -1,0 +1,87 @@
+/*
+ * jQuery FlexSlider v1.4
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider { margin: 0; padding: 0; float:left;}
+.flexslider .slides li {display: none;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display:block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider { width:100%; position: relative; margin:0; padding:p0x;/* border:15px solid #d1d1d1;*/}
+.flexslider .slides{ margin:0; padding:0px;}
+.flexslider .slides  li {position: relative; list-style:none; padding:0;}
+
+.flexslider .slides  li .price{
+	margin:0px;
+	padding:12px 20px;
+	font-size:20px;
+	color:#fff;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	background:url(../images/price_bg.gif) repeat-x left top;
+	-webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+	behavior: url(PIE.htc);
+	position:absolute;
+	bottom:10px;
+	right:20px;
+}
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flexslider-container {position: relative;}
+
+
+/* Caption style */
+.flex-caption {width: 100%; padding: 0px; position: absolute; left: 0px; margin:0px; bottom: 0px; background:url(../images/bgWhite_transparent.png); }
+
+.flex-caption h5{
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	font-weight:normal;
+}
+.flex-caption h3{
+	margin:4px 0px 2px 0px ;
+	padding:0px;
+	font-size:18px;
+	font-weight:normal;
+}
+.flex-caption h3 span{
+	margin:0px;
+	padding:0px;
+	color:#D60015;
+	font-style:italic;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.flex-caption em{
+	margin:0px 0px 4px 0px;
+	padding:0px;
+	font-size:14px;
+	font-weight:normal;
+	display:block;
+	
+}
+/* Direction Nav */
+.flex-direction-nav{margin:0; padding:0; display:none; }
+.flex-direction-nav li{ list-style:none;}
+.flex-direction-nav li a {width: 52px; height: 52px; margin: -50px 0 0; display: block; background: url(../images/bg_direction_nav.png) no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px;} /* set negative margin-top equal to half the height on the directional-nav for perfect vertical centering */
+.flex-direction-nav li a.next {background-position: -52px 0; right: 30px;}
+.flex-direction-nav li a.prev {background-position: 0 0; left: 30px;}
+
+/* Control Nav */
+.flex-control-nav {margin-left: -31px; position: relative; bottom: 0; top:20px; left: 50%; float:left; display:none;} /* set negative margin-left equal to half the width on the control-nav for perfect centering */
+.flex-control-nav li {margin: 0 0 0 5px; float: left; list-style:none; }
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(../images/bg_control_nav.png) no-repeat 0 0; cursor: pointer; text-indent: -9999px;}
+.flex-control-nav li a:hover {background-position: 0 -13px;}
+.flex-control-nav li a.active {background-position: 0 -26px; cursor: default;}

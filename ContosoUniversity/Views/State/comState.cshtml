@@ -1,0 +1,33 @@
+﻿@model OLProject.Models.tb_StateMaster
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true) 
+    <fieldset>
+        <legend>State Information</legend>
+        <div class="editor-label">
+            Select Country
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CountryID", (SelectList)ViewData["countrylist"], "Select", new { style = "width: 140px;" })
+        </div>
+
+
+        <div class="editor-label">
+            State Name
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.StateName, new { Style = "Width:250px" })
+            @Html.ValidationMessageFor(model => model.StateName)
+        </div>
+
+
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Cancel & Back to List", "Index")
+</div>
+

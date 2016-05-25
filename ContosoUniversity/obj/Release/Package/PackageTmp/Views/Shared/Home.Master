@@ -1,0 +1,58 @@
+﻿@@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+
+@@ Register Src="AppFooter.ascx" TagName="AppFooter" TagPrefix="uc2" 
+@@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc3" 
+@@ Register Src="Footer.ascx" TagName="Footer" TagPrefix="uc1" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-47212041-1', 'goonlineschool.com');
+        ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+    @--  <form id="form1" runat="server">--
+    <uc3:Header ID="Header1" runat="server" />
+    <div id="main_body_text">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="bootemAdd">
+        <script type="text/javascript"><!--
+            google_ad_client = "pub-3017908902490282";
+            /* 728x90, created 25/07/11 */
+            google_ad_slot = "2575973722";
+            google_ad_width = 728;
+            google_ad_height = 90;
+
+        </script>
+        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <script async src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- 200 x 90 v x l -->
+        <ins class="adsbygoogle" style="display: inline-block; width: 200px; height: 90px"
+            data-ad-client="ca-pub-3017908902490282" data-ad-slot="2806868121"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    
+    </div>
+
+    @--   </form>--
+    <uc1:Footer ID="Footer1" runat="server" />
+</body>
+</html>

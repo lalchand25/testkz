@@ -1,0 +1,128 @@
+﻿@model IEnumerable<OLProject.Models.QuizInformation>
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    string okIcon = "ok.png";
+    string okIcon1 = "wrong.png";
+    string check1 = "wrong.png";
+    string check2 = "wrong.png";
+    string check3 = "wrong.png";
+    string check4 = "wrong.png";
+}
+<h2>Quiz Information</h2>
+<table cellpadding="3" cellspacing="3"  width="100%" align='center' >
+    @{
+        var OddColor = "#DDEEEE";
+        var evenColor = "#EEFFFF";
+        var Odd = OddColor;
+    }
+      <tr bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <h3>Student Name:@Html.Raw(ViewData["StudentName"]</h3>
+        </td> </tr>
+ <tr bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Subject Name: @Html.Raw(ViewData["SubjectName"]</b>
+        </td> </tr>
+ <tr bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Class Name: @Html.Raw(ViewData["ClassName"]</b>
+        </td> </tr>
+ <tr bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Unit: @Html.Raw(ViewData["UnitName"]</b>
+        </td> </tr>
+ <tr  bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Lesson Name: @Html.Raw(ViewData["LessonName"]</b>
+        </td> </tr>
+<tr  bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Total Question: @Html.Raw(ViewData["Total"]</b>
+        </td> </tr>
+
+        <tr  bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Total Correct: @Html.Raw(ViewData["TotalCorrect"]</b>
+        </td> </tr>
+
+          <tr  bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Total Wrong: @Html.Raw(ViewData["TotalWrong"]</b>
+        </td> </tr>
+
+          <tr  bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan="2">
+         <b>Your Star Rating : @Html.Raw(ViewData["StarString"]</b>
+        </td> </tr>
+ 
+        
+
+     <tr>
+              <td colspan="2" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>  
+    @foreach (var model1 in Model)
+    {
+     <tr border="0" bgcolor="@evenColor" color="#ffffff" >
+        <td width="100%" align="left" colspan='2'>
+         <h3>  @Html.Raw(HttpUtility.HtmlDecode(model1.Decription))</h3>
+        </td> </tr>
+        
+       
+        if (model1.QuesTypeId == 1 || model1.QuesTypeId == 2 || model1.QuesTypeId == 5)
+        {
+            if (model1.Check1 == true) { check1 = okIcon; }
+            if (model1.Check2 == true) { check2 = okIcon; }
+            if (model1.Check3 == true) { check3 = okIcon; }
+            if (model1.Check4 == true) { check4 = okIcon; }
+            <tr border='1' bgcolor="@Odd"><td width="10%"><img alt='Image' width='32px' height='32px' src='../../siteimages/@check1' /></td><td>@model1.Ans1</td></tr>
+            <tr bgcolor="@evenColor"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check2' /></td><td>@model1.Ans2</td></tr>
+            <tr bgcolor="@Odd"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check3' /></td><td>@model1.Ans3</td></tr>
+            <tr bgcolor="@evenColor"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check4' /></td><td>@model1.Ans4</td></tr>
+        }
+        
+                
+         if (model1.QuesTypeId == 3)
+                {
+                    if (model1.Check1 == true) { check1 = okIcon; }
+                    if (model1.Check2 == true) { check2 = okIcon; }
+                    <tr bgcolor="@Odd"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check1' /></td><td>@model1.Ans1</td></tr>
+                    <tr bgcolor="@evenColor"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check2' /></td><td>@model1.Ans2</td></tr>
+                }
+
+            if (model1.QuesTypeId == 4)
+                {
+                    if (model1.Check1 == true) { check1 = okIcon; }
+                    if (model1.Check2 == true) { check2 = okIcon; }
+                    if (model1.Check3 == true) { check3 = okIcon; }
+                    if (model1.Check4 == true) { check4 = okIcon; }
+                    <tr bgcolor="@Odd"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check1' /></td><td><img alt='Image' width='100px' height='75px' src='../../uploads/@model1.Ans1' /></td></tr>
+                    <tr bgcolor="@evenColor"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check2' /></td><td><img alt='Image' width='100px' height='75px' src='../../uploads/@model1.Ans2' /></td></tr>
+                    <tr bgcolor="@Odd"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check3' /></td><td><img alt='Image' width='100px' height='75px' src='../../uploads/@model1.Ans3' /></td></tr>
+                    <tr bgcolor="@evenColor"><td><img alt='Image' width='32px' height='32px' src='../../siteimages/@check4' /></td><td><img alt='Image' width='100px' height='75px' src='../../uploads/@model1.Ans4' /></td></tr>
+                }
+
+
+        if (model1.ComputerAns == model1.UserAns)
+        {
+            <tr><td colspan='2'><img alt='Image' width='181px' height='40px' src='../../siteimages/right1.png' /></td></tr>
+
+        }
+        else
+        {
+            <tr><td colspan='2'><img alt='Image' width='181px' height='40px' src='../../siteimages/wrong1.png' /></td></tr>
+        }
+           <tr>
+              <td colspan="2" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>            
+        if (Odd == OddColor)
+        {
+            Odd = evenColor;
+        }
+        else
+        {
+            Odd = OddColor;
+        }
+
+    }
+</table>

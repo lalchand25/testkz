@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OLProject.Models.tb_QuizMaster>
+
+
+		@Session["projectmetatags"]
+
+
+
+    <h2>List Of Tests</h2>
+    <table width="100%">
+       <tr>
+              <td colspan="3" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>  
+
+       <tr>
+              <td colspan="3">
+                  Total Records:@Html.Raw(ViewData["totalrecords"])    <br />
+                  @Html.Raw(ViewData["pageLinks"] </td>
+        </tr>
+
+
+
+     <tr>
+              <td colspan="3" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+
+        <tr>
+            
+            <th style="text-align: left">
+                Name
+            </th>
+            <th style="text-align: left">
+                Description
+            </th>
+         
+           <th>
+                Test
+            </th>
+             
+        </tr>
+         <tr>
+              <td colspan="3" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+   @Html.Raw(ViewData["data"])
+   </table>
+
+
+

@@ -1,0 +1,124 @@
+﻿<div id="rest2">
+
+    @using OLProject.Models;
+
+    @Session["projectmetatags"]
+
+
+
+
+    <form action="/Exercisenew/Welcome1/" method="POST">
+
+
+        @if (Convert.ToInt32(ViewData["total"]) > 0)
+        {
+            <div class="topdiv">
+                <div class="clr"></div>
+                <div class="clr"></div>
+                <div class="clr"></div>
+            </div>
+            <div class="middiv1">
+
+                @Html.Raw(ViewData["Intruductionofpage"])
+              
+
+                <div class="result-display">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div style="text-align: center; margin: 10px 0;">
+                                        <img src="../../images/112.jpg" style="width: 150px; height: 126px;"></div>
+                                    <h2 style="text-align: center;">Chapter has Finished</h2>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <br />
+                    <br />
+
+                    <table>
+
+                        <tbody>
+                            <tr>
+                                <td><strong>Subject Name:</strong></td>
+                                <td>  @Html.Raw(Session["subjectname"]) </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Lesson Name:</strong></td>
+                                <td>         @Html.Raw(Session["lessonName"]) </td>
+                            </tr>
+
+                            <tr>
+                                <td><strong>Total Question:</strong></td>
+                                <td>@Html.Raw(ViewData["total"])</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Start Quiz</strong></td>
+                                <td>
+                                    <button class="btn-style">Start</button>
+                                 
+                                        @*   <a href="questions.html">Start Quiz</a>*@
+
+
+                                  
+                                </td>
+                            </tr>
+							
+							  <tr>
+                                <td><strong>Quit Quiz</strong></td>
+                                <td>
+                                    <a href="/mytraining/courseSubject/@ViewBag.subid" style="border: medium none; background-color: #e8424e; border-radius: 5px; color: #fff; font-size: 16px; font-weight: 600; padding:10px 20px; float:left; margin:0px;">Quit</a>
+
+
+                                  
+                                </td>
+                            </tr>
+							
+
+
+                                       
+
+                            <tr>
+                                <td colspan="2">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+                @* <div class="display-label"><strong>Passing Score:</strong></div>
+            <div class="display-field">@Html.Raw(ViewData["passingScore"])</div>*@
+
+                @* <div class="display-label">Question Required or test</div>
+            <div class="display-field">
+                <input id="Question" name ="Question" type="text" value="@Html.Raw(ViewData["total"])" style="width: 34px" />
+
+
+            </div>*@
+
+                @Html.Hidden("Question", ViewData["total"])
+
+                <p>&nbsp;</p>
+
+
+
+
+
+            </div>     
+        }
+        else
+        {        
+           
+            <h2 style="color: #FF0000">Quiz not found</h2>
+
+        }
+    </form>
+
+
+</div>
+
+

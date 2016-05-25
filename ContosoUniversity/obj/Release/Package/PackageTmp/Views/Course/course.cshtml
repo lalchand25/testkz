@@ -1,0 +1,122 @@
+﻿@model  OLProject.Models.tb_UserMaster
+
+@{ Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<!--BANNER START-->
+    <div class="page-heading">
+     <div class="container">
+            <h2>Our Courses</h2>
+            <p>Home / Our Courses</p>
+        </div>
+    </div>
+    <!--BANNER END-->
+
+<!--CONTANT START-->
+<div class="contant">
+    <div class="container">
+        <div class="row">
+            <div class="span9">
+                <div class="featured-courses">
+                    <h2>Browsing All Topics</h2>
+                    <div class="row">
+                        @Html.Raw(ViewData["data"])
+
+
+@*                    
+                        <div class="span3">
+                            <div class="course">
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/course2.jpg"></a>
+                                    <div class="price"><span>$</span>750</div>
+                                </div>
+                                <div class="text">
+                                    <div class="header">
+                                        <h4>ITA</h4>
+                                        <div class="rating">
+                                            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-name">
+                                        <p>International Training &amp; Assistance (ITA)</p>
+                                        <span>$750</span>
+                                    </div>
+                                    <div class="course-detail-btn">
+                                        <a href="#">Subscribe</a>
+                                        <a href="#">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+
+
+
+                    </div>
+                    <div class="pagination">
+                       @* <ul>
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>*@
+                    </div>
+                </div>
+            </div>
+            <div class="span3">
+                <!--SIDEBAR START-->
+                <div class="sidebar">
+                    <!--COURSE CATEGORIES WIDGET START-->
+                    <div class="widget widget-course-categories">
+                        <h2>Course List</h2>
+                        <ul>
+                               @Html.Raw(ViewBag.strList)
+                 @*      
+                
+                            <li><a href="#">Photography</a></li>*@
+
+                        </ul>
+                    </div>
+                    <!--COURSE CATEGORIES WIDGET END-->
+
+                    <!--SLIDER WIDGET START-->
+                    <div class="widget widget-slider">
+                        <h2>Upcoming Courses</h2>
+                        <ul class="bxslider">
+                            <li>
+                                <div class="thumb">
+                                    <img src="../images/side-slider.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <p>Creating Responsive Web Design</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb">
+                                    <img src="../images/side-slider2.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <p>Creating Responsive Web Design</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="thumb">
+                                    <img src="../images/side-slider.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <p>Creating Responsive Web Design</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--SLIDER WIDGET END-->
+                </div>
+                <!--SIDEBAR END-->
+            </div>
+        </div>
+
+    </div>
+

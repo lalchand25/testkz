@@ -1,0 +1,190 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--BANNER START-->
+    <div class="page-heading">
+     <div class="container">
+            <h2>About The Company</h2>
+            <p>Home / About us</p>
+        </div>
+    </div>
+    <!--BANNER END-->
+
+<!--CONTANT START-->
+<div class="contant">
+    <!--INTRO SECTION START-->
+    <section class="gray-bg">
+        <div class="container">
+            <div class="row">
+               
+                  @Html.Raw(ViewBag.about)
+                
+
+           
+                
+              @*  <div class="span6">
+                    <div class="intro">
+                        <h2>We're empowering learning in the classroom and around the globe</h2>
+                        <p>
+                            We believe in the highest quality education, both online and in the classroom. This website was created for students and institutions that seek to transform themselves through cutting-edge technologies, innovative pedagogy, and rigorous courses.
+
+Through our institutional partners, the xConsortium, along with other leading global members, we present the best of higher education online, offering opportunity to anyone who wants to achieve, thrive, and grow.
+
+Our goals, however, go beyond offering courses and content. We are committed to research that will allow us to understand how students learn, how technology can transform learning, and the ways teachers teach on campus and beyond.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="span6">
+                    <div class="mac">
+                        <ul class="bxslider">
+                            <li>
+                                <img src="../../images/mac-screen1.png" alt="">
+                            </li>
+                            <li>
+                                <img src="../../images/mac-screen2.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </section>
+    <!--INTRO SECTION END-->
+   
+    <!--FAQ SECTION START-->
+    <section class="gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="span8">
+                    <div class="faq">
+                        <h2>why choose us</h2>
+                        <!--ACORDIAN DATE START-->
+                        <div class="accordion_cp" id="section1">
+                            <p>Multiple Learning Options</p>
+                            <span><i class="fa fa-minus"></i></span>
+                        </div>
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+                                <p>One reason individuals choose online learning is so that they can earn a certificate or degree entirely online without traveling to a college campus or attending classes at fixed times. In addition, certificates and degrees that are conferred do not typically designate whether the student earned them through an online program or not. </p>
+								<p>Another option is a hybrid program, which either combines on-campus and online classes or offers a fully online curriculum that requires some visits to the school for orientation, seminars or hands-on training. Some classes can also be taken independently for personal enrichment, without enrolling in a complete program or being formally admitted to the host school. </p>
+                            </div>
+                        </div>
+                        <!--ACORDIAN DATE END-->
+                        <!--ACORDIAN DATE START-->
+                        <div class="accordion_cp" id="section2">
+                            <p>Scheduling, Flexibility and Pacing</p>
+                            <span><i class="fa fa-minus"></i></span>
+                        </div>
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+                                <p>The way that online courses are delivered varies by school and instructor. If a school offers the same class in person and online, the instructor and syllabus may be the same for both. In addition, some classes follow a fixed semester schedule; others have no definitive end date. Options are available for working adults who wish to pace themselves slowly through a degree program as well as for driven students who wish to complete a degree program in a fraction of the time normally required. </p>
+                            </div>
+                        </div>
+                        <!--ACORDIAN DATE END-->
+                        <!--ACORDIAN DATE START-->
+                        <div class="accordion_cp" id="section3">
+                            <p>Online Communication and Assignments</p>
+                            <span><i class="fa fa-minus"></i></span>
+                        </div>
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+                                <p>Some online classes allow students to complete all work at their own pace as long as all work is turned in by the end of a semester; others have deadlines for assignments to help students stay on track for course completion. In some programs, students are required to be online to attend virtual class sessions at specific days or times.</p>
+                                <p>Many online classes also require students to spend a certain amount of time interacting with the professor, posting on message boards or working on group projects with fellow students. Communication generally takes place via e-mail and discussion forums during off-hours, though real-time participation may be required in scheduled chat rooms or during phone and video sessions. </p>
+                            </div>
+                        </div>
+                        <!--ACORDIAN DATE END-->
+                        <!--ACORDIAN DATE START-->
+                        <div class="accordion_cp" id="section4">
+                            <p>Virtual Classroom Organization</p>
+                            <span><i class="fa fa-minus"></i></span>
+                        </div>
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+                                <p>Online classes are usually organized through an Kin Zin, which is content management software used by colleges to replicate a classroom environment for distance-education students. This means that individuals can visit one area to locate all of their materials for all of their courses, which may include written text, video or audio files. They may also be able to take open-book exams online, though some schools require students to attend campus or visit an approved site for proctored testing.</p>
+                            </div>
+                        </div>
+                        <!--ACORDIAN DATE END-->
+                        <!--ACORDIAN DATE START-->
+                        <div class="accordion_cp" id="section5">
+                            <p>Considerations</p>
+                            <span><i class="fa fa-minus"></i></span>
+                        </div>
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+                                <p>Because of the self-directed nature of online learning, students may be held to higher levels of accountability for time management, motivation and written communication. Since they can't simply speak up as they would in a classroom, they need to be able to voice concerns, ask questions and submit work in writing. It's ultimately up to individuals to determine if online learning is right for them, and many schools offer online learning orientation or quizzes to help candidates decide if this option is suitable.</p>
+                            </div>
+                        </div>
+                        <!--ACORDIAN DATE END-->
+                        
+                        
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box">
+                        <h2>Event Gallery</h2>
+                        <ul class="event-galley">
+                         @Html.Partial("~/views/home/partialevent.cshtml")
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FAQ SECTION END-->
+
+    <!--TESTIMONIALS SECTION START-->
+    @* <section class="upcoming-events">
+        <div class="container">
+            <ul class="bxslider">
+                <!--LIST ITEM START-->
+                <li>
+                    <div class="event-contant">
+                        <div class="thumb">
+                            <a href="#">
+                                <img src="../../images/event-img.jpg" alt=""></a>
+                        </div>
+                        <div class="text">
+                            <h2>Upcoming Events 1</h2>
+                            <h4>Free Seminar at London14 May 2014 10:00 am</h4>
+                            <p>Quisque tortor nisi, tristique sit amet commodo vel, commodo at mauris. Vestibulum vel justo neque, non pharetra orci. Integer nec est mauris, in vestibulum elit. Nulla facilisi. Praesent eu dolor lacus. Vestibulum laoreet sodales...</p>
+                        </div>
+                    </div>
+                </li>
+                <!--LIST ITEM END-->
+                <!--LIST ITEM START-->
+                <li>
+                    <div class="event-contant">
+                        <div class="thumb">
+                            <a href="#">
+                                <img src="../../images/event-img2.jpg" alt=""></a>
+                        </div>
+                        <div class="text">
+                            <h2>Upcoming Events 2</h2>
+                            <h4>Free Seminar at London14 May 2014 10:00 am</h4>
+                            <p>Quisque tortor nisi, tristique sit amet commodo vel, commodo at mauris. Vestibulum vel justo neque, non pharetra orci. Integer nec est mauris, in vestibulum elit. Nulla facilisi. Praesent eu dolor lacus. Vestibulum laoreet sodales...</p>
+                        </div>
+                    </div>
+                </li>
+                <!--LIST ITEM END-->
+                <!--LIST ITEM START-->
+                <li>
+                    <div class="event-contant">
+                        <div class="thumb">
+                            <a href="#">
+                                <img src="../../images/event-img3.jpg" alt=""></a>
+                        </div>
+                        <div class="text">
+                            <h2>Upcoming Events 3</h2>
+                            <h4>Free Seminar at London14 May 2014 10:00 am</h4>
+                            <p>Quisque tortor nisi, tristique sit amet commodo vel, commodo at mauris. Vestibulum vel justo neque, non pharetra orci. Integer nec est mauris, in vestibulum elit. Nulla facilisi. Praesent eu dolor lacus. Vestibulum laoreet sodales...</p>
+                        </div>
+                    </div>
+                </li>
+                <!--LIST ITEM END-->
+            </ul>
+        </div>
+    </section> *@
+
+<!--TESTIMONIALS SECTION END-->
+
+<!--CONTANT END-->

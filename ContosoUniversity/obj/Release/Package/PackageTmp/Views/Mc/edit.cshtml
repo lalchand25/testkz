@@ -1,0 +1,33 @@
+﻿@model OLProject.Models.tb_QuizDetail
+
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+	@Session["projectmetatags"]
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+ </script>
+ 
+<h2>&nbsp;</h2>
+     
+  @if (ViewData["msgStatus"] == null)
+     { 
+    
+   @Html.Partial("ImgChoice"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+  
+  
+   
+

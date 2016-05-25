@@ -1,0 +1,97 @@
+﻿
+   @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+	@Session["projectmetatags"]
+<h2>Your Result</h2>
+
+
+   <table class="table table-striped table-bordered table-hover" id="resultForm:result_table">
+                                        
+                                   
+                    <tr>
+                        <td style="text-align: center;" bgcolor="#FF9966" colspan="2">
+                          <h3>@Html.Raw(ViewData["starstring"]) </h3> </td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%;">
+                            &nbsp;</td>
+                        <td style="width:50%;">
+                            &nbsp;</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Date of Completed:</strong></td>
+                        <td style="width:50%;">
+                            @Html.Raw(ViewData["DateOfComplete"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Course</strong>:</td>
+                        <td style="width:50%;">
+                           @Html.Raw(ViewData["subject"])</td>
+                        
+                    </tr>
+               
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Total Questions:</strong></td>
+                        <td style="width:50%;">
+                            @Html.Raw(ViewData["total"])  </td>
+                       
+              
+             
+
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Answered correctly:</strong></td>
+                        <td style="width:50%;">
+                            @Html.Raw(ViewData["totalcorrect"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Wrong Answer</strong></td>
+                        <td style="width:50%;">
+                            @Html.Raw(ViewData["totalWrong"]) </td>
+                        
+                    </tr>
+                     
+        
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            <strong>Score:</strong></td>
+                        <td style="width:50%;">
+                            @Html.Raw(ViewData["totalScrore"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            &nbsp;</td>
+                        <td style="width:50%;">
+                            &nbsp;</td>
+                        
+                    </tr>
+                     
+               
+                     
+               
+                     
+                </table>
+
+
+  
+
+

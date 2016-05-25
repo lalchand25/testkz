@@ -1,0 +1,123 @@
+﻿@using OLProject.Models;
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+@*<div class="the-best">
+    <p>We're empowering learning in the classroom and around the globe </p>
+    <h2>take $10 0ff for new users</h2>
+</div>*@
+
+<!--FOLLOW US SECTION START-->
+<section class="follow-us">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <div class="follow">
+                    <a href="https://www.facebook.com/kzdigitalmedia/">
+                        <i class="fa fa-facebook"></i>
+                        <div class="text">
+                            <h4>Follow us on Facebook</h4>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="follow">
+                    <a href="https://plus.google.com/b/104771061014437045209/">
+                        <i class="fa fa-google"></i>
+                        <div class="text">
+                            <h4>Follow us on Google Plus</h4>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="follow">
+                    <a href="https://www.linkedin.com/company/kin-zin-digital-media-inc">
+                        <i class="fa fa-linkedin"></i>
+                        <div class="text">
+                            <h4>Follow us on Linkedin</h4>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="follow">
+                    <a href="https://twitter.com/KZDigitalMedia">
+                        <i class="fa fa-twitter"></i>
+                        <div class="text">
+                            <h4>Follow us on Twitter</h4>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--FOLLOW US SECTION END-->
+</div>
+  <!--FOOTER START-->
+<footer>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row">
+                <!--OUR ARTICLE WIDGET START-->
+                @{   kzonlineEntities db = new kzonlineEntities();
+                     var apppage = (from m in db.tb_ApplicationPage where m.Pageid == 26 select m).Single();
+
+                     // var apppage = (from m in db.tb_ApplicationPage where m.PageRefId == 23 select m).Single();
+
+                     ViewBag.footer = apppage.Description;
+                        
+                }
+
+                @Html.Raw(ViewBag.footer)
+
+
+                <div class="span3">
+                    <div class="widget widget-newsletter">
+                        <h2>Newsletters</h2>
+                        <div class="newsletter-contant">
+                            <p>Subscribe to be the first to know about best deals and exclusive offers!</p>
+
+                            @using (Html.BeginForm())
+                            {                             
+                                <p>
+                                    <input class="input-block-level" type="text" name="subscribemail" />
+                                </p>
+                                <p>
+
+                                    <button name="buttonName" value="subscribe">Subscribe</button>
+                                </p> }
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="span3">
+                    <div class="widget widget-map">
+                        <h2>Where we are?</h2>
+                        <div class="location-map">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d650.7981064534545!2d-123.10067601111683!3d49.27275091774617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867166f50d2e2d%3A0xf15214bd690bafd4!2s333+Terminal+Ave%2C+Vancouver%2C+BC+V6A+4C1%2C+Canada!5e0!3m2!1sen!2sin!4v1453124198975" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+                           @* <div id="map-canvas"></div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div class="container">
+            <p>&copy; Copyrights 2015-16. All Rights Reserved <a href="#">Kin Zin Digital Media Inc.</a></p>
+        </div>
+    </div>
+</footer>
+<!--FOOTER END-->
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({ publisher: "612b2ff6-61ba-4bc5-94ac-63771a704430", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>

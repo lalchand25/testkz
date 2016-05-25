@@ -1,0 +1,2089 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="kzonlineModelStoreContainer" CdmEntityContainer="kzonlineEntities">
+    <EntitySetMapping Name="tb_AccountHead">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_AccountHead">
+        <MappingFragment StoreEntitySet="tb_AccountHead">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="HeadName" ColumnName="HeadName" />
+          <ScalarProperty Name="HeadType" ColumnName="HeadType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_AccountsMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_AccountsMaster">
+        <MappingFragment StoreEntitySet="tb_AccountsMaster">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DebitorCreditor" ColumnName="DebitorCreditor" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Activity">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Activity">
+        <MappingFragment StoreEntitySet="tb_Activity">
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ActivityMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ActivityMaster">
+        <MappingFragment StoreEntitySet="tb_ActivityMaster">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="ActivityDesc" ColumnName="ActivityDesc" />
+          <ScalarProperty Name="ActivityImage" ColumnName="ActivityImage" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ActivitySubMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ActivitySubMaster">
+        <MappingFragment StoreEntitySet="tb_ActivitySubMaster">
+          <ScalarProperty Name="SubHeadId" ColumnName="SubHeadId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="SubImage" ColumnName="SubImage" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_AdminActivity">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_AdminActivity">
+        <MappingFragment StoreEntitySet="tb_AdminActivity">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ApplicationPage">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ApplicationPage">
+        <MappingFragment StoreEntitySet="tb_ApplicationPage">
+          <ScalarProperty Name="Pageid" ColumnName="Pageid" />
+          <ScalarProperty Name="PageRefId" ColumnName="PageRefId" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SetModuleId" ColumnName="SetModuleId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="UseAsMenu" ColumnName="UseAsMenu" />
+          <ScalarProperty Name="MvcUrl" ColumnName="MvcUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_AvtarPictureMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_AvtarPictureMaster">
+        <MappingFragment StoreEntitySet="tb_AvtarPictureMaster">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="AvtarPicture" ColumnName="AvtarPicture" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="refid" ColumnName="refid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Billing_Informatoin">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Billing_Informatoin">
+        <MappingFragment StoreEntitySet="tb_Billing_Informatoin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Product_Cost" ColumnName="Product_Cost" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EnquiryID" ColumnName="EnquiryID" />
+          <ScalarProperty Name="DateofPurchase" ColumnName="DateofPurchase" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="client" ColumnName="client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_BulkEmailSystem">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_BulkEmailSystem">
+        <MappingFragment StoreEntitySet="tb_BulkEmailSystem">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="DateOfSent" ColumnName="DateOfSent" />
+          <ScalarProperty Name="EmailDescription" ColumnName="EmailDescription" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="BulkEmailSubject" ColumnName="BulkEmailSubject" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_BullshitWord">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_BullshitWord">
+        <MappingFragment StoreEntitySet="tb_BullshitWord">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ButtonMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ButtonMaster">
+        <MappingFragment StoreEntitySet="tb_ButtonMaster">
+          <ScalarProperty Name="ButtonId" ColumnName="ButtonId" />
+          <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="ImagePath1" ColumnName="ImagePath1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CareerWithUs">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CareerWithUs">
+        <MappingFragment StoreEntitySet="tb_CareerWithUs">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="YourName" ColumnName="YourName" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="replydate" ColumnName="replydate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CategoryMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CategoryMaster">
+        <MappingFragment StoreEntitySet="tb_CategoryMaster">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Imagepath" ColumnName="Imagepath" />
+          <ScalarProperty Name="astatus" ColumnName="astatus" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CategoryTemplate">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CategoryTemplate">
+        <MappingFragment StoreEntitySet="tb_CategoryTemplate">
+          <ScalarProperty Name="CateId" ColumnName="CateId" />
+          <ScalarProperty Name="CateName" ColumnName="CateName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ClassMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ClassMaster">
+        <MappingFragment StoreEntitySet="tb_ClassMaster">
+          <ScalarProperty Name="ClassesId" ColumnName="ClassesId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="ClasssDescription" ColumnName="ClasssDescription" />
+          <ScalarProperty Name="ClassImage" ColumnName="ClassImage" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Company">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Company">
+        <MappingFragment StoreEntitySet="tb_Company">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CompName" ColumnName="CompName" />
+          <ScalarProperty Name="DispalyName" ColumnName="DispalyName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Logopath" ColumnName="Logopath" />
+          <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Cell" ColumnName="Cell" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ActiveStatus" ColumnName="ActiveStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Contactus">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Contactus">
+        <MappingFragment StoreEntitySet="tb_Contactus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReplyDate" ColumnName="ReplyDate" />
+          <ScalarProperty Name="ReplyComments" ColumnName="ReplyComments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Counselling">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Counselling">
+        <MappingFragment StoreEntitySet="tb_Counselling">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReferID" ColumnName="ReferID" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Cell" ColumnName="Cell" />
+          <ScalarProperty Name="EducationalQualification" ColumnName="EducationalQualification" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+          <ScalarProperty Name="DateOfExpire" ColumnName="DateOfExpire" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="NoOfDependents" ColumnName="NoOfDependents" />
+          <ScalarProperty Name="BestWayContact" ColumnName="BestWayContact" />
+          <ScalarProperty Name="OtherCategory" ColumnName="OtherCategory" />
+          <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+          <ScalarProperty Name="YearsofExperience" ColumnName="YearsofExperience" />
+          <ScalarProperty Name="ServiceInterested" ColumnName="ServiceInterested" />
+          <ScalarProperty Name="CountryInterestedFor" ColumnName="CountryInterestedFor" />
+          <ScalarProperty Name="FiancialStatus" ColumnName="FiancialStatus" />
+          <ScalarProperty Name="LanguageKnown" ColumnName="LanguageKnown" />
+          <ScalarProperty Name="LanguageProfeciency" ColumnName="LanguageProfeciency" />
+          <ScalarProperty Name="EnglishTest" ColumnName="EnglishTest" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="TermsConditions" ColumnName="TermsConditions" />
+          <ScalarProperty Name="AcceptNotAccept" ColumnName="AcceptNotAccept" />
+          <ScalarProperty Name="BusiProjectInterested" ColumnName="BusiProjectInterested" />
+          <ScalarProperty Name="BusiNameBusiness" ColumnName="BusiNameBusiness" />
+          <ScalarProperty Name="BusiTypeofBusiness" ColumnName="BusiTypeofBusiness" />
+          <ScalarProperty Name="BusiAddress" ColumnName="BusiAddress" />
+          <ScalarProperty Name="BusiCity" ColumnName="BusiCity" />
+          <ScalarProperty Name="BusiState" ColumnName="BusiState" />
+          <ScalarProperty Name="BusiCountry" ColumnName="BusiCountry" />
+          <ScalarProperty Name="BusiSpace" ColumnName="BusiSpace" />
+          <ScalarProperty Name="BusiCurrentBusinessOfficeArea" ColumnName="BusiCurrentBusinessOfficeArea" />
+          <ScalarProperty Name="BusiAnyOtherLandBuilForBusi" ColumnName="BusiAnyOtherLandBuilForBusi" />
+          <ScalarProperty Name="BusiCurrentAssets" ColumnName="BusiCurrentAssets" />
+          <ScalarProperty Name="BusiCurrentLiabilities" ColumnName="BusiCurrentLiabilities" />
+          <ScalarProperty Name="BusiArrangedInvestment" ColumnName="BusiArrangedInvestment" />
+          <ScalarProperty Name="BusiSpecificProjectinformation" ColumnName="BusiSpecificProjectinformation" />
+          <ScalarProperty Name="BusiFax" ColumnName="BusiFax" />
+          <ScalarProperty Name="BusiPhone" ColumnName="BusiPhone" />
+          <ScalarProperty Name="BusiPersonalInvestment" ColumnName="BusiPersonalInvestment" />
+          <ScalarProperty Name="SoftProjectDes" ColumnName="SoftProjectDes" />
+          <ScalarProperty Name="SoftProjectName" ColumnName="SoftProjectName" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="TrainingDescription" ColumnName="TrainingDescription" />
+          <ScalarProperty Name="TrainingInformation" ColumnName="TrainingInformation" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CounteryInterested" ColumnName="CounteryInterested" />
+          <ScalarProperty Name="Associateid" ColumnName="Associateid" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+          <ScalarProperty Name="RegCategoryid" ColumnName="RegCategoryid" />
+          <ScalarProperty Name="closeDate" ColumnName="closeDate" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="countryid_inter" ColumnName="countryid_inter" />
+          <ScalarProperty Name="estimatedClosDate" ColumnName="estimatedClosDate" />
+          <ScalarProperty Name="checkReplyIst" ColumnName="checkReplyIst" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CreaterUserID" ColumnName="CreaterUserID" />
+          <ScalarProperty Name="hotlist" ColumnName="hotlist" />
+          <ScalarProperty Name="ForumStatus" ColumnName="ForumStatus" />
+          <ScalarProperty Name="ProductBuy" ColumnName="ProductBuy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CounsellingFranchisee">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CounsellingFranchisee">
+        <MappingFragment StoreEntitySet="tb_CounsellingFranchisee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ReferID" ColumnName="ReferID" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Cell" ColumnName="Cell" />
+          <ScalarProperty Name="EducationalQualification" ColumnName="EducationalQualification" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="DateOfIssue" ColumnName="DateOfIssue" />
+          <ScalarProperty Name="DateOfExpire" ColumnName="DateOfExpire" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="NoOfDependents" ColumnName="NoOfDependents" />
+          <ScalarProperty Name="BestWayContact" ColumnName="BestWayContact" />
+          <ScalarProperty Name="OtherCategory" ColumnName="OtherCategory" />
+          <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+          <ScalarProperty Name="YearsofExperience" ColumnName="YearsofExperience" />
+          <ScalarProperty Name="ServiceInterested" ColumnName="ServiceInterested" />
+          <ScalarProperty Name="CountryInterestedFor" ColumnName="CountryInterestedFor" />
+          <ScalarProperty Name="FiancialStatus" ColumnName="FiancialStatus" />
+          <ScalarProperty Name="LanguageKnown" ColumnName="LanguageKnown" />
+          <ScalarProperty Name="LanguageProfeciency" ColumnName="LanguageProfeciency" />
+          <ScalarProperty Name="EnglishTest" ColumnName="EnglishTest" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="TermsConditions" ColumnName="TermsConditions" />
+          <ScalarProperty Name="AcceptNotAccept" ColumnName="AcceptNotAccept" />
+          <ScalarProperty Name="BusiProjectInterested" ColumnName="BusiProjectInterested" />
+          <ScalarProperty Name="BusiNameBusiness" ColumnName="BusiNameBusiness" />
+          <ScalarProperty Name="BusiTypeofBusiness" ColumnName="BusiTypeofBusiness" />
+          <ScalarProperty Name="BusiAddress" ColumnName="BusiAddress" />
+          <ScalarProperty Name="BusiCity" ColumnName="BusiCity" />
+          <ScalarProperty Name="BusiState" ColumnName="BusiState" />
+          <ScalarProperty Name="BusiCountry" ColumnName="BusiCountry" />
+          <ScalarProperty Name="BusiSpace" ColumnName="BusiSpace" />
+          <ScalarProperty Name="BusiCurrentBusinessOfficeArea" ColumnName="BusiCurrentBusinessOfficeArea" />
+          <ScalarProperty Name="BusiAnyOtherLandBuilForBusi" ColumnName="BusiAnyOtherLandBuilForBusi" />
+          <ScalarProperty Name="BusiCurrentAssets" ColumnName="BusiCurrentAssets" />
+          <ScalarProperty Name="BusiCurrentLiabilities" ColumnName="BusiCurrentLiabilities" />
+          <ScalarProperty Name="BusiArrangedInvestment" ColumnName="BusiArrangedInvestment" />
+          <ScalarProperty Name="BusiSpecificProjectinformation" ColumnName="BusiSpecificProjectinformation" />
+          <ScalarProperty Name="BusiFax" ColumnName="BusiFax" />
+          <ScalarProperty Name="BusiPhone" ColumnName="BusiPhone" />
+          <ScalarProperty Name="BusiPersonalInvestment" ColumnName="BusiPersonalInvestment" />
+          <ScalarProperty Name="SoftProjectDes" ColumnName="SoftProjectDes" />
+          <ScalarProperty Name="SoftProjectName" ColumnName="SoftProjectName" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="TrainingDescription" ColumnName="TrainingDescription" />
+          <ScalarProperty Name="TrainingInformation" ColumnName="TrainingInformation" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CounteryInterested" ColumnName="CounteryInterested" />
+          <ScalarProperty Name="Associateid" ColumnName="Associateid" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+          <ScalarProperty Name="RegCategoryid" ColumnName="RegCategoryid" />
+          <ScalarProperty Name="closeDate" ColumnName="closeDate" />
+          <ScalarProperty Name="countryid" ColumnName="countryid" />
+          <ScalarProperty Name="cityid" ColumnName="cityid" />
+          <ScalarProperty Name="countryid_inter" ColumnName="countryid_inter" />
+          <ScalarProperty Name="estimatedClosDate" ColumnName="estimatedClosDate" />
+          <ScalarProperty Name="checkReplyIst" ColumnName="checkReplyIst" />
+          <ScalarProperty Name="FranCategory" ColumnName="FranCategory" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CountryMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CountryMaster">
+        <MappingFragment StoreEntitySet="tb_CountryMaster">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="StatePer" ColumnName="StatePer" />
+          <ScalarProperty Name="DistrictPer" ColumnName="DistrictPer" />
+          <ScalarProperty Name="BAPer" ColumnName="BAPer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CountryMasterOld">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CountryMasterOld">
+        <MappingFragment StoreEntitySet="tb_CountryMasterOld">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_DefaultPermission">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_DefaultPermission">
+        <MappingFragment StoreEntitySet="tb_DefaultPermission">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_EmailAddressBook">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_EmailAddressBook">
+        <MappingFragment StoreEntitySet="tb_EmailAddressBook">
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+          <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
+          <ScalarProperty Name="HomePhoneNo" ColumnName="HomePhoneNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="OfficePhoneNo" ColumnName="OfficePhoneNo" />
+          <ScalarProperty Name="OfficeFax" ColumnName="OfficeFax" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="DateofBrith" ColumnName="DateofBrith" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="DateifAnniversary" ColumnName="DateifAnniversary" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ConfirmSubScription" ColumnName="ConfirmSubScription" />
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_emailsBAComp">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_emailsBAComp">
+        <MappingFragment StoreEntitySet="tb_emailsBAComp">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmailModule_" ColumnName="EmailModule " />
+          <ScalarProperty Name="SetModuleID" ColumnName="SetModuleID" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_emailsDescription">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_emailsDescription">
+        <MappingFragment StoreEntitySet="tb_emailsDescription">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmailModule_" ColumnName="EmailModule " />
+          <ScalarProperty Name="SetModuleID" ColumnName="SetModuleID" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="EmailStatus" ColumnName="EmailStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_EmailToFriend">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_EmailToFriend">
+        <MappingFragment StoreEntitySet="tb_EmailToFriend">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="RefID" ColumnName="RefID" />
+          <ScalarProperty Name="FromEmail" ColumnName="FromEmail" />
+          <ScalarProperty Name="ToEmail" ColumnName="ToEmail" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="MessageDesc" ColumnName="MessageDesc" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_employeeMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_employeeMaster">
+        <MappingFragment StoreEntitySet="tb_employeeMaster">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DateOfbirth" ColumnName="DateOfbirth" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="DateofAppointment" ColumnName="DateofAppointment" />
+          <ScalarProperty Name="LeftDate" ColumnName="LeftDate" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="BirthState" ColumnName="BirthState" />
+          <ScalarProperty Name="BirthDistrict" ColumnName="BirthDistrict" />
+          <ScalarProperty Name="PfNo" ColumnName="PfNo" />
+          <ScalarProperty Name="ESINo" ColumnName="ESINo" />
+          <ScalarProperty Name="BonusType" ColumnName="BonusType" />
+          <ScalarProperty Name="LeftYN" ColumnName="LeftYN" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="HraPercentage" ColumnName="HraPercentage" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="Incentive" ColumnName="Incentive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_EmployeeSalary">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_EmployeeSalary">
+        <MappingFragment StoreEntitySet="tb_EmployeeSalary">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="SalaryBasic" ColumnName="SalaryBasic" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DayWorking" ColumnName="DayWorking" />
+          <ScalarProperty Name="DayWorked" ColumnName="DayWorked" />
+          <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+          <ScalarProperty Name="CONVEYANCE" ColumnName="CONVEYANCE" />
+          <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="AdvanceDate" ColumnName="AdvanceDate" />
+          <ScalarProperty Name="TDS" ColumnName="TDS" />
+          <ScalarProperty Name="Instalment" ColumnName="Instalment" />
+          <ScalarProperty Name="InstalmentDateStart" ColumnName="InstalmentDateStart" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="Increment" ColumnName="Increment" />
+          <ScalarProperty Name="ESIYN" ColumnName="ESIYN" />
+          <ScalarProperty Name="PFYN" ColumnName="PFYN" />
+          <ScalarProperty Name="FoodAllonce" ColumnName="FoodAllonce" />
+          <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+          <ScalarProperty Name="SalaryBasicCurrent" ColumnName="SalaryBasicCurrent" />
+          <ScalarProperty Name="HRACurrent" ColumnName="HRACurrent" />
+          <ScalarProperty Name="empPF" ColumnName="empPF" />
+          <ScalarProperty Name="employerPF" ColumnName="employerPF" />
+          <ScalarProperty Name="ESIAmount" ColumnName="ESIAmount" />
+          <ScalarProperty Name="Deductions" ColumnName="Deductions" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_EnglishTestMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_EnglishTestMaster">
+        <MappingFragment StoreEntitySet="tb_EnglishTestMaster">
+          <ScalarProperty Name="EnglishTestID" ColumnName="EnglishTestID" />
+          <ScalarProperty Name="EnglishTestName" ColumnName="EnglishTestName" />
+          <ScalarProperty Name="EnglishTestDescription" ColumnName="EnglishTestDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ExamMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ExamMaster">
+        <MappingFragment StoreEntitySet="tb_ExamMaster">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="TotalQuestion" ColumnName="TotalQuestion" />
+          <ScalarProperty Name="TotalCorrect" ColumnName="TotalCorrect" />
+          <ScalarProperty Name="TotalWrong" ColumnName="TotalWrong" />
+          <ScalarProperty Name="StarRating" ColumnName="StarRating" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="DateOfComplete" ColumnName="DateOfComplete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ExamResults">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ExamResults">
+        <MappingFragment StoreEntitySet="tb_ExamResults">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="check1" ColumnName="check1" />
+          <ScalarProperty Name="check2" ColumnName="check2" />
+          <ScalarProperty Name="check3" ColumnName="check3" />
+          <ScalarProperty Name="check4" ColumnName="check4" />
+          <ScalarProperty Name="Check5" ColumnName="Check5" />
+          <ScalarProperty Name="Check6" ColumnName="Check6" />
+          <ScalarProperty Name="ActualAns" ColumnName="ActualAns" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Student" ColumnName="Student" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_FamilyUser">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_FamilyUser">
+        <MappingFragment StoreEntitySet="tb_FamilyUser">
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="Schoolname" ColumnName="Schoolname" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="IDProof" ColumnName="IDProof" />
+          <ScalarProperty Name="DOBProof" ColumnName="DOBProof" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="UnitHouseNo" ColumnName="UnitHouseNo" />
+          <ScalarProperty Name="TownCity" ColumnName="TownCity" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Feedback">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Feedback">
+        <MappingFragment StoreEntitySet="tb_Feedback">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_FlashLibMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_FlashLibMaster">
+        <MappingFragment StoreEntitySet="tb_FlashLibMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="FlashName" ColumnName="FlashName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Formula">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Formula">
+        <MappingFragment StoreEntitySet="tb_Formula">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_HeaderDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_HeaderDetail">
+        <MappingFragment StoreEntitySet="tb_HeaderDetail">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="HeaderId" ColumnName="HeaderId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_HeaderMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_HeaderMaster">
+        <MappingFragment StoreEntitySet="tb_HeaderMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="HeadingName" ColumnName="HeadingName" />
+          <ScalarProperty Name="HeadingImage" ColumnName="HeadingImage" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Help">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Help">
+        <MappingFragment StoreEntitySet="tb_Help">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Keywords">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Keywords">
+        <MappingFragment StoreEntitySet="tb_Keywords">
+          <ScalarProperty Name="KeyId" ColumnName="KeyId" />
+          <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessionMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessionMaster">
+        <MappingFragment StoreEntitySet="tb_LessionMaster">
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="LessionHeading" ColumnName="LessionHeading" />
+          <ScalarProperty Name="LessionDesc" ColumnName="LessionDesc" />
+          <ScalarProperty Name="SubHeadId" ColumnName="SubHeadId" />
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="Downloads" ColumnName="Downloads" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+          <ScalarProperty Name="Help" ColumnName="Help" />
+          <ScalarProperty Name="Formulas" ColumnName="Formulas" />
+          <ScalarProperty Name="UsefulTips" ColumnName="UsefulTips" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Tutorial" ColumnName="Tutorial" />
+          <ScalarProperty Name="SpeechText" ColumnName="SpeechText" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="IntroductionPage" ColumnName="IntroductionPage" />
+          <ScalarProperty Name="IfPass" ColumnName="IfPass" />
+          <ScalarProperty Name="IfFail" ColumnName="IfFail" />
+          <ScalarProperty Name="graphics" ColumnName="graphics" />
+          <ScalarProperty Name="PassingScore" ColumnName="PassingScore" />
+          <ScalarProperty Name="SlideImage" ColumnName="SlideImage" />
+          <ScalarProperty Name="SlideDescription" ColumnName="SlideDescription" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessionMasterDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessionMasterDetail">
+        <MappingFragment StoreEntitySet="tb_LessionMasterDetail">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="LessionHeading" ColumnName="LessionHeading" />
+          <ScalarProperty Name="LessionDesc" ColumnName="LessionDesc" />
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+          <ScalarProperty Name="VideoPath" ColumnName="VideoPath" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SubmitDate" ColumnName="SubmitDate" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="downloads" ColumnName="downloads" />
+          <ScalarProperty Name="LessionDesc1" ColumnName="LessionDesc1" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="dispOrder" ColumnName="dispOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessionQuizMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessionQuizMaster">
+        <MappingFragment StoreEntitySet="tb_LessionQuizMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="QuizHeading" ColumnName="QuizHeading" />
+          <ScalarProperty Name="QuizDesc" ColumnName="QuizDesc" />
+          <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+          <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+          <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+          <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+          <ScalarProperty Name="ActualAns" ColumnName="ActualAns" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="QuesType" ColumnName="QuesType" />
+          <ScalarProperty Name="QuesBoolAns" ColumnName="QuesBoolAns" />
+          <ScalarProperty Name="QuesCheckAns" ColumnName="QuesCheckAns" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="check1" ColumnName="check1" />
+          <ScalarProperty Name="check2" ColumnName="check2" />
+          <ScalarProperty Name="check3" ColumnName="check3" />
+          <ScalarProperty Name="check4" ColumnName="check4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessionQuizResults">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessionQuizResults">
+        <MappingFragment StoreEntitySet="tb_LessionQuizResults">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="ActualAns" ColumnName="ActualAns" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="testid" ColumnName="testid" />
+          <ScalarProperty Name="check1" ColumnName="check1" />
+          <ScalarProperty Name="check2" ColumnName="check2" />
+          <ScalarProperty Name="check3" ColumnName="check3" />
+          <ScalarProperty Name="check4" ColumnName="check4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessonQuesType">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessonQuesType">
+        <MappingFragment StoreEntitySet="tb_LessonQuesType">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="QuesType" ColumnName="QuesType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessonTestDone">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessonTestDone">
+        <MappingFragment StoreEntitySet="tb_LessonTestDone">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TestRefId" ColumnName="TestRefId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_MetatagMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_MetatagMaster">
+        <MappingFragment StoreEntitySet="tb_MetatagMaster">
+          <ScalarProperty Name="MetaId" ColumnName="MetaId" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="RobotTag" ColumnName="RobotTag" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Taskid" ColumnName="Taskid" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_NotePadMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_NotePadMaster">
+        <MappingFragment StoreEntitySet="tb_NotePadMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_OnlineTestMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_OnlineTestMaster">
+        <MappingFragment StoreEntitySet="tb_OnlineTestMaster">
+          <ScalarProperty Name="TestID" ColumnName="TestID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TotalQuestion" ColumnName="TotalQuestion" />
+          <ScalarProperty Name="TotalCorrect" ColumnName="TotalCorrect" />
+          <ScalarProperty Name="TotalWrong" ColumnName="TotalWrong" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="CateId" ColumnName="CateId" />
+          <ScalarProperty Name="SubCateId" ColumnName="SubCateId" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ExamId" ColumnName="ExamId" />
+          <ScalarProperty Name="StarRating" ColumnName="StarRating" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pageMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_pageMaster">
+        <MappingFragment StoreEntitySet="tb_pageMaster">
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_PageTemplate">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_PageTemplate">
+        <MappingFragment StoreEntitySet="tb_PageTemplate">
+          <ScalarProperty Name="Pageid" ColumnName="Pageid" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SetModuleID" ColumnName="SetModuleID" />
+          <ScalarProperty Name="PosId" ColumnName="PosId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_PageTemplateDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_PageTemplateDetail">
+        <MappingFragment StoreEntitySet="tb_PageTemplateDetail">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="Pageid" ColumnName="Pageid" />
+          <ScalarProperty Name="PosID" ColumnName="PosID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_PayPaPaymentHistory">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_PayPaPaymentHistory">
+        <MappingFragment StoreEntitySet="tb_PayPaPaymentHistory">
+          <ScalarProperty Name="Autoid" ColumnName="Autoid" />
+          <ScalarProperty Name="TokenNo" ColumnName="TokenNo" />
+          <ScalarProperty Name="Gross_ms" ColumnName="Gross_ms" />
+          <ScalarProperty Name="protection_eligibility" ColumnName="protection_eligibility" />
+          <ScalarProperty Name="address_status" ColumnName="address_status" />
+          <ScalarProperty Name="payer_id" ColumnName="payer_id" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="address_street" ColumnName="address_street" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="address_zip" ColumnName="address_zip" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="mc_fee" ColumnName="mc_fee" />
+          <ScalarProperty Name="address_country_code" ColumnName="address_country_code" />
+          <ScalarProperty Name="address_name" ColumnName="address_name" />
+          <ScalarProperty Name="payer_status" ColumnName="payer_status" />
+          <ScalarProperty Name="business" ColumnName="business" />
+          <ScalarProperty Name="address_country" ColumnName="address_country" />
+          <ScalarProperty Name="address_city" ColumnName="address_city" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="payer_email" ColumnName="payer_email" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="btn_id" ColumnName="btn_id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="address_state" ColumnName="address_state" />
+          <ScalarProperty Name="receiver_email" ColumnName="receiver_email" />
+          <ScalarProperty Name="payment_fee" ColumnName="payment_fee" />
+          <ScalarProperty Name="shipping_discount" ColumnName="shipping_discount" />
+          <ScalarProperty Name="insurance_amount" ColumnName="insurance_amount" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="mc_currency" ColumnName="mc_currency" />
+          <ScalarProperty Name="item_number" ColumnName="item_number" />
+          <ScalarProperty Name="residence_country" ColumnName="residence_country" />
+          <ScalarProperty Name="receipt_id" ColumnName="receipt_id" />
+          <ScalarProperty Name="shipping_method" ColumnName="shipping_method" />
+          <ScalarProperty Name="handling_amount" ColumnName="handling_amount" />
+          <ScalarProperty Name="transaction_subject" ColumnName="transaction_subject" />
+          <ScalarProperty Name="payment_gross" ColumnName="payment_gross" />
+          <ScalarProperty Name="shipping" ColumnName="shipping" />
+          <ScalarProperty Name="ipn_track_id" ColumnName="ipn_track_id" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ProductClassMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ProductClassMaster">
+        <MappingFragment StoreEntitySet="tb_ProductClassMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="ImageClass" ColumnName="ImageClass" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ProductLinkedClass">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ProductLinkedClass">
+        <MappingFragment StoreEntitySet="tb_ProductLinkedClass">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ProductMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ProductMaster">
+        <MappingFragment StoreEntitySet="tb_ProductMaster">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="PriceDis" ColumnName="PriceDis" />
+          <ScalarProperty Name="Fromdate" ColumnName="Fromdate" />
+          <ScalarProperty Name="Todate" ColumnName="Todate" />
+          <ScalarProperty Name="SubsId" ColumnName="SubsId" />
+          <ScalarProperty Name="NoOfUsers" ColumnName="NoOfUsers" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QualificationMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QualificationMaster">
+        <MappingFragment StoreEntitySet="tb_QualificationMaster">
+          <ScalarProperty Name="QualificationID" ColumnName="QualificationID" />
+          <ScalarProperty Name="QualificationName" ColumnName="QualificationName" />
+          <ScalarProperty Name="QualificationDescription" ColumnName="QualificationDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Question">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Question">
+        <MappingFragment StoreEntitySet="tb_Question">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuesTypeMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuesTypeMaster">
+        <MappingFragment StoreEntitySet="tb_QuesTypeMaster">
+          <ScalarProperty Name="QuesTypeId" ColumnName="QuesTypeId" />
+          <ScalarProperty Name="QuesTypeName" ColumnName="QuesTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuizDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuizDetail">
+        <MappingFragment StoreEntitySet="tb_QuizDetail">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="RefId" ColumnName="RefId" />
+          <ScalarProperty Name="QuesTypeId" ColumnName="QuesTypeId" />
+          <ScalarProperty Name="Decription" ColumnName="Decription" />
+          <ScalarProperty Name="Ans1" ColumnName="Ans1" />
+          <ScalarProperty Name="Ans2" ColumnName="Ans2" />
+          <ScalarProperty Name="Ans3" ColumnName="Ans3" />
+          <ScalarProperty Name="Ans4" ColumnName="Ans4" />
+          <ScalarProperty Name="Ans5" ColumnName="Ans5" />
+          <ScalarProperty Name="Ans6" ColumnName="Ans6" />
+          <ScalarProperty Name="AllOfAbove" ColumnName="AllOfAbove" />
+          <ScalarProperty Name="NoneOfAbove" ColumnName="NoneOfAbove" />
+          <ScalarProperty Name="Check1" ColumnName="Check1" />
+          <ScalarProperty Name="Check2" ColumnName="Check2" />
+          <ScalarProperty Name="Check3" ColumnName="Check3" />
+          <ScalarProperty Name="Check4" ColumnName="Check4" />
+          <ScalarProperty Name="Check5" ColumnName="Check5" />
+          <ScalarProperty Name="Check6" ColumnName="Check6" />
+          <ScalarProperty Name="Check7" ColumnName="Check7" />
+          <ScalarProperty Name="Check8" ColumnName="Check8" />
+          <ScalarProperty Name="ActualAns" ColumnName="ActualAns" />
+          <ScalarProperty Name="PointValue" ColumnName="PointValue" />
+          <ScalarProperty Name="NoTries" ColumnName="NoTries" />
+          <ScalarProperty Name="HelpQuiz" ColumnName="HelpQuiz" />
+          <ScalarProperty Name="Tutorial" ColumnName="Tutorial" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="Formulas" ColumnName="Formulas" />
+          <ScalarProperty Name="Quick" ColumnName="Quick" />
+          <ScalarProperty Name="UsefulTips" ColumnName="UsefulTips" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="ActualAns1" ColumnName="ActualAns1" />
+          <ScalarProperty Name="ShowInExam" ColumnName="ShowInExam" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuizMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuizMaster">
+        <MappingFragment StoreEntitySet="tb_QuizMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="QuizHeading" ColumnName="QuizHeading" />
+          <ScalarProperty Name="QuizDesc" ColumnName="QuizDesc" />
+          <ScalarProperty Name="RandomOrder" ColumnName="RandomOrder" />
+          <ScalarProperty Name="ShowCorrectAns" ColumnName="ShowCorrectAns" />
+          <ScalarProperty Name="QuizPassingScore" ColumnName="QuizPassingScore" />
+          <ScalarProperty Name="ShowIntroPage" ColumnName="ShowIntroPage" />
+          <ScalarProperty Name="IfPass" ColumnName="IfPass" />
+          <ScalarProperty Name="IfFail" ColumnName="IfFail" />
+          <ScalarProperty Name="ShowReCap" ColumnName="ShowReCap" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuizResults">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuizResults">
+        <MappingFragment StoreEntitySet="tb_QuizResults">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="check1" ColumnName="check1" />
+          <ScalarProperty Name="check2" ColumnName="check2" />
+          <ScalarProperty Name="check3" ColumnName="check3" />
+          <ScalarProperty Name="check4" ColumnName="check4" />
+          <ScalarProperty Name="Check5" ColumnName="Check5" />
+          <ScalarProperty Name="Check6" ColumnName="Check6" />
+          <ScalarProperty Name="ActualAns" ColumnName="ActualAns" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuizTestMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuizTestMaster">
+        <MappingFragment StoreEntitySet="tb_QuizTestMaster">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TestHeading" ColumnName="TestHeading" />
+          <ScalarProperty Name="TestDesc" ColumnName="TestDesc" />
+          <ScalarProperty Name="RandomOrder" ColumnName="RandomOrder" />
+          <ScalarProperty Name="TestPassingScore" ColumnName="TestPassingScore" />
+          <ScalarProperty Name="ShowIntroPage" ColumnName="ShowIntroPage" />
+          <ScalarProperty Name="IfPass" ColumnName="IfPass" />
+          <ScalarProperty Name="IfFail" ColumnName="IfFail" />
+          <ScalarProperty Name="ShowReCap" ColumnName="ShowReCap" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="TestImage" ColumnName="TestImage" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="totalQues" ColumnName="totalQues" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="isShow" ColumnName="isShow" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="PassingScore" ColumnName="PassingScore" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_QuizTestMasterDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_QuizTestMasterDetail">
+        <MappingFragment StoreEntitySet="tb_QuizTestMasterDetail">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TestRefId" ColumnName="TestRefId" />
+          <ScalarProperty Name="Systemdate" ColumnName="Systemdate" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_realLogMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_realLogMaster">
+        <MappingFragment StoreEntitySet="tb_realLogMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ErrorDesc" ColumnName="ErrorDesc" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="System" ColumnName="System" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_RegCategory">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_RegCategory">
+        <MappingFragment StoreEntitySet="tb_RegCategory">
+          <ScalarProperty Name="RegTypeId" ColumnName="RegTypeId" />
+          <ScalarProperty Name="RegTypeName" ColumnName="RegTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ReportParameter">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ReportParameter">
+        <MappingFragment StoreEntitySet="tb_ReportParameter">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="ParaName" ColumnName="ParaName" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_RequestQuote">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_RequestQuote">
+        <MappingFragment StoreEntitySet="tb_RequestQuote">
+          <ScalarProperty Name="QuoteID" ColumnName="QuoteID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Contactno" ColumnName="Contactno" />
+          <ScalarProperty Name="Quote" ColumnName="Quote" />
+          <ScalarProperty Name="Postedon" ColumnName="Postedon" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ServiceMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ServiceMaster">
+        <MappingFragment StoreEntitySet="tb_ServiceMaster">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceCategoryName" ColumnName="ServiceCategoryName" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Solution">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Solution">
+        <MappingFragment StoreEntitySet="tb_Solution">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_StarInformation">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_StarInformation">
+        <MappingFragment StoreEntitySet="tb_StarInformation">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="StarName" ColumnName="StarName" />
+          <ScalarProperty Name="StarScore" ColumnName="StarScore" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Mp3Path" ColumnName="Mp3Path" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_StateMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_StateMaster">
+        <MappingFragment StoreEntitySet="tb_StateMaster">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateDescription" ColumnName="StateDescription" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="Country_Direct" ColumnName="Country_Direct" />
+          <ScalarProperty Name="From_State" ColumnName="From_State" />
+          <ScalarProperty Name="From_District" ColumnName="From_District" />
+          <ScalarProperty Name="State_Fee" ColumnName="State_Fee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SubCategoryMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_SubCategoryMaster">
+        <MappingFragment StoreEntitySet="tb_SubCategoryMaster">
+          <ScalarProperty Name="SubCatID" ColumnName="SubCatID" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="SubCatDescription" ColumnName="SubCatDescription" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="associateID" ColumnName="associateID" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SubjectMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_SubjectMaster">
+        <MappingFragment StoreEntitySet="tb_SubjectMaster">
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectImge" ColumnName="SubjectImge" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="SubjectDesc" ColumnName="SubjectDesc" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="BigImage" ColumnName="BigImage" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="CourseCategoryID" ColumnName="CourseCategoryID" />
+          <ScalarProperty Name="PublishAdmin" ColumnName="PublishAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SubProjectDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_SubProjectDetail">
+        <MappingFragment StoreEntitySet="tb_SubProjectDetail">
+          <ScalarProperty Name="SubProjectID" ColumnName="SubProjectID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="SubProjectDescription" ColumnName="SubProjectDescription" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_subscribe">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_subscribe">
+        <MappingFragment StoreEntitySet="tb_subscribe">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="EMailID" ColumnName="EMailID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ConfirmSubScription" ColumnName="ConfirmSubScription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Subscription">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_Subscription">
+        <MappingFragment StoreEntitySet="tb_Subscription">
+          <ScalarProperty Name="SubsId" ColumnName="SubsId" />
+          <ScalarProperty Name="SubsName" ColumnName="SubsName" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SubTitleMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_SubTitleMaster">
+        <MappingFragment StoreEntitySet="tb_SubTitleMaster">
+          <ScalarProperty Name="SubHeadId" ColumnName="SubHeadId" />
+          <ScalarProperty Name="SubImage" ColumnName="SubImage" />
+          <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TaskDetail">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TaskDetail">
+        <MappingFragment StoreEntitySet="tb_TaskDetail">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_taskDetailDefault">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_taskDetailDefault">
+        <MappingFragment StoreEntitySet="tb_taskDetailDefault">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TaskDetailStandard">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TaskDetailStandard">
+        <MappingFragment StoreEntitySet="tb_TaskDetailStandard">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="AutoidOfTaskDetail" ColumnName="AutoidOfTaskDetail" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TaskMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TaskMaster">
+        <MappingFragment StoreEntitySet="tb_TaskMaster">
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+          <ScalarProperty Name="taskstatus" ColumnName="taskstatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="urlmvc" ColumnName="urlmvc" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="TaskInstruction" ColumnName="TaskInstruction" />
+          <ScalarProperty Name="TaskCode" ColumnName="TaskCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TaskPermission">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TaskPermission">
+        <MappingFragment StoreEntitySet="tb_TaskPermission">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TeacherHelp">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TeacherHelp">
+        <MappingFragment StoreEntitySet="tb_TeacherHelp">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="Teacherreply" ColumnName="Teacherreply" />
+          <ScalarProperty Name="ReplyDate" ColumnName="ReplyDate" />
+          <ScalarProperty Name="ReplyIpAddress" ColumnName="ReplyIpAddress" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="StatusReply" ColumnName="StatusReply" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TeacherPermission">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TeacherPermission">
+        <MappingFragment StoreEntitySet="tb_TeacherPermission">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_TeacherPermissionLesson">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_TeacherPermissionLesson">
+        <MappingFragment StoreEntitySet="tb_TeacherPermissionLesson">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="TeacherId" ColumnName="TeacherId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ThemeContent">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ThemeContent">
+        <MappingFragment StoreEntitySet="tb_ThemeContent">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UploadTypeId" ColumnName="UploadTypeId" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="intWidth" ColumnName="intWidth" />
+          <ScalarProperty Name="intHeight" ColumnName="intHeight" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ThemeMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ThemeMaster">
+        <MappingFragment StoreEntitySet="tb_ThemeMaster">
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="ThemeName" ColumnName="ThemeName" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ThemeName1" ColumnName="ThemeName1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UnitMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UnitMaster">
+        <MappingFragment StoreEntitySet="tb_UnitMaster">
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="ClassesId" ColumnName="ClassesId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UnitDesc" ColumnName="UnitDesc" />
+          <ScalarProperty Name="UnitImage" ColumnName="UnitImage" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="IntroductionPage" ColumnName="IntroductionPage" />
+          <ScalarProperty Name="IfPass" ColumnName="IfPass" />
+          <ScalarProperty Name="IfFail" ColumnName="IfFail" />
+          <ScalarProperty Name="Publish" ColumnName="Publish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UploadTypeMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UploadTypeMaster">
+        <MappingFragment StoreEntitySet="tb_UploadTypeMaster">
+          <ScalarProperty Name="UploadId" ColumnName="UploadId" />
+          <ScalarProperty Name="UploadTypeName" ColumnName="UploadTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UsefulTips">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UsefulTips">
+        <MappingFragment StoreEntitySet="tb_UsefulTips">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserCategory">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UserCategory">
+        <MappingFragment StoreEntitySet="tb_UserCategory">
+          <ScalarProperty Name="MainCateid" ColumnName="MainCateid" />
+          <ScalarProperty Name="MainCateName" ColumnName="MainCateName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserLoginHistory">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UserLoginHistory">
+        <MappingFragment StoreEntitySet="tb_UserLoginHistory">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+          <ScalarProperty Name="IpAdress" ColumnName="IpAdress" />
+          <ScalarProperty Name="SystemTime" ColumnName="SystemTime" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserPageHistory">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UserPageHistory">
+        <MappingFragment StoreEntitySet="tb_UserPageHistory">
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="AccessDate" ColumnName="AccessDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserUnitInformation">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UserUnitInformation">
+        <MappingFragment StoreEntitySet="tb_UserUnitInformation">
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="TotalLesson" ColumnName="TotalLesson" />
+          <ScalarProperty Name="TotalTested" ColumnName="TotalTested" />
+          <ScalarProperty Name="FinalTestStatus" ColumnName="FinalTestStatus" />
+          <ScalarProperty Name="TotalQuestion" ColumnName="TotalQuestion" />
+          <ScalarProperty Name="TotalRight" ColumnName="TotalRight" />
+          <ScalarProperty Name="TotalWrong" ColumnName="TotalWrong" />
+          <ScalarProperty Name="TestDate" ColumnName="TestDate" />
+          <ScalarProperty Name="TestRefId" ColumnName="TestRefId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="UnitStatus" ColumnName="UnitStatus" />
+          <ScalarProperty Name="TryDone" ColumnName="TryDone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_WebMasterInfo">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_WebMasterInfo">
+        <MappingFragment StoreEntitySet="tb_WebMasterInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReplyDate" ColumnName="ReplyDate" />
+          <ScalarProperty Name="ReplyComments" ColumnName="ReplyComments" />
+          <ScalarProperty Name="ErrorImage" ColumnName="ErrorImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_HaveAQuestion">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_HaveAQuestion">
+        <MappingFragment StoreEntitySet="tb_HaveAQuestion">
+          <ScalarProperty Name="course" ColumnName="course" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="Emailid" ColumnName="Emailid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ModuleMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ModuleMaster">
+        <MappingFragment StoreEntitySet="tb_ModuleMaster">
+          <ScalarProperty Name="Moduleidnew" ColumnName="Moduleidnew" />
+          <ScalarProperty Name="ModuleInstruction" ColumnName="ModuleInstruction" />
+          <ScalarProperty Name="DeletionDate" ColumnName="DeletionDate" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Urlpath" ColumnName="Urlpath" />
+          <ScalarProperty Name="Displayorderno" ColumnName="Displayorderno" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_UserMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_UserMaster">
+        <MappingFragment StoreEntitySet="tb_UserMaster">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="TeacherAssginedID" ColumnName="TeacherAssginedID" />
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="AgreementEndDate" ColumnName="AgreementEndDate" />
+          <ScalarProperty Name="AgreementStartDate" ColumnName="AgreementStartDate" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="ConfirmDate" ColumnName="ConfirmDate" />
+          <ScalarProperty Name="ConfirmId" ColumnName="ConfirmId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="DistrictId" ColumnName="DistrictId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="TownCity" ColumnName="TownCity" />
+          <ScalarProperty Name="UnitHouseNo" ColumnName="UnitHouseNo" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ProfileName" ColumnName="ProfileName" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="DOBProof" ColumnName="DOBProof" />
+          <ScalarProperty Name="IDProof" ColumnName="IDProof" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="AvtarName" ColumnName="AvtarName" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_CityMaster">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_CityMaster">
+        <MappingFragment StoreEntitySet="tb_CityMaster">
+          <ScalarProperty Name="BATarget" ColumnName="BATarget" />
+          <ScalarProperty Name="Dist_Fee" ColumnName="Dist_Fee" />
+          <ScalarProperty Name="BA_Per" ColumnName="BA_Per" />
+          <ScalarProperty Name="From_District" ColumnName="From_District" />
+          <ScalarProperty Name="State_Direct" ColumnName="State_Direct" />
+          <ScalarProperty Name="BAPer" ColumnName="BAPer" />
+          <ScalarProperty Name="ModificationDate" ColumnName="ModificationDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="CityDescripton" ColumnName="CityDescripton" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_ImagesUploaded">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_ImagesUploaded">
+        <MappingFragment StoreEntitySet="tb_ImagesUploaded">
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_LessionMasterSlides">
+      <EntityTypeMapping TypeName="kzonlineModel.tb_LessionMasterSlides">
+        <MappingFragment StoreEntitySet="tb_LessionMasterSlides">
+          <ScalarProperty Name="iframe5" ColumnName="iframe5" />
+          <ScalarProperty Name="Iframe4" ColumnName="Iframe4" />
+          <ScalarProperty Name="Iframe3" ColumnName="Iframe3" />
+          <ScalarProperty Name="Iframe2" ColumnName="Iframe2" />
+          <ScalarProperty Name="Iframe1" ColumnName="Iframe1" />
+          <ScalarProperty Name="ImagePath4" ColumnName="ImagePath4" />
+          <ScalarProperty Name="ImagePath3" ColumnName="ImagePath3" />
+          <ScalarProperty Name="ImagePath2" ColumnName="ImagePath2" />
+          <ScalarProperty Name="UploadTypeId4" ColumnName="UploadTypeId4" />
+          <ScalarProperty Name="UploadTypeId3" ColumnName="UploadTypeId3" />
+          <ScalarProperty Name="UploadTypeId2" ColumnName="UploadTypeId2" />
+          <ScalarProperty Name="SpeechText" ColumnName="SpeechText" />
+          <ScalarProperty Name="SlideId" ColumnName="SlideId" />
+          <ScalarProperty Name="Formula" ColumnName="Formula" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="Quiz" ColumnName="Quiz" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="UsefulTips" ColumnName="UsefulTips" />
+          <ScalarProperty Name="Quick" ColumnName="Quick" />
+          <ScalarProperty Name="RefSlide" ColumnName="RefSlide" />
+          <ScalarProperty Name="HelpSlide" ColumnName="HelpSlide" />
+          <ScalarProperty Name="ImagePath1" ColumnName="ImagePath1" />
+          <ScalarProperty Name="VideoFiles1" ColumnName="VideoFiles1" />
+          <ScalarProperty Name="Mp3Files1" ColumnName="Mp3Files1" />
+          <ScalarProperty Name="GameFiles1" ColumnName="GameFiles1" />
+          <ScalarProperty Name="FilePath1" ColumnName="FilePath1" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="UploadTypeId1" ColumnName="UploadTypeId1" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="UploadTypeId" ColumnName="UploadTypeId" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+          <ScalarProperty Name="SlideTypeId" ColumnName="SlideTypeId" />
+          <ScalarProperty Name="SystemDate" ColumnName="SystemDate" />
+          <ScalarProperty Name="Ipaddress" ColumnName="Ipaddress" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Downloads" ColumnName="Downloads" />
+          <ScalarProperty Name="TotalView" ColumnName="TotalView" />
+          <ScalarProperty Name="DispOrder" ColumnName="DispOrder" />
+          <ScalarProperty Name="GameFiles" ColumnName="GameFiles" />
+          <ScalarProperty Name="VideoFiles" ColumnName="VideoFiles" />
+          <ScalarProperty Name="Mp3Files" ColumnName="Mp3Files" />
+          <ScalarProperty Name="ImageDescription" ColumnName="ImageDescription" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="SlideDescription" ColumnName="SlideDescription" />
+          <ScalarProperty Name="LessionId" ColumnName="LessionId" />
+          <ScalarProperty Name="AutoId" ColumnName="AutoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

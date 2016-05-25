@@ -1,0 +1,31 @@
+﻿@model OLProject.Models.tb_ClassMaster
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+@Session["projectmetatags"]
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+@if (ViewData["msgStatus"] == null)
+{
+<h2>Create Class</h2>
+    using (Html.BeginForm("create", "class", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("BaseClass");
+    }
+}
+else
+{
+
+    <h2>@Html.Raw(ViewData["errorMsg"])</h2>
+   
+}
+
+
+

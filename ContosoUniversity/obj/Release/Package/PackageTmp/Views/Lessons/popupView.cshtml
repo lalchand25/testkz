@@ -1,0 +1,85 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Security.Master" Inherits="System.Web.Mvc.ViewPage<OLProject.Models.tb_LessionMaster>" 
+
+
+	@Session["projectmetatags"]
+
+
+
+
+    <h2>pop</h2>
+
+    <fieldset>
+        <legend>Fields</legend>
+        
+        <div class="display-label">LessionId</div>
+        <div class="display-field">@ Model.LessionId </div>
+        
+        <div class="display-label">LessionHeading</div>
+        <div class="display-field">@ Model.LessionHeading </div>
+        
+        <div class="display-label">LessionDesc</div>
+        <div class="display-field">@ Model.LessionDesc </div>
+        
+        <div class="display-label">SubHeadId</div>
+        <div class="display-field">@ Model.SubHeadId </div>
+        
+        <div class="display-label">imagePath</div>
+        <div class="display-field">@ Model.imagePath </div>
+        
+        <div class="display-label">DisplayOrder</div>
+        <div class="display-field">@ Model.DisplayOrder </div>
+        
+        <div class="display-label">UnitId</div>
+        <div class="display-field">@ Model.UnitId </div>
+        
+        <div class="display-label">ClassId</div>
+        <div class="display-field">@ Model.ClassId </div>
+        
+        <div class="display-label">SubjectId</div>
+        <div class="display-field">@ Model.SubjectId </div>
+        
+        <div class="display-label">CompanyId</div>
+        <div class="display-field">@ Model.CompanyId </div>
+        
+        <div class="display-label">TotalView</div>
+        <div class="display-field">@ Model.TotalView </div>
+        
+        <div class="display-label">Downloads</div>
+        <div class="display-field">@ Model.Downloads </div>
+        
+        <div class="display-label">Userid</div>
+        <div class="display-field">@ Model.Userid </div>
+        
+        <div class="display-label">Ipaddress</div>
+        <div class="display-field">@ Model.Ipaddress </div>
+        
+        <div class="display-label">SubmitDate</div>
+        <div class="display-field">@ String.Format("{0:g}", Model.SubmitDate) </div>
+        
+        <div class="display-label">Help</div>
+        <div class="display-field">@ Model.Help </div>
+        
+        <div class="display-label">Formulas</div>
+        <div class="display-field">@ Model.Formulas </div>
+        
+        <div class="display-label">UsefulTips</div>
+        <div class="display-field">@ Model.UsefulTips </div>
+        
+        <div class="display-label">Solution</div>
+        <div class="display-field">@ Model.Solution </div>
+        
+        <div class="display-label">Question</div>
+        <div class="display-field">@ Model.Question </div>
+        
+        <div class="display-label">Tutorial</div>
+        <div class="display-field">@ Model.Tutorial </div>
+        
+    </fieldset>
+    <p>
+
+        @Html.ActionLink("Edit", "Edit", new { id=Model.LessionId })  |
+        @Html.ActionLink("Back to List", "Index") 
+    </p>
+
+
+

@@ -1,0 +1,19 @@
+﻿
+
+       @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+@using OLProject.Models
+
+	@Session["projectmetatags"]
+
+
+
+    <h2>Welcome You !!</h2>
+
+     @if (Session["moduleid"] != null)
+            {
+               @Html.Raw(clsCommon.getTaskList(Convert.ToInt32(Session["moduleid"]), Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["menuid"])));
+            }
+
+   
+

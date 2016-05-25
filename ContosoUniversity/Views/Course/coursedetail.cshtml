@@ -1,0 +1,160 @@
+﻿@model  OLProject.Models.tb_SubjectMaster
+
+@{ Layout = "~/Views/Shared/_layout.cshtml";
+}
+@using OLProject.Models;
+
+<link href="css/prettyPhoto.css" rel="stylesheet" media="screen">
+<!--BANNER START-->
+<div class="page-heading">
+    <div class="container">
+        <h2>@Html.Raw(ViewBag.name)</h2>
+        <p>Home / Courses /  @Html.Raw(ViewBag.name)</p>
+    </div>
+</div>
+<!--BANNER END-->
+<div class="contant">
+    <div class="container">
+        <div class="row">
+            <div class="span4 sidebar">
+                <div class="thumb">
+                  @*  <img src="../../images/course-detail2.png" alt="">*@
+
+                            <img src="../../uploads/@Html.DisplayFor(model => model.SubjectImge)" style="width:100%;" alt="">
+
+                </div>
+                <!--BECOME A MEMBER START-->
+                <div class="widget become-member">
+                    <a href="/register/signin/?courseid=@ViewBag.SubjectId&&cattype=9" class="member">Subscribe this Course</a>
+
+                    <p><a href="#" class="color">@Html.DisplayFor(model => model.Price) </a></p>
+                </div>
+                <!--BECOME A MEMBER END-->
+
+                <div class="widget inside-course">
+                    <h2>What’s Inside the Course</h2>
+                    <ul>
+                        <li><a href="#">Lifetime access to  lectures</a></li>
+                        <li><a href="#">2+ hours of high quality content</a></li>
+                        <li><a href="#">A community of 1000+ students learning together!</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="span8 sidebar">
+                <div class="tutor-detail-section">
+
+                    <div class="tutor-duration">
+                        <div class="duration">
+                            <ul>
+                                <li>
+                                    <h4>ID</h4>
+                                    <p>BA-039</p>
+                                </li>
+                                <li>
+                                    <h4>duration</h4>
+                                    <p>3 Weeks</p>
+                                </li>
+                                <li>
+                                    <h4>Rating</h4>
+                                    <p class="rating">
+                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Reviews</h4>
+                                    <p>109</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="course-price">
+                            <p>PRICE</p>
+                            <p>$ @Html.DisplayFor(model => model.Price)0</p>
+                        </div>
+                    </div>
+                    <div class="text">
+                      @*  <h2>
+                            @Html.Raw(ViewBag.name)
+                        </h2>*@
+                        <blockquote>
+                            @Html.Raw(ViewBag.name)
+                        </blockquote>
+                        @Html.Raw(ViewBag.desc)
+                        <div class="share-course">
+                            <h4>Share:</h4>
+
+                            <span class='st_facebook_large' displayText='Facebook'></span>
+<span class='st_twitter_large' displayText='Tweet'></span>
+<span class='st_googleplus_large' displayText='Google +'></span>
+<span class='st_linkedin_large' displayText='LinkedIn'></span>
+<span class='st_pinterest_large' displayText='Pinterest'></span>
+
+                         
+                        </div>
+                        <a href="/register/signin/?courseid=@ViewBag.SubjectId&&cattype=9" class="enroll">Subscribe Course</a>
+
+                    </div>
+                </div>
+                <div class="lessons">
+                    <!--ACORDIAN DATE START-->
+                    @{ 
+                        kzonlineEntities db = new kzonlineEntities();
+
+                        var tbless = from m in db.tb_LessionMaster where m.SubjectId == Model.SubjectId select m;
+                        int sectoinid = 1;
+                        foreach (var item in tbless)
+                        {
+
+                            string heading = "";
+                            heading += "<div class='accordion_cp' id='section"+sectoinid+"'>";
+                            heading += "<p> "+ item.LessionDesc +"  </p>";
+                            
+                            @* <span>2 lessons, 07:09</span>*@
+                        heading += "  </div>";
+                        @Html.Raw(heading);
+                        sectoinid +=1;
+                        
+                        <div class="contain_cp_accor">
+                            <div class="content_cp_accor">
+
+                                <!--lesson video start-->
+
+                                <div class="lesson-vid">
+
+                                    <div class="thumb">
+                                      @*  <a href="#">
+                                            <img src="../../images/imag1.jpg" alt=""></a>*@
+                                    </div>
+
+                                    <div class="text">
+
+                                        <h4><a href="#">  </a></h4>
+                                        <p>
+                                            @Html.Raw(item.SlideDescription)
+                                    </div>
+
+                                </div>
+
+                                <!--lesson video end-->
+
+
+                             
+                            </div>
+                        </div>
+
+
+                        }
+                    }
+
+                    <!--ACORDIAN DATE END-->
+                  
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--CONTANT END-->

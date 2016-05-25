@@ -1,0 +1,13 @@
+﻿
+
+    @Session["projectmetatags"]
+    
+        <div class="questions">
+            <form id="id" action="/ExerciseNew/Startup" method="post">
+                @Html.Raw(ViewData["data"])
+            </form>
+            <div class="action">
+                <a href='/Exercisenew/Startup/' id='A2' runat='server'>
+                    <button class="btn-style">Next </button></a>
+            </div>
+        </div>

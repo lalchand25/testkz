@@ -1,0 +1,27 @@
+﻿@model ContosoUniversity.Models.tb_ApplicationForm
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Edit Module</h2>
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+@if (ViewData["msgStatus"] == null)
+{ 
+    @Html.Partial("Base")
+   
+}
+else
+{
+    <h1>@ViewData["errorMsg"]</h1>
+}
+

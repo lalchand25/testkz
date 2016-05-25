@@ -1,0 +1,50 @@
+﻿@model OLProject.Models.tb_BullshitWord
+<br />
+<b>@Html.Raw(ViewData["lstatus"])</b><br />
+
+    <form method="post" runat="server">
+        <table width="95%" align="center" class='form2'>
+            <tr>
+                <td style="Width: 20%"></td>
+                <td style="Width: 80%"></td>
+            </tr>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>
+                        <b>Description</b> </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.Description)
+                            <b>@Html.ValidationMessageFor(model => model.Description)</b>
+                        </div>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+                        { 
+                            <input type="image" src="../../siteimages/submit.png" /><br />
+                        }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+                        { 
+                            <input type="image" src="../../siteimages/update.png" /><br />
+                        }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+                        { 
+                            <input type="image" src="../../siteimages/Delete.png" /><br />
+                        }
+
+
+
+                        @Html.Raw(ViewData["errorMsg"])
+                        &nbsp;</td>
+                </tr>                  
+            }
+        </table>
+    </form>

@@ -1,0 +1,34 @@
+﻿@model OLProject.Models.tb_SubTitleMaster
+  @{ Layout = "~/Views/Shared/adminpopup.cshtml"; }
+
+	@Session["projectmetatags"]
+
+
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+ </script>
+
+<h2>&nbsp;</h2>
+
+  
+  
+   @if (ViewData["msgStatus"] == null)
+     { 
+        using (Html.BeginForm("delete", "subtitle", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+   @Html.Partial("Base"); }
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+
+

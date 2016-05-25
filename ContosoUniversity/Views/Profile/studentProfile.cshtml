@@ -1,0 +1,159 @@
+﻿@model OLProject.Models.tb_UserMaster
+
+@{
+    ViewBag.Title = "studentProfile";
+    Layout = "~/Views/Shared/LayoutTraining.cshtml";
+}
+
+<!--BANNER START-->
+<div class="page-heading">
+    <div class="container">
+        <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
+        <p>Home / Your Profile</p>
+    </div>
+</div>
+<!--BANNER END-->
+
+<!--CONTANT START-->
+<div class="contant">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <!--PROFILE IMAGE START-->
+                <div class="profile-box profile-view">
+
+
+                    <div class='thumb'>
+                        @{ if (Model.Picture != null && Model.Picture != "")
+                           {
+                            <a href=''>
+                                <img src='../../uploads/@Model.Picture' alt=''>
+                            </a>
+                           }
+                           else
+                           {
+                            <a href=''>
+                                <img src='../../images/profile_img.jpg' alt=''>
+                            </a>}
+                        }
+                    </div>
+                    <div class='text'>
+                        <p>Welcome</p>
+                        <a href='' class='btn-style'>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</a>
+                    </div>
+
+                </div>
+                <!--PROFILE IMAGE END-->
+                <!--EDIT PROFILE START-->
+                <div class="profile-box edit-profile">
+                    <h2>Account Setting</h2>
+                    <ul>
+                        <li><a href="/profile/edit">Edit Profile</a></li>
+                        <li><a href="/profile/ChangePassword">Change Password</a></li>
+
+
+                        <li><a href="/mytraining">Booked Courses</a></li>
+                    </ul>
+                    <div class="logout">
+                        @if (Session["pmsuserid"] != null)
+                        {
+                            <a href="/login/LogOff">LogOff</a>
+                        }
+
+                    </div>
+                </div>
+                <!--EDIT PROFILE END-->
+            </div>
+            <div class="span8">
+                <!--EDIT PROFILE START-->
+                <div class="profile-box editing">
+                    <h2>Profile</h2>
+                    <ul>
+                        <li>
+                            <label>First Name: <span>@Html.DisplayFor(model => model.FirstName)</span></label>
+                        </li>
+                        <li>
+                            <label>Last Name: <span>@Html.DisplayFor(model => model.LastName)</span></label>
+                        </li>
+                        <li>
+                            <label>Display Name: <span>@Html.DisplayFor(model => model.ProfileName)</span></label>
+                        </li>
+                        @*<li>
+                            <label>Gender:  @Html.DisplayFor(model => model) <span>&nbsp;</span></label>
+                        </li>*@
+                        <li>
+                            <label>Date of Birth:  @Html.DisplayFor(model => model.DOB) <span>&nbsp;</span></label>
+                        </li>
+                        <li>
+                            <label>Email: @Html.DisplayFor(model => model.EmailID)</label>
+
+                        </li>
+                        <li>
+                            <label>Phone: @Html.DisplayFor(model => model.ContactNo)</label>
+                        </li>
+                        <li>
+                            <label>Address: @Html.DisplayFor(model => model.Address)</label>
+                        </li>
+                        @*<li>
+                            <label>City / District: @Html.DisplayFor(model => model.Address)</label>
+                        </li>
+                        <li>
+                            <label>State / Province: @Html.DisplayFor(model => model.Address)</label>
+                        </li>
+                        <li>
+                            <label>Zip / Postal Code: @Html.DisplayFor(model => model.Address)</label>
+                        </li>
+                        <li>
+                            <label>Country: @Html.DisplayFor(model => model.Address)</label>
+                        </li>*@
+
+                        <li class="fw">
+                            <a href="/profile/edit">
+                                <button class="btn-style">Edit Profile</button></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--EDIT PROFILE END-->
+                <!--EDIT PASSWORD START-->
+
+                <!--EDIT PASSWORD END-->
+
+
+                <!--QUIZ SCORE START-->
+                <div class="profile-box editing">
+                    <h2>Your Course</h2>
+
+                    @Html.Raw(ViewData["data"])
+
+
+                </div>
+                <!--QUIZ SCORE END-->
+                <div class="profile-box editing">
+                    <h2>Attempted Quizzes and Scores</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Lessons</td>
+                                <td>Date</td>
+                                <td>Total Questions</td>
+                                <td>Correct</td>
+                                <td>Wrong</td>
+                        </thead>
+                        <tbody>
+                            @Html.Raw(ViewBag.strResult)
+                        </tbody>
+                    @*    <tfoot>
+                            <tr>
+                                <td>Total</td>
+                                <td>&nbsp;</td>
+                                <td>7.5/50</td>
+                            </tr>
+                        </tfoot>*@
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>

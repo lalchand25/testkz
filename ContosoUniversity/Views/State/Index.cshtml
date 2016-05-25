@@ -1,0 +1,92 @@
+﻿@model IEnumerable<OLProject.Models.tb_StateMaster>
+@using OLProject.Models;
+
+@Session["projectmetatags"]
+
+   @{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+
+<h2>@Session["menutaskname"]</h2>
+<br />
+<br />
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form id="form2" method="post" action="/state/index/">
+    <table width="60%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>Select Country to filter</td>
+            <td>@Html.DropDownList("CountryID", (SelectList)ViewData["countrylist"], "Select", new { style = "width: 240px;" })</td>
+            <td>
+                <input type="submit" class="btn_black" name="button" id="button" value="Submit" /></td>
+        </tr>
+    </table>
+
+</form>
+<table border="0" style="width: 100%" cellpadding="0" cellspacing="0">
+
+    <tr>
+        <td colspan="5" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Icon    </td>
+        <td>Name </td>
+        <td>Country </td>
+
+
+
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+
+    <tr>
+        <td colspan="5" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" />
+        </td>
+    </tr>
+
+
+
+
+    @{foreach (var item in Model)
+      { 
+    
+        <tr>
+
+            <td align="center" width="5%">
+                <img src="@Url.Content("~/Images/object_02.ico")" border="0" alt="edit" style="width: 22px;         height: 22px;" />
+            </td>
+
+            <td>
+                @item.StateName
+            </td>
+            <td>
+
+                @clsCommon.getCountryName(Convert.ToInt32(item.CountryID))
+
+            </td>
+
+
+            <td align="center" width="5%">
+                <a href="@Url.Action("Edit", "State", new { id = item.StateID })">
+                    <img src="@Url.Content("~/SiteImages/edit.png") " border="0" alt="edit" style="width: 74px;                       height: 28px;" /></a>
+            </td>
+            <td align="center" width="5%">
+                <a href="@Url.Action("Delete", "State", new { id = item.StateID })">
+                    <img src="@Url.Content("~/SiteImages/delete.png") " border="0" alt="Delete" style="width: 74px;                     height: 28px;" /></a>
+            </td>
+
+
+        </tr>
+    
+      } }
+
+</table>
+
+
+
+

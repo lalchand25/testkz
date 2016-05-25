@@ -1,0 +1,248 @@
+﻿@model PagedList.IPagedList<ContosoUniversity.Models.tb_ApplicationForm>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+}
+<style type="text/css">
+    #SearchString
+    {
+        width: 250px;
+    }
+</style>
+
+
+<style type="text/css">
+    @@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)
+    {
+
+
+        .table_div_Res table, thead, tbody, th, td, tr
+        {
+            display: block;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        .table_div_Res thead tr
+        {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 100px;
+        }
+
+        .table_div_Res tr
+        {
+            border: 1px solid #ccc;
+        }
+
+        .table_div_Res td
+        {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            .table_div_Res td:before
+            {
+                /* Now like a table header */
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            /*
+		Label the data
+		*/
+            .table_div_Res td:nth-of-type(1):before
+            {
+                content: "S. No";
+            }
+
+            .table_div_Res td:nth-of-type(2):before
+            {
+                content: "Name";
+            }
+
+            .table_div_Res td:nth-of-type(3):before
+            {
+                content: "Mobile No";
+            }
+
+            .table_div_Res td:nth-of-type(4):before
+            {
+                content: "Address";
+            }
+
+            .table_div_Res td:nth-of-type(5):before
+            {
+                content: "Edit";
+            }
+
+            .table_div_Res td:nth-of-type(6):before
+            {
+                content: "Archive";
+            }
+
+            .table_div_Res td:nth-of-type(7):before
+            {
+                content: "Enrol";
+            }
+
+            .table_div_Res td:nth-of-type(8):before
+            {
+                content: "Reject";
+            }
+
+            .table_div_Res td:nth-of-type(9):before
+            {
+                content: "Fee";
+            }
+
+            .table_div_Res td:nth-of-type(10):before
+            {
+                content: "Upload";
+            }
+    }
+</style>
+
+
+
+
+<h2> List for Status</h2>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+        @using (Html.BeginForm())
+        {
+             
+            <p>
+                Search  : @Html.TextBox("SearchString")
+                <input type="submit" value="Search" />
+            </p>
+        }
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+</div>
+
+
+
+
+<div class="table_div_Res">
+
+    <table class="table table-striped table-bordered table-hover" width="100%">
+
+
+
+
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.ActionLink("S. No", "Index", new { sortOrder = ViewBag.SrnoParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Surname (Family Name)", "Index", new { sortOrder = ViewBag.NameParm })
+                </th>
+
+                <th>
+                    @Html.ActionLink("Given Names", "Index", new { sortOrder = ViewBag.NameParm })
+                </th>
+
+                <th>
+                    @Html.ActionLink("Email ID", "Index", new { sortOrder = ViewBag.MobileParm })
+                </th>
+
+                <th>Address </th>
+                <th>Status Update
+                </th>
+          
+                <th width="15%">&nbsp;</th>
+
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationID)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailID)
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CurrentAddress)
+                    </td>
+
+                    <td>
+                        <button class="btn btn-success" onclick="OpenPopupCenter('/application/updateStatus/@item.ApplicationID', 'Edit!?', 450, 450);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Status Update
+                        </button>
+
+
+
+                    </td>
+               
+
+               
+
+                   
+              
+                
+                    <td></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+<div class="pageing_tab">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

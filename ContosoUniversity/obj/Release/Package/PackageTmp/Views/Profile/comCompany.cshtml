@@ -1,0 +1,168 @@
+﻿@model wtfProject.Models.tb_UserMasterWT
+
+
+
+
+
+
+
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Company Name</label>
+                            @Html.EditorFor(model => model.CompanyName)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.CompanyName)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Description </label>
+                            @Html.EditorFor(model => model.BriefDescription)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.BriefDescription)
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">First Name</label>
+                            @Html.EditorFor(model => model.FirstName)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Last Name</label>
+                            @Html.EditorFor(model => model.LastName)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Email Id</label>
+
+                            @Html.EditorFor(model => model.EmailID)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.EmailID)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Password</label>
+
+                            @Html.PasswordFor(model => model.UserPassword)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.UserPassword)
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Re-Password</label>
+
+                            @Html.PasswordFor(model => model.ConfirmPassword)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Address</label>
+
+                            @Html.EditorFor(model => model.UserAddress)
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.UserAddress)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Country  </label>
+                            @Html.DropDownList("CountryID", (SelectList)ViewData["ddCountryList"], "Select", new { onchange = "UpdateCatList();" })
+
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+
+                            <div id="tasklistResult" style="width: 100%; ">
+                                <label for="name1">State</label>
+
+                                @Html.DropDownList("StateID", (SelectList)ViewData["subStateList"], "Select")
+                            </div>
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.StateID)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <div id="cityDiv" style="width: 100%; ">
+                                <label for="name1">City </label>
+
+
+                                @Html.DropDownList("CityID", (SelectList)ViewData["subCity"], "Select")
+
+
+                            </div>
+                            <label for="name1">&nbsp;</label>
+                            @Html.ValidationMessageFor(model => model.CityID)
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">Postal Code </label>
+                            @Html.EditorFor(model => model.ZipCode)
+
+
+
+                        </div>
+                        @*       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                                <label for="name1">Date of Birth </label>
+
+                                @Html.TextBox("DateofBirth")
+                                <label for="name1">&nbsp;</label>
+                                @Html.ValidationMessageFor(model => model.DateofBirth)
+                            </div>*@
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <label for="name1">Upload Photo </label>
+                                    </td>
+                                    <td>
+                                        <input type="file" id="fileToUpload" name="file" />
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+                            <label for="name1">&nbsp;</label>
+
+
+
+
+                            <input class="button" value="Submit" type="submit" style="width: 150px;">
+                        </div>
+                    </div>
+          
+
+                     
+                        
+                         
+                        
+                }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

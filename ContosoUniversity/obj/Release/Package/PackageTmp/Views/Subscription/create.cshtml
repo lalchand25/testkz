@@ -1,0 +1,23 @@
+﻿@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+	@Session["projectmetatags"]
+
+
+
+<script>
+window.onunload = function () {
+            window.opener.location.href = window.opener.location;
+}
+
+ </script>
+
+ 
+  <h2>Subscription Duration Information</h2>
+  @Html.Partial("BaseCategory"); 
+ 
+  
+   
+  
+
+
+

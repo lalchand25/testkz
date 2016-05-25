@@ -1,0 +1,15 @@
+﻿@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+@using OLProject.Models;
+
+	@Session["projectmetatags"]
+
+
+
+  <h2>Popup</h2>
+
+  <h3>
+  @Html.Raw(ViewData["results"])
+
+  </h3>
+

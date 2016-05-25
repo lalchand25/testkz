@@ -1,0 +1,29 @@
+﻿@model OLProject.Models.tb_HeaderMaster
+
+
+	@Session["projectmetatags"]
+
+
+@{
+    Layout = "~/Views/Shared/adminpopup.cshtml";
+    }
+ 
+
+   
+   <br />
+<br />
+
+   
+   @if (ViewData["msgStatus"] == null)
+     { 
+      
+   @Html.Partial("BaseCategory"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+
+

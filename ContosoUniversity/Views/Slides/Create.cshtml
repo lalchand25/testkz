@@ -1,0 +1,77 @@
+﻿@model OLProject.Models.tb_LessionMasterSlides
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+
+
+@Session["projectmetatags"]
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+@if (ViewData["msgStatus"] == null)
+{
+    using (Html.BeginForm("create", "slides", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 1)
+        { 
+        
+        
+    @Html.Partial("Theme1");
+
+        }
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 2)
+        { 
+    @Html.Partial("Theme2");
+        }
+
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 3)
+        { 
+    @Html.Partial("Theme3");
+        }
+
+
+
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 4)
+        { 
+    @Html.Partial("Theme4");
+        }
+
+
+
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 5)
+        { 
+    @Html.Partial("Theme5");
+        }
+
+
+
+
+
+        if (Convert.ToInt32(ViewData["themeid"]) == 6)
+        { 
+    @Html.Partial("Theme6");
+        }
+
+    }
+
+}
+else
+{
+
+    <h2>@Html.Raw(ViewData["errormsg"])</h2>
+    <a href='/slides/Index/?LessonId=@Session["clessionid"]' class="btn btn-warning"> Back to List </a>
+
+}
+
+

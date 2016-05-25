@@ -1,0 +1,164 @@
+﻿@model ContosoUniversity.Models.tb_employeeMaster
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Create Employee</h2>
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#DateOfBirth").datepicker({
+            changeMonth: true,
+            changeYear: true,
+
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#ContractStartDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+
+        });
+    });
+</script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#ContractEndDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+
+        });
+    });
+</script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#ContractRenewalDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+
+        });
+    });
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function UpdateCatList() {
+
+        destElement = document.getElementById("CountryID");
+        id = destElement.value
+
+        var url = '/employee/statelist/' + id;
+
+        $("#tasklistResult").load(url);
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCity() {
+        //alert("hell")
+        destElement = document.getElementById("StateID");
+        id = destElement.value
+
+        var url = '/employee/citylist/' + id;
+        $("#cityDiv").load(url);
+    }
+
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function UpdateStateListEadd() {
+
+        destElement = document.getElementById("EmergencyCountryID");
+        id = destElement.value
+
+        var url = '/application/estatelist/' + id;
+        $("#tasklistResult3").load(url);
+    }
+
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCityEadd() {
+        //alert("hell")
+        destElement = document.getElementById("EmergencyStateID");
+        id = destElement.value
+
+        var url = '/application/ecitylist/' + id;
+        $("#cityDiv3").load(url);
+    }
+
+
+</script>
+
+
+
+
+
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("Base")
+    
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

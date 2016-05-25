@@ -1,0 +1,35 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/QuizSecurity.Master"  Inherits="System.Web.Mvc.ViewPage<OLProject.Models.tb_LessionMasterSlides>" 
+@using OLProject.Models;
+
+	@Session["projectmetatags"]
+
+
+
+ 
+ @ if (ViewData["msgStatus"] == null)
+     { 
+  @using (Html.BeginForm())
+     {
+        @Html.ValidationSummary(true)
+    <table width="95%" align="center">
+   
+            <tr>
+    <td valign="top" align='left'>            <b>Solution</b>   </td>    </tr>
+           <tr>
+    <td align='left'>  
+                 @Html.TextAreaFor(model => model.Question)
+             <b> @Html.ValidationMessageFor(model => model.Solution)</b>
+                 </td>
+    </tr>
+           <tr>
+    <td align='left'>  
+                    <input type="image" src="../../siteimages/Submit.png" /><br /></td>
+    </tr>
+    </table>
+  }
+}
+     else
+     { 
+     <h1>@Html.Raw(ViewData["msgStatus"]</h1>
+  }
+

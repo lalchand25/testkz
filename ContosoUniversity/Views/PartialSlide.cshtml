@@ -1,0 +1,79 @@
+﻿<div id="rest">
+
+<div class="Courses">
+    <h2>@Html.Raw(ViewData["classname"]) / @Html.Raw(ViewData["uname"]) / @Html.Raw(ViewData["LessionName"])</h2>
+    <div class="topdiv">
+
+         <div class="course-tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#web" data-toggle="tab"><i class="fa fa-book"></i>Web &amp; Mobile</a></li>
+                  <li><a href="#music" data-toggle="tab"><i class="fa fa-bell-o"></i>Music &amp; Production</a></li>
+                  <li><a href="#math" data-toggle="tab"><i class="fa fa-bolt"></i>Math &amp; Science</a></li>
+                  <li><a href="#Production" data-toggle="tab"><i class="fa fa-bullhorn"></i>Music &amp; Production </a></li>
+                  <li><a href="#Photography" data-toggle="tab"><i class="fa fa-camera"></i>Photography</a></li>
+                  <li><a href="#Geography" data-toggle="tab"><i class="fa fa-cubes"></i>Geography</a></li>
+                       </ul>
+                <!-- Tab panes -->
+                
+            </div>
+
+      @*  <div class="bred">@Session["ModuleName0"]
+
+        </div>
+
+        <div class="buttons">
+            @Html.Raw(ViewData["pageLinks"])
+            <a style='float: right;' class='btn-grey' href='javascript:this.close()' />
+            <img width='60px' height='60px' src='../../uploads/t2kefek3_Quit.png' /><br />
+            Quit</a>
+                @Html.Raw(ViewData["SpeechButton"])
+        </div>*@
+
+        <br />
+        <div id="tasklistResult1" title="Inner Container" style="margin: 10px 0 0 0;">
+        </div>
+        <div class="clr"></div>
+    </div>
+    <div class="middiv1">
+
+        <textarea rows="4" cols="50" id="tts" name="tts" style="display: none;">
+ @Html.Raw(ViewData["lessonSpeech"])
+</textarea>
+
+        @Html.Raw(ViewData["slidedata"])  @*comming for slide from tb_LessionMasterSlides *@
+        <br />
+        @Html.Raw(ViewData["SlideDescription"])  @*nothing comming *@
+        <br />
+        @Html.Raw(ViewData["startbutton"]) @*it comming blank *@
+        <div class="clr"></div>
+    </div>
+    <div class="bottomdiv" style="background: #e8424e;">
+
+             <div class="course-tabs">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#web" data-toggle="tab"><i class="fa fa-book"></i>Web &amp; Mobile</a></li>
+                  <li><a href="#music" data-toggle="tab"><i class="fa fa-bell-o"></i>Music &amp; Production</a></li>
+                  <li><a href="#math" data-toggle="tab"><i class="fa fa-bolt"></i>Math &amp; Science</a></li>
+                  <li><a href="#Production" data-toggle="tab"><i class="fa fa-bullhorn"></i>Music &amp; Production </a></li>
+                  <li><a href="#Photography" data-toggle="tab"><i class="fa fa-camera"></i>Photography</a></li>
+                  <li><a href="#Geography" data-toggle="tab"><i class="fa fa-cubes"></i>Geography</a></li>
+                       </ul>
+                <!-- Tab panes -->
+                
+            </div>
+
+    @*    @Html.Raw(ViewData["buttons"]) *@@*buttons at bottom to create *@
+        <div class="clr"></div>
+    </div>
+
+    @if (ViewData["comments"] != null)
+    { 
+        @Html.Raw(ViewData["comments"])
+    }
+</div>
+
+</div>
+
+

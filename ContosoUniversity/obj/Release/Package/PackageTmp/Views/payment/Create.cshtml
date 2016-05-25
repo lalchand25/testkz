@@ -1,0 +1,37 @@
+﻿@model ContosoUniversity.Models.tb_InvoiceMaster
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Create Invoice</h2>
+
+<script>
+    $(document).ready(function () {
+        $("#InvoiceDate").datepicker();
+    });
+</script>
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+@using (Html.BeginForm("Create", "payment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("Base")
+    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+
+
+

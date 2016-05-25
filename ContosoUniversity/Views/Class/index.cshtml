@@ -1,0 +1,42 @@
+﻿@model IEnumerable<OLProject.Models.tb_ClassMaster>
+  @{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+@using OLProject.Models;
+@Session["projectmetatags"]
+<h2>Class Information</h2>
+<form id="id" role="form" action="/class/Index" method="post">
+<table class="table table-striped table-bordered table-hover">
+<tbody>
+<tr><td>
+<div class="form-group">
+<table>
+<tr><td colspan="2"><label>Select Class</label></td></tr>
+<tr><td>@Html.DropDownList("SubjectId", (SelectList)ViewData["SubjectList"], "Select", new { @class="form-control" })</td><td><button class="btn btn-default" type="submit">Submit Button</button></td></tr>
+</table>
+
+
+
+
+
+</div></td>
+<td>Subject : @Html.Raw(ViewData["subjectname:"])<br />
+Total Records:@Html.Raw(ViewData["totalrecords"]  )  <br />
+                  @Html.Raw(ViewData["pageLinks"] )</td></tr>
+</tbody>
+</table>
+<div class="panel-body">
+<div class="dataTable_wrapper">
+<div style="margin:0 0 10px 0;">
+<a href="/class/create/" id='A2' runat='server' ><button class="btn btn-success" type="button"><i class="fa fa-plus"></i>Create</button></a>
+
+</div>	    
+    
+ 
+ <table class="table table-striped table-bordered table-hover" id="resultForm:result_table">
+     @Html.Raw(clsCommon.getHeader(5))
+      
+    @Html.Raw(ViewData["data"] )
+ </table>
+</form>
+ 	</div>	
+</div>	
+

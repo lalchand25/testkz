@@ -1,0 +1,23 @@
+﻿.textBox_full{
+ margin:15px 0px 0px 10px;
+ padding:0px 10px 10px 10px;
+ width:100%;
+ background:#f6f6f6 url(../../images/title_bg.gif) repeat-x top left;
+ position:relative;
+ color:#000;
+ border:1px solid #d0d0d0;
+ -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+ behavior: url(PIE.htc);
+ float:left;
+}
+.textBox_full h2{
+ margin:0px 0px 15px 0px;
+ padding:0px;
+ font-size:18px;
+ color:#fff;
+ font-weight:normal;
+ line-height:30px;
+
+}

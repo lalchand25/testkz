@@ -1,0 +1,24 @@
+﻿@model OLProject.Models.tb_TeacherHelp
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+@Session["projectmetatags"]
+
+
+<br />
+<br />
+
+@if (ViewData["msgStatus"] == null)
+{
+    using (Html.BeginForm("edit", "teacherhelp", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("BaseSubjectEdit");
+    }
+}
+
+else
+{
+    <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+}
+
+
+

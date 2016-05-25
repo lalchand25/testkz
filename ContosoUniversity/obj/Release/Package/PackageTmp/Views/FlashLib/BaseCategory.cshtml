@@ -1,0 +1,63 @@
+﻿@model OLProject.Models.tb_FlashLibMaster
+<br />
+<b>@Html.Raw(ViewData["lstatus"])</b><br />
+<fieldset>
+    <form method="post" runat="server">
+        <table width="95%" align="center" class='form2'>
+            <tr>
+                <td style="Width: 20%"></td>
+                <td style="Width: 80%"></td>
+            </tr>
+            @using (Html.BeginForm())
+       {
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>
+                        <b>Clip Name</b> </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.FlashName, new  { Style="Width:350px"})
+                            <b>@Html.ValidationMessageFor(model => model.FlashName)</b>
+                        </div>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td align="left">
+                        <b>Icons Path</b></td>
+                    <td align="left">
+                        <div>
+                            <asp:fileupload id="FileUpload0" runat="server" class="multi" accept="png" />
+                            <br />
+                            Formats : png,jpg,gif,jpeg. 
+             Maximum Size : 20kb
+                        </div>
+                    </td>
+                </tr>
+
+ 
+                <tr>
+                    <td></td>
+                    <td>
+                        @if (Convert.ToInt32( ViewData["buttonname"]) == 1)
+              { 
+                            <input type="image" src="../../siteimages/submit.png" /><br />
+               }
+                        @if (Convert.ToInt32( ViewData["buttonname"]) == 2)
+              { 
+                            <input type="image" src="../../siteimages/update.png" /><br />
+               }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+              { 
+                            <input type="image" src="../../siteimages/Delete.png" /><br />
+               }
+
+
+
+                        @Html.Raw(ViewData["errorMsg"] )
+                        &nbsp;</td>
+                </tr>                  
+     }
+        </table>
+    </form>
+</fieldset>

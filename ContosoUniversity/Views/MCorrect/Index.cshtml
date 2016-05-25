@@ -1,0 +1,62 @@
+﻿
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+	@Session["projectmetatags"]
+
+
+
+
+    <h2>Quiz - Multiple Correct</h2>
+    
+   
+            <table class="table table-striped table-bordered table-hover" id="resultForm:result_table">
+             <tr>
+              <td colspan="9" align="right">
+                @*  <a href="javascript:OpenPopup1('/mcorrect/create/');" id='contract' runat='server' > <img src="@Url.Content("~/siteImages/create.png")" border="0" alt="edit" style="width: 74px;height: 28px;" /></a>*@
+
+                    <button class='btn btn-success' onclick='javascript:OpenPopup1("/mcorrect/create/");'   type='button'><i class='fa fa-plus'></i>Create</button> 
+
+              </td>
+            </tr>
+
+                     <tr>
+              <td colspan="9" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>   
+     
+                 <td colspan="9" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+        <tr>
+                            <th style="text-align: left">
+                                Image</th>
+                            <th style="text-align: left">
+                                Description</th>
+                            <th style="text-align: left">Ans-1</th>
+                            <th style="text-align: left">Ans-2</th>
+                            <th style="text-align: left">Ans-3</th>
+                            <th style="text-align: left">Ans-4</th>
+                            <th>Answer</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+
+                        </tr>
+                         <tr>
+              <td colspan="9" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>     @Html.Raw(ViewData["data"])
+                    </table>
+
+      
+
+    
+        
+   
+    
+
+      
+      
+         
+        
+         
+           
+            
+     
+
+

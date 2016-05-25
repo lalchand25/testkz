@@ -1,0 +1,32 @@
+﻿@model OLProject.Models.tb_QuizDetail
+@using OLProject.Models;
+
+	@Session["projectmetatags"]
+
+
+
+    
+  @using (Html.BeginForm())
+       {
+        @Html.ValidationSummary(true)
+        
+    <table width="95%" align="center">
+   
+            <tr>
+    <td valign="top" align='left'>            <b>Tutorial</b>   </td>    </tr>
+           <tr>
+    <td align='left'>  
+                 @Html.TextAreaFor(model => model.Tutorial)
+             <b> @Html.ValidationMessageFor(model => model.Tutorial)</b>
+                 </td>
+    </tr>
+           <tr>
+    <td align='left'>  
+                    <input type="image" src="../../siteimages/Submit.png" /><br /></td>
+    </tr>
+    </table>
+  }
+
+    
+ <br /><b>@Html.Raw(ViewData["lstatus"])</b><br />
+

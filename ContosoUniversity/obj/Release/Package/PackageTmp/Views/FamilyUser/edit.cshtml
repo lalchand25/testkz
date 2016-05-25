@@ -1,0 +1,24 @@
+﻿@model OLProject.Models.tb_UserMaster
+
+  @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+
+		@Session["projectmetatags"]
+
+
+
+  
+    @if (ViewData["msgStatus"] == null)
+     { 
+   @Html.Partial("BaseCategory"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+   
+
+
+

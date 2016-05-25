@@ -1,0 +1,25 @@
+﻿@model OLProject.Models.tb_ThemeMaster
+
+
+   @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+
+	@Session["projectmetatags"]
+
+
+
+   
+  @if (ViewData["msgStatus"] == null)
+     { 
+   @Html.Partial("BaseTheme"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+   
+
+
+

@@ -1,0 +1,65 @@
+﻿@*@{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+}*@
+
+@{ Layout = "~/Views/Shared/LayoutTraining.cshtml";
+}
+
+
+@Session["projectmetatags"]
+
+
+
+<!--BANNER START-->
+    <div class="page-heading">
+     <div class="container">
+            <h2> </h2>
+            <p></p>
+        </div>
+    </div>
+    <!--BANNER END-->
+<!--CONTANT START-->
+<div class="contant">
+    <div class="container">
+        <div class="our-lessons">
+            <div class="course-tabs">
+                <!-- Nav tabs -->
+
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#web" data-toggle="tab"><i class="fa fa-book"></i>     @Html.Raw(ViewData["subject"]) </a></li>
+
+
+                </ul>
+
+
+
+
+
+                <!-- Tab panes -->
+
+                <div class="tab-content container">
+                    <div class="tab-pane fade active in" id="web">
+                        <ul class="course-topics row">
+                        
+                              @Html.Raw(ViewData["Classlist"])
+                        
+                        @*    <!--LIST ITEM START-->
+                            <li class="span4">
+                                <div class="thumb">
+                                    <a href="lesson-detail.html">
+                                        <img alt="" src="images/topic1.jpg"></a>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="~/mytraining/courseSubject">Sem 1</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->*@
+                        
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+		 </div>

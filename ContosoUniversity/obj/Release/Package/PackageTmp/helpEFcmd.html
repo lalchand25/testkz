@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    
+    IEnumerable<tb_LessionMasterSlides>
+        modelSlide = db.Database.SqlQuery<tb_LessionMasterSlides>
+    (strQuery);
+
+
+    tb_LessionMasterSlides Lessiontb = db.Database.SqlQuery<tb_LessionMasterSlides>
+        ("Select *  from tb_LessionMasterSlides where AutoId =" + id).FirstOrDefault<tb_LessionMasterSlides>
+            ();
+
+            tb_LessionMaster Lesson = db.Database.SqlQuery<tb_LessionMaster>
+                ("Select *  from tb_LessionMaster where LessionId =" + Lessiontb.LessionId).FirstOrDefault<tb_LessionMaster>
+                    ();
+
+    
+
+                    using (var ctx = new SchoolDBEntities())
+                    {
+                    var studentList = ctx.Students.SqlQuery("Select * from Student").ToList<Student>
+                        ();
+
+                        }
+
+                        However, columns returned by SQL query should match the property of an entity type of DBSet otherwise, it will throw an exception. For example:
+
+                        using (var ctx = new  SchoolDBEntities())
+                        {
+                        var studentName = ctx.Students.SqlQuery("Select studentid, studentname
+                        from Student where studentname='New Student1'").ToList();
+
+                        }
+
+                        If you change the column name in query, then it will throw an exception because it must match column names:
+
+                        using (var ctx = new SchoolDBEntities())
+                        {
+                        //this will throw an exception
+                        var studentName = ctx.Students.SqlQuery("Select studentid as id, studentname as name
+                        from Student where studentname='New Student1'").ToList();
+                        }
+
+                        SQL query for non-entity types:
+
+                        A SQL query returning instances of any type, including primitive types, can be created using the SqlQuery method on the Database class. For example:
+
+                        using (var ctx = new SchoolDBEntities())
+                        {
+                        //Get student name of string type
+                        string studentName = ctx.Database.SqlQuery<string>
+                            ("Select studentname
+                            from Student where studentid=1").FirstOrDefault<string>
+                                ();
+                                }
+
+                                Raw SQL commands to the database:
+
+                                ExecuteSqlCommnad method is useful in sending non-query commands to the database, such as the Insert, Update or Delete command. For example:
+
+                                using (var ctx = new SchoolDBEntities())
+                                {
+
+                                //Update command
+                                int noOfRowUpdated = ctx.Database.ExecuteSqlCommand("Update student
+                                set studentname ='changed student by command' where studentid=1");
+                                //Insert command
+                                int noOfRowInserted = ctx.Database.ExecuteSqlCommand("insert into student(studentname)
+                                values('New Student')");
+                                //Delete command
+                                int noOfRowDeleted = ctx.Database.ExecuteSqlCommand("delete from student
+                                where studentid=1");
+
+                                }
+
+
+                                http://www.entityframeworktutorial.net/EntityFramework4.3/raw-sql-query-in-entity-framework.aspx
+</body>
+</html>

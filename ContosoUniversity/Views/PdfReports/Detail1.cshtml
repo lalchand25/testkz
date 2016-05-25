@@ -1,0 +1,170 @@
+﻿@model IEnumerable<OLProject.Models.tb_LessionMasterSlides>
+
+@{
+    ViewBag.Title = "Detail1";
+    //Layout = "~/Views/Shared/_LayoutHome.cshtml";
+    string imagepath12 = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~")) + "Uploads/";
+
+    Int32 total = 0;
+    Int32 sno = 0;
+    string logname = "logonew.png";
+       
+}
+
+   @helper GetHtml(string image, Int32 UploadTypeId)
+       {
+           string VideoSample = "video_Sample.jpg";
+           string Mp3Sample = "mp3_sample.jpg";
+           string FlashSample = "flash_sample.png";
+           string imagepath11 = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~")) + "Uploads/";
+           string imagepath13 = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~")) + "Siteimages/";
+           if (UploadTypeId == 1)
+           {
+                <table width='100%' style='background-color:white;'>
+                <tr><td align='left' valign='top'>@Html.Raw(HttpUtility.HtmlDecode(image))</td></tr>
+             </table> 
+           }
+
+
+           if (UploadTypeId == 2)
+           {
+                <table width='100%' align='left' style='background-color:white;'>
+                <tr><td align='left' valign='top'><img src='@imagepath11@image' width='500px' height='500px'  /></td></tr>
+                </table>
+           }
+
+           if (UploadTypeId == 3)
+           {
+               <table width='100%' align='left' style='background-color:white;'>
+               <tr><td align='left' valign='top'><img src='@imagepath13@VideoSample' width='500px' height='500px'  /></td></tr>
+               </table>
+           }
+
+           if (UploadTypeId == 4)
+           {
+               <table width='100%' align='left' style='background-color:white;'>
+               <tr><td align='left' valign='top'><img src='@imagepath13@Mp3Sample' width='500px' height='500px'  /></td></tr>
+               </table>
+           }
+           if (UploadTypeId == 5)
+           {
+               <table width='100%' align='left' style='background-color:white;'>
+               <tr><td align='left' valign='top'><img src='@imagepath13@FlashSample' width='500px' height='500px'  /></td></tr>
+               </table>
+           }
+      }
+  
+ <table border='0'>
+
+@foreach (var item in Model)
+{
+    sno += 1;
+  <tr><td> <h1>@item.SlideDescription /  Slide :@sno </h1></td></tr>
+    
+    
+    if (item.ThemeId == 1)
+    {
+        //Done
+        if (item.UploadTypeId == 1)
+        {<tr><td>@GetHtml(item.ImageDescription, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 2)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 3)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 4)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 5)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+    }
+
+    if (item.ThemeId == 2)
+    {
+        if (item.UploadTypeId == 2)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 3)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 4)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 5)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        <tr><td>@GetHtml(item.ImageDescription, 1)</td></tr> 
+    }
+
+    if (item.ThemeId == 3)
+    {
+        if (item.UploadTypeId == 2)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+
+        if (item.UploadTypeId == 3)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+
+
+        if (item.UploadTypeId == 4)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+        if (item.UploadTypeId == 5)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+    }
+
+    if (item.ThemeId == 4)
+    {
+
+   <div class='box4'>
+   <div class='box5'>
+   
+    if (item.UploadTypeId == 2)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 3)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 4)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+        if (item.UploadTypeId == 5)
+        {<tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr> }
+      </div> 
+       <tr><td>@GetHtml(item.ImageDescription, 1)</td></tr> 
+  </div>
+    }
+    
+    
+    if (item.ThemeId == 6)
+    {
+        if (item.UploadTypeId == 2)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+
+        if (item.UploadTypeId == 3)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+
+
+        if (item.UploadTypeId == 4)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+        if (item.UploadTypeId == 5)
+        {
+            <tr><td>@GetHtml(item.ImageDescription, 1)</td><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId))</td></tr>
+            <tr><td>@GetHtml(item.ImagePath, Convert.ToInt32(item.UploadTypeId1))</td><td>@GetHtml(item.Description2, 1)</td></tr>
+        }
+    }
+
+
+}
+
+</table>

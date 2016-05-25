@@ -1,0 +1,67 @@
+﻿@model ContosoUniversity.Models.tb_sessionMaster
+
+
+
+
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Session
+                        <br />
+            @Html.EditorFor(model => model.SessionYear)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.SessionYear) </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+      <br />
+
+    
+        
+
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+            <input class="btnSubmit" value="Submit" type="submit" name="btnSubmit" style="width: 150px;">
+            <input class="btnClose" value="Cancel" type="submit" name="btnSubmit" style="width: 150px;">
+     
+  
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

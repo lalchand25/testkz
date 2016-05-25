@@ -1,0 +1,32 @@
+﻿@model OLProject.Models.tb_UnitMaster
+      @{ Layout = "~/Views/Shared/adminPopup.cshtml"; }
+
+    @Session["projectmetatags"]
+
+
+
+<fieldset>
+    <div class="display-label"><b>Unit Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitName) 
+    </div>
+    <br />
+<br />
+
+    <div class="display-label"><b>Description</b></div>
+    <div class="display-field">
+        
+         @Html.Raw(ViewData["desc"] )
+    </div>
+<br />
+<br />
+
+    <div class="display-label"><b>Display Order</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisplayOrder) 
+    </div>
+
+</fieldset>
+ 
+
+

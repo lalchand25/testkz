@@ -1,0 +1,5 @@
+﻿
+@*@Html.DropDownList("StateID", (SelectList)ViewData["slist"], "Select", new { onchange = "UpdateDistList();" })*@
+
+
+@Html.DropDownList("StateID", (SelectList)ViewData["subStateList"], "Select", new { onchange = "UpdateDistList();" })

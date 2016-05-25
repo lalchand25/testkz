@@ -1,0 +1,93 @@
+﻿@model IEnumerable<OLProject.Models.tb_ClassMaster>
+
+   @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+	@Session["projectmetatags"]
+
+
+
+     <form method="post" id="form1" action="/TestCreation/CreatePermission">
+     @Html.Raw(ViewData["datalist1"] )
+    <h2>List of Questions</h2>
+    @if (ViewData["datalist"] != null)
+       { 
+    <table style="width: 100%;">
+        <tr>
+            <td style="text-decoration: underline">
+                <b>Existing Questions:</b></td>
+               </tr>
+
+               <tr>
+            <td>
+               @Html.Raw(ViewData["datalist"])
+                 
+               </td>
+          
+        </tr>
+        
+        
+        <tr>
+            <td>
+                  <input type="image" src="../../siteimages/Update.png" /><br />
+                <span style="color: #FF0000; font-size: large"><strong>
+                <br />
+                 @Html.Raw(ViewData["msg"])</strong></span>
+                </td>
+            
+   
+        </tr>
+        
+    </table>
+  }
+       else
+       {
+
+       <h1>@Html.Raw(ViewData["datalist11"])</h1>
+      }
+  
+  </form>
+ @if (ViewData["DefaultSlide"] != null)
+    {
+ <table style="width: 100%;">
+        <tr style="background-color:Gray">
+       <td align="center" style="text-align: left">
+             <strong>Additional Question</strong></td>
+                <td align="center" style="text-align: left">
+                    &nbsp;</td>
+                <td align="center" style="text-align: left">
+                    &nbsp;</td>
+
+             <td align="center" style="text-align: left">
+                 &nbsp;</td>
+                <td align="center" style="text-align: left">
+                    &nbsp;</td>
+       </tr>
+        <tr>
+       <td align="center" style="text-align: left">
+             <b>One Correct
+            </b>
+            </td>
+                <td align="center" style="text-align: left">
+                    <b>Multiple Correct
+            </b>
+            </td>
+                <td align="center" style="text-align: left">
+                    <b>True False
+            </b>
+            </td>
+
+             <td align="center" style="text-align: left">
+                 <b>Image Choice
+            </b>
+            </td>
+                <td align="center" style="text-align: left">
+                    <b>Select from Image
+            </b>
+            </td>
+       </tr>
+     @Html.Raw(ViewData["DefaultSlide"])
+</table>
+}
+
+

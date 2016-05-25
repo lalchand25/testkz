@@ -1,0 +1,444 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+
+@using OLProject.Models
+
+@Session["projectmetatags"]
+
+<!--CONTANT START-->
+<div class="contant">
+
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <div class="blog">
+                    <!--BLOG START-->
+                    <div class="blog-contant">
+
+                        <div class="thumb">
+
+                            <ul class="bxslider">
+                                <li>
+                                    <img src="../images/blog-img.jpg" alt="">
+                                </li>
+                                <li>
+                                    <img src="../images/blog-img2.jpg" alt="">
+                                </li>
+                                <li class="thumb-video">
+                                    <iframe src="https://www.youtube.com/embed/l0s_M6xKxNc"></iframe>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+                        <div class="message-box">
+                            <h2>Get College Ready &amp; Prep for the Advanced Placement® Exams</h2>
+                            <h4>Grades in college prep courses, such as Advanced Placement®, are among the most important factors in college admissions. To help students succeed in high school and get ready for college, We offer more than 40 high school courses from top universities. </h4>
+                            <p>Covering subjects ranging from mathematics to science, English and history, our courses let students around the world prepare for college and the AP exams or  supplement AP coursework. Teachers can also use the new high school course materials to augment their classroom curriculum. Take any course free, or pay for a Verified Certificate to share with teachers or college admissions.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="span4">
+                <!--SIDEBAR START-->
+                <div class="sidebar">
+                    <!--SEARCH WIDGET START-->
+                    <div class="widget widget-search-course">
+                        <h2><i class="fa fa-search"></i>Search Course</h2>
+
+                        <div class="styled-select">
+                            <select class="input-block-level">
+                                <option>Here is the first option</option>
+                                <option>The second option</option>
+                            </select>
+                        </div>
+                        <p>
+                            <input type="text" class="input-block-level" placeholder="Search by Keyword">
+                        </p>
+                        <button class="btn-style">Search</button>
+                    </div>
+                    <!--PAPULAR POST WIDGET START-->
+                    <div class="widget widget-papular-post">
+                        <h2>Our Most Popular Courses</h2>
+                        <ul>
+                            @Html.Raw(ViewBag.Mosttopcours)
+                        
+                        @*    <!--LIST ITEM START-->
+                            <li>
+                                <h4>The Art of Structural Engineering: Bridges</h4>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img src="~/images/papular-post2.jpg" alt=""></a>
+                                </div>
+                                <div class="text">
+                                    <p>Learn about bridge design and discover how structural engineering is a creative discipline and art form.</p>
+                                </div>
+                            </li>
+                            <!--LIST ITEM END-->*@
+
+                        </ul>
+                    </div>
+                    <!--PAPULAR POST WIDGET END-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <div class="message-box">
+                    <h2>Professional Education</h2>
+                    <h4>How are professional education courses structured?</h4>
+                    <p>Our courses are designed for professionals, offering online learning in a convenient, time-saving manner that fits into busy schedules. Courses typically run for just a few days to several weeks. Course content will be geared to a specific industry or skill set, with an emphasis on learnings and hands-on scenarios from the field.</p>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="message-box">
+                    <h2>Select an eligible course</h2>
+                    <h4>Choose the course that's right for you</h4>
+                    <p>At KDU, we have many types of courses to choose from. Choose the one that's right for you. Our courses are rigorous so choose wisely. Some courses allow you to earn a Certificate of Achievement that is Verified to ensure you are the one taking the course. Using a series of photos of you and your ID, we are able to verify that you are the person completing your work in the course.</p>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="span4">
+                <!--PAPULAR POST WIDGET START-->
+                <div class="sidebar">
+                    <div class="widget widget-courses">
+                        <div class="inner">
+                            <h2>Visit Our Top Courses</h2>
+                            <ul class="bxslider">
+
+                           
+                                <!--LIST ITEM START-->
+                                <li>
+                                    <div class="top-courses">
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="~/images/top-courses.jpg" alt=""></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Intro to Computer Science</a></h4>
+                                            <p>Learn essential computer science and object-oriented programming concepts in this introductory Java course. </p>
+                                            <a href="#" class="btn-style">Lets Visit</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--LIST ITEM END-->
+                            
+                                       <!--LIST ITEM START-->
+                                <li>
+                                    <div class="top-courses">
+                                        <div class="thumb">
+                                            <a href="#">
+                                                <img src="~/images/top-courses2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="text">
+                                            <h4><a href="#">Intro to Java Programming</a></h4>
+                                            <p>Learn essential computer science and object-oriented programming concepts in this introductory Java course. </p>
+                                            <a href="#" class="btn-style">Lets Visit</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--LIST ITEM END-->
+                        
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--PAPULAR POST WIDGET END-->
+            </div>
+
+
+
+
+
+
+            <div class="clearfix"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--PAPULAR POSTS SECTION END-->
+    <!--GALLERY AND NEXT COURSES SECTION START-->
+    <section class="gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <div class="box">
+                        <h2>Event Gallery</h2>
+                        <ul class="event-galley">
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event1.png"></a>
+                                </div>
+                                <div class="text">
+                                    <p>21-04-2012</p>
+                                    <h4>most popular courses </h4>
+                                    <a href="#" class="tags">Equipment</a>
+                                    <a href="#" class="tags">tips</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event2.png"></a>
+                                </div>
+                                <div class="text">
+                                    <p>21-04-2012</p>
+                                    <h4>most popular courses </h4>
+                                    <a href="#" class="tags">Equipment</a>
+                                    <a href="#" class="tags">tips</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event3.png"></a>
+                                </div>
+                                <div class="text">
+                                    <p>21-04-2012</p>
+                                    <h4>most popular courses </h4>
+                                    <a href="#" class="tags">Equipment</a>
+                                    <a href="#" class="tags">tips</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event4.png"></a>
+                                </div>
+                                <div class="text">
+                                    <p>21-04-2012</p>
+                                    <h4>most popular courses </h4>
+                                    <a href="#" class="tags">Equipment</a>
+                                    <a href="#" class="tags">tips</a>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box lesson">
+                        <h2>About Trial Lessons</h2>
+                        <iframe src="https://www.youtube.com/embed/H6HHB0VLezY"></iframe>
+                        <div class="text">
+                            <h3 class="pull-left">UX Design</h3>
+                            <span class="pull-right">$6/Hour</span>
+                            <p>The most successful products and services offer rich and colorful user experiences that take into account social and cultural patterns. Learn how to create excellent user experience (UX) designs which are user-centered and consider factors such as consumer demand, ability and cultural background.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="box">
+                        <h2>Our Next Courses</h2>
+                        <ul class="event-galley next-course">
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event1.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="#">Computer</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                    <span class="rate"><small>$</small> 27</span>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event2.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="#">Computer</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                    <span class="rate"><small>$</small> 27</span>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event3.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="#">Computer</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                    <span class="rate"><small>$</small> 27</span>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                            <!--LIST ITEM START-->
+                            <li>
+                                <div class="thumb">
+                                    <a href="#">
+                                        <img alt="" src="../images/event4.png"></a>
+                                </div>
+                                <div class="text">
+                                    <h4><a href="#">Computer</a></h4>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                                    <span class="rate"><small>$</small> 27</span>
+                                </div>
+                            </li>
+                            <!--LIST ITEM START-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--STUDENT FORM SECTION START
+        <section class="form">
+        	<div class="form-contant relative">
+            	<div class="container form-fields"> 
+                	<div class="row">
+                    	<div class="span6">
+                        	<img src="../images/student.png" alt="">
+                        </div>
+                        <div class="span6">
+                        	<div class="student-form">
+                            	<div class="header">
+                                	<h2>Student Form</h2>
+                                    <p>Learn how to build websites &amp; apps, write code or start a business.</p>
+                                </div>
+                                <div class="form-data">
+                                	<ul>
+                                    	<li><input type="text" class="input-block-level" placeholder="Name"></li>
+                                        <li><input type="text" class="input-block-level" placeholder="Email ID"></li>
+                                        <li><input type="text" class="input-block-level" placeholder="Phone Number"></li>
+                                        <li><input type="text" class="input-block-level" placeholder="Select Course"></li>
+                                        <li>
+                                        	<div class="gender">
+                                                <span>
+                                                    <input name="gender" type="radio" value="" id="male">
+                                                    <label for="male">Male</label>
+                                                </span>
+                                                <span>
+                                                    <input name="gender" type="radio" value="" id="female">
+                                                    <label for="female">Female</label>
+                                                </span>
+                                            </div>
+                                            <button>Submit</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+                <div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:0px -1000px;"></div>
+                <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:0px -1500px;"></div>
+                <div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:0px -900px;"></div>
+            </div>
+        </section>
+        STUDENT FORM SECTION END-->
+
+
+    <!--FOLLOW US SECTION END-->
+
+
+    <!--CONTANT END-->
+
+
+
+@*@{ Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@using OLProject.Models
+
+@Session["projectmetatags"]
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+
+ 
+
+    <div class="main_body">
+        <div class="body">
+            <div class="body_back">
+       
+            
+         
+                <form method="POST" action="/login/logon" id="Form1">
+                    <div class="aspNetHidden">
+                        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ3MDY0MjU3NWRkZujq6IiIgE+xSP24imDGCGlMj/zash9uYlqWWn5yMYE=" />
+                    </div>
+                    <div class="login_div">
+                        <h1>Member <span>Login</span></h1>
+                        <p>
+                            <input name="UserName" type="text" class="user" onclick="this.value = '';" placeholder="User Name" />
+                        </p>
+                        <p>
+                            <input name="Password" type="password" class="pass" onclick="this.value = '';" placeholder="Password" />
+                        </p>
+                        <!--<p class="remember_me">
+       						 <label><input type="checkbox" name="remember_me" id="remember_me">Remember me</label>
+     					  </p>-->
+                        <p class="forget">
+                            <a href="/login/forgotpassword">Forgot Password </a>
+                        </p>
+                        <div class="login_button">
+                            <input type="image" src="../~/images/login_button.png" />
+                        </div>
+                    </div>
+                </form>
+
+       
+            
+            </div>
+            <div class="deom_button">
+                <img src="~/images/demo.png" />
+            </div>
+        </div>
+    </div>
+ 
+        <div class="main_bottom">
+            <div class="bottom">
+                <div class="bottom_h2">
+                    <h2>Copyright@2015 goonlineschool.com
+                    </h2>
+                </div>
+                <div class="bottom_menu">
+                    <ul>
+                        <li><a href="/home/terms">Terms of Use</a></li>
+                        <li>| </li>
+                        <li><a href="/home/privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+*@

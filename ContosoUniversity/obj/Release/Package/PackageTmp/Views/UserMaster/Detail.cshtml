@@ -1,0 +1,186 @@
+﻿@model OLProject.Models.tb_UserMaster
+@using OLProject.Models;
+
+ @{ Layout = "~/Views/Shared/quizSecurity.cshtml";
+      }
+
+    Detail1
+
+
+
+ <table width="95%" align="center" >
+    <tr>
+    <td style="Width:20%">
+     </td>
+    <td style="Width:80%">
+     </td>
+    </tr>
+    @using (Html.BeginForm())
+       {
+         @Html.ValidationSummary(true)
+           <tr>
+        <td width="20%" valign="top">
+              Select or Change Profile Picture:</td>
+        <td width="80%">
+                    <img src='../../uploads/@Model.Picture ' alt='Profile Picture' width="100px" height="100px" />
+            </td>
+        </tr>
+ 
+        <tr>
+        <td >
+        
+            Email ID:</td>
+        <td>
+        
+              @Html.TextBoxFor(model => model.EmailID, new { style = "width: 240px;"})</td>
+        </tr>
+      
+
+         <tr>
+        <td >
+        
+            User Password</td>
+        <td>
+        
+              @Html.TextBoxFor(model => model.UserPassword, new { style = "width: 240px;"})</td>
+        </tr>
+      
+
+        <tr>
+        <td>
+        
+            First Name:</td>
+        <td>
+        
+            @Html.TextBoxFor(model => model.FirstName, new { style = "width: 240px;"}) 
+                @Html.ValidationMessageFor(model => model.FirstName) </td>
+        </tr>
+        
+        <tr>
+        <td>
+        
+            Middle Name:</td>
+        <td>
+        
+            @Html.TextBoxFor(model => model.MiddleName, new { style = "width: 240px;" })
+                @Html.ValidationMessageFor(model => model.MiddleName) </td>
+        </tr>
+        <tr>
+        <td>
+        
+            Last Name:</td>
+        <td>
+        
+                  @Html.TextBoxFor(model => model.LastName, new { style = "width: 240px;" })
+                @Html.ValidationMessageFor(model => model.LastName) </td>
+        </tr>
+        
+        <tr>
+        <td>
+        
+           Display Name:</td>
+        <td>
+        
+                    @Html.TextBoxFor(model => model.UserName, new { style = "width: 240px;" })
+                @Html.ValidationMessageFor(model => model.UserName)</td>
+        </tr>
+        
+        <tr>
+        <td>
+        Contact No:</td>
+        <td>
+        
+                  @Html.TextBoxFor(model => model.ContactNo, new { style = "width: 240px;" })
+                @Html.ValidationMessageFor(model => model.ContactNo)</td>
+        </tr>
+        
+     
+    
+    <tr>
+        <td>
+            Address:</td>
+        <td>
+        
+                   @Html.TextBoxFor(model => model.Address, new { style = "width: 340px;" })</td>
+        </tr>
+    <tr>
+        <td>
+            Street:</td>
+        <td>
+        
+                   @Html.TextBoxFor(model => model.Street, new { style = "width: 240px;" })</td>
+        </tr>
+
+
+          <tr>
+        <td>
+            TownCity:</td>
+        <td>
+        
+                   @Html.TextBoxFor(model => model.TownCity, new { style = "width: 240px;" })</td>
+        </tr>
+   
+          <tr>
+        <td>
+            Zip Code:</td>
+        <td>
+           @Html.TextBoxFor(model => model.ZipCode, new { style = "width: 240px;" })</td>
+        </tr>
+         <tr><td valign="top">Country:*</td>  <td>      @Html.DropDownList("CountryID", (SelectList)ViewData["countrylist"], "Select", new { style = "width: 150px;Height:25px" })
+      <br />  <br />  </td></tr>
+       <tr><td valign="top">State / Province:*</td>  <td>     
+                
+                    @clsCommon.getStateName(Convert.ToInt32(Model.StateID))
+               </td></tr>
+       <tr><td valign="top">&nbsp;City / District:*</td>  <td> 
+                   @clsCommon.getDistrictName(Convert.ToInt32(Model.DistrictId))
+               </td></tr>
+        <tr>
+        <td>
+            School Name:</td>
+        <td>
+                    @Html.TextBoxFor(model => model.SchoolName, new { style = "width: 240px;" })</td>
+      </tr>
+      <tr>
+        <td>
+            Date of Birth:</td>
+        <td>
+        
+                     @Html.TextBoxFor(model => model.DOB, new { Readonly = "Readonly", style = "Width:180px" })
+        </tr>
+   
+
+          <tr>
+        <td width="20%" valign="top">
+        
+              Birth Proof:</td>
+        <td width="80%">
+        
+            
+                    <img src='../../uploads/@Model.DOBProof ' alt='Profile Picture' width="100px" height="100px" />
+                    
+                   
+            </td>
+        </tr>
+
+            <tr>
+        <td width="20%" valign="top">
+        
+              ID Proof:</td>
+        <td width="80%">
+        
+            
+                    <img src='../../uploads/@Model.IDProof ' alt='Profile Picture' width="100px" height="100px" />
+                    
+                   
+            </div>
+            </td>
+        </tr>
+
+
+    
+     }
+            </table>
+
+
+

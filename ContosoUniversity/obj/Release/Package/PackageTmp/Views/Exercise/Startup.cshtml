@@ -1,0 +1,283 @@
+﻿@model IEnumerable<OLProject.Models.tb_QuizDetail>
+
+@{Layout = "~/views/shared/adminpopup.cshtml"; }
+
+@Session["projectmetatags"]
+
+
+
+
+<script type="text/javascript">
+    function validate() {
+        var retval = false;
+        for (var i = 0; i < document.myForm.ActualAns1.length; i++) {
+            if (document.myForm.ActualAns1[i].checked) {
+                retval = true;
+            }
+        }
+        if (retval == false) {
+            alert("Option not selected");
+
+        }
+        return retval;
+    }
+
+</script>
+
+<form id="myForm" action="/Exercise/Startup" method="post" name="myForm" onsubmit="javascript:return validate();">
+    <div class="Courses">
+        <h2>&nbsp;</h2>
+        <div class="topdiv">
+            <div class="bred">Quiz Start Here       </div>
+            <div class="buttons">
+                <a style='float: right;' class='btn-grey' href='javascript:this.close()'>
+                    <img width='40px' height='40px' src='../../uploads/t2kefek3_Quit.png' />
+                    <br />
+                    Quit</a>
+            </div>
+
+            <div class="clr"></div>
+            <div class="clr"></div>
+        </div>
+        <div class="middiv1">
+            <table style="width: 100%;" align='center'>
+                @{Int32 mcounter = 0;}
+                @foreach (var item in Model)
+                {
+                    mcounter += 1;
+           
+                    @Html.Hidden("ActualAns", item.ActualAns)
+			
+                    @Html.Hidden("AutoId", item.AutoId)
+            
+                    @Html.Hidden("QuesTypeId", item.QuesTypeId)         
+                    <tr>
+                        <td colspan="2">
+                            @if (item.QuesTypeId == 5)
+                            {
+                                <div class="col-xs-12 col-sm-6 col-md-10 title">
+                                    <img alt="Image" class="img-responsive" width="200px" height="150px" src="../../uploads/@item.Decription" /></div>
+
+                            }
+                            else
+                            { 
+                                <div class="col-xs-12 col-sm-6 col-md-10 title">@Html.Raw(item.Decription)</div>
+                            }
+
+                            <div class="col-xs-6 col-md-2 title">@Html.Raw(ViewData["dispmess"])</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="border-bottom: 1px solid #c2c2c2;"></td>
+                    </tr>  
+            
+                            if (item.QuesTypeId == 1) //Multiple Options
+                            {
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 1)
+                                    1.@item.Ans1
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 2)
+                                    2.@item.Ans2
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 3)
+                                    3.@item.Ans3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 4)
+                                    4.@item.Ans4
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                            }
+
+                            if (item.QuesTypeId == 5) //Multiple Options
+                            {
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 1)
+                                    1.@item.Ans1
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 2)
+                                    2.@item.Ans2
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 3)
+                                    3.@item.Ans3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 4)
+                                    4.@item.Ans4
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                            }
+
+
+                            if (item.QuesTypeId == 2) //Multiple correct
+                            {
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox">
+                                <label>
+                                    @Html.CheckBox("check1", false) @item.Ans1
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox">
+                                <label>@Html.CheckBox("check2", false) @item.Ans2
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox">
+                                <label>@Html.CheckBox("check3", false) @item.Ans3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="checkbox">
+                                <label>@Html.CheckBox("check4", false) @item.Ans4
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                            }
+                            if (item.QuesTypeId == 3) //Only True False
+                            {
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 1)
+                                    1.@item.Ans1
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>
+                                    @Html.RadioButton("ActualAns1", 2)
+                                    2.@item.Ans2<br />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+     
+        
+                            }
+
+                            if (item.QuesTypeId == 4) //Images
+                            {
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>@Html.RadioButton("ActualAns1", 1)
+                                    <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans1" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>@Html.RadioButton("ActualAns1", 2)
+                                    <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans2" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>@Html.RadioButton("ActualAns1", 3)
+                                    <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans3" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="radio">
+                                <label>@Html.RadioButton("ActualAns1", 4)
+                                    <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans4" />
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+   
+                            }
+
+                }
+                <tr>
+                    <td colspan="2" style="border-bottom: 1px solid #c2c2c2;">
+                        <img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <br />
+                        <input type="image" src="../../SiteImages/Submit.png" width="74px" height="28px" />
+
+                    </td>
+                </tr>
+
+            </table>
+</form>
+</div>
+</div>

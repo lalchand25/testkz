@@ -1,0 +1,154 @@
+﻿@model ContosoUniversity.Models.tb_ProgramMaster
+
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        var nextDayDate = new Date();
+        nextDayDate.setDate(nextDayDate.getDate() + 1);
+        $("#StartDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            startDate: nextDayDate,
+            minDate: nextDayDate
+        });
+    });
+
+    $(function () {
+        var nextDayDate = new Date();
+        nextDayDate.setDate(nextDayDate.getDate() + 0);
+        $("#EndDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            startDate: nextDayDate,
+            minDate: nextDayDate
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCatList() {
+
+        destElement = document.getElementById("CountryID");
+        id = destElement.value
+
+        var url = '/agent/statelist/' + id;
+        $("#tasklistResult").load(url);
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateDistList() {
+        //  alert("hell")
+        destElement = document.getElementById("StateID");
+        id = destElement.value
+
+        var url = '/agent/citylist/' + id;
+        $("#cityDiv").load(url);
+    }
+
+
+</script>
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Program Name
+                        <br />
+            @Html.TextBoxFor(m => m.ProgrameName, new { @autofocus = "autofocus" })
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgrameName) </div>
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+    <br />
+
+      
+    
+        
+
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+     
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">@*
+            
+              <button class="btn btn-success" onclick="OpenPopupCenter('/application/edit/1', 'Edit!?', 1300, 750);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </button>*@
+               
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit" formnovalidate  name="btnSubmit" style="width: 120px;">
+                
+                   
+        }
+               <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<OLProject.Models.QuizInformation>
+@{
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@*<img src="@Model.ImageUrl" width="64" height="64" /> *@
+<br/>
+<table cellpadding="3" cellspacing="3">
+    @{
+        var OddColor = "#DDEEEE";
+        var evenColor = "#EEFFFF";
+        var Odd = OddColor;
+    }
+    @foreach (var model1 in Model)
+    {
+     <tr border="1" bgcolor="Red" color="#ffffff" >
+        <td width="20%" align="left">
+            @model1.Decription
+        </td>
+    </tr>
+        <tr border="0" bgcolor="@Odd"><td>@model1.Ans1</td></tr>
+        <tr border="0" bgcolor="@evenColor"><td>@model1.Ans2</td></tr>
+        <tr border="0" bgcolor="@Odd"><td>@model1.Ans3</td></tr>
+        <tr border="0" bgcolor="@evenColor"><td>@model1.Ans4</td></tr>
+        <br />
+        <br />
+        if (Odd == OddColor)
+        {
+            Odd = evenColor;
+        }
+        else
+        {
+            Odd = OddColor;
+        }
+
+    }
+</table>

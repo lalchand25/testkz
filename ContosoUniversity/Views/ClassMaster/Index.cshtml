@@ -1,0 +1,336 @@
+﻿@model PagedList.IPagedList<ContosoUniversity.Models.vwClassModel>
+@using PagedList;
+@using PagedList.Mvc;
+@using ContosoUniversity.Models;
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminLayout.cshtml";
+
+  
+    
+    
+}
+<style type="text/css">
+    #SearchString
+    {
+        width: 250px;
+    }
+</style>
+
+
+<style type="text/css">
+    @@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)
+    {
+
+
+        .table_div_Res table, thead, tbody, th, td, tr
+        {
+            display: block;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        .table_div_Res thead tr
+        {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 100px;
+        }
+
+        .table_div_Res tr
+        {
+            border: 1px solid #ccc;
+        }
+
+        .table_div_Res td
+        {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            .table_div_Res td:before
+            {
+                /* Now like a table header */
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            /*
+		Label the data
+		*/
+            .table_div_Res td:nth-of-type(1):before
+            {
+                content: "Sr. No";
+            }
+
+            .table_div_Res td:nth-of-type(2):before
+            {
+                content: "Code";
+            }
+
+
+            .table_div_Res td:nth-of-type(3):before
+            {
+                content: "Program";
+            }
+
+            .table_div_Res td:nth-of-type(4):before
+            {
+                content: "Detail";
+            }
+              .table_div_Res td:nth-of-type(5):before
+            {
+                content: "Start Date";
+            }
+                .table_div_Res td:nth-of-type(6):before
+            {
+                content: "End Date";
+            }
+
+                  .table_div_Res td:nth-of-type(7):before
+            {
+                content: "Edit";
+            }
+                    .table_div_Res td:nth-of-type(8):before
+            {
+                content: "Delete";
+            }
+                      .table_div_Res td:nth-of-type(9):before
+            {
+                content: "Duplicate ";
+            }
+    }
+</style>
+
+
+
+@*   <div class="table_div_Res">
+
+        <table class="table table-hover" width="100%">
+            <thead>
+                <tr style="background: #6f8803;">
+
+                    <th>
+                        @Html.ActionLink("Company Name", "Index", new { sortOrder = ViewBag.CompanyParm, currentFilter = ViewBag.CurrentFilter, groupID = ViewBag.currentGroupID })
+                    </th>
+                 
+                    <th>Phone No</th>
+               
+                </tr>
+            </thead>
+
+            <tbody>
+
+             <tr>
+                 <td> test</td> <td> test</td>
+             </tr>
+
+             <tr>
+                 <td> test</td> <td> test</td>
+             </tr>
+
+                 <tr>
+                 <td> test</td> <td> test</td>
+             </tr>
+
+                 <tr>
+                 <td> test</td> <td> test</td>
+             </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="pageing_tab">
+        </div>*@
+<h2>Class List</h2>
+
+<div class="row">
+    <div class="col-lg-7 col-md-5 col-sm-3 col-xs-12">
+        <button class="btn btn-primary" onclick="OpenPopupCenter('/classMaster/create', 'Employee Master!?', 450, 500);" type="button">
+            <i class="fa fa-plus-square"></i>
+            Create
+        </button>
+
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12">
+
+        @using (Html.BeginForm())
+        {
+             
+            <p>
+                Search  : @Html.TextBox("SearchString")
+                <input type="submit" value="Search" />
+            </p>
+        }
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12"></div>
+</div>
+
+
+
+
+<div class="table_div_Res">
+
+    <table class="table table-striped table-bordered table-hover" width="100%">
+
+    <thead>
+        <tr>
+
+            <th>
+                @Html.ActionLink("S. No", "Index", new { sortOrder = ViewBag.SrnoParm })
+            </th>
+            <th>
+                @Html.ActionLink("Code", "Index", new { sortOrder = ViewBag.CodeParm })
+            </th>
+            <th>
+                @Html.ActionLink("Program", "Index", new { sortOrder = ViewBag.ClassNameParm })
+            </th>
+            <th>
+                @Html.ActionLink("Detail", "Index", new { sortOrder = ViewBag.NameDetailParm })
+            </th>
+            <th>Start Date </th>
+            <th>End Date </th>
+            <th>Edit
+            </th>
+            <th>Delete
+            </th>
+            <th>Duplicate & Edit </th>
+            <th width="15%">&nbsp;</th>
+        </tr>
+    </thead>
+    @{  scidataEntities db = new scidataEntities();
+        String progname = "";
+        String progname2 = "";
+    }
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.classID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgrameCode)
+                </td>
+                <td>
+                    @{
+            progname = "";
+            progname2 = "";
+
+            if (item.ProgramMasterID != null && item.ProgramMasterID != 0)
+            {
+
+                var program = (from m in db.tb_ProgramMaster where m.ProgrameMasterID == item.ProgramMasterID select m).Single();
+                progname = program.ProgrameName;
+            }
+
+
+            if (item.ProgrameIDDetail != null && item.ProgrameIDDetail != 0)
+            {
+
+                var program = (from m in db.tb_programme where m.ProgrameID == item.ProgrameIDDetail select m).Single();
+                progname2 = program.ProgrameDetailName;
+            }
+            
+                    }
+                    @progname
+
+
+                </td>
+
+                <td>
+                    @progname2
+
+                </td>
+                <td>
+
+                    @String.Format("{0:d}", item.StartDate)
+                    @*   @Html.DisplayFor(modelItem => item.StartDate)*@
+                </td>
+                <td>
+
+                    @String.Format("{0:d}", item.EndDate)
+
+
+
+                </td>
+
+
+
+
+                <td>
+                    <button class="btn btn-success" onclick="OpenPopupCenter('/classMaster/edit/@item.classID', 'Edit!?', 450, 500);" type="button">
+                        <i class="fa fa-edit"></i>
+                        Edit
+                    </button>
+
+
+
+                </td>
+                <td>
+
+                    <button class="btn btn-danger" onclick="OpenPopupCenter('/classMaster/delete/@item.classID', 'Delete!?', 450, 550);" type="button">
+                        <i class="fa glyphicon-remove"></i>
+                        Archive
+                    </button>
+
+
+                </td>
+
+                <td>
+
+
+
+                    <button class="btn btn-warning" onclick="OpenPopupCenter('/classMaster/Duplicate/@item.classID', 'Delete!?', 450, 550);" type="button">
+                        <i class="fa fa-sign-in"></i>
+                        Duplicate
+                    </button>
+
+
+
+                </td>
+                <td></td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+    </div>
+
+<div class="pageing_tab">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

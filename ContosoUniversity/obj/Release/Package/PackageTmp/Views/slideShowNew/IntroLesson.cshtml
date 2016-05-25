@@ -1,0 +1,30 @@
+﻿@{ Layout = "~/Views/Shared/adminpopup.cshtml"; }
+
+
+@Session["projectmetatags"]
+<div class="Courses">
+<h2>&nbsp;</h2>
+
+ <div class="topdiv">
+	<div class="bred">@Session["ModuleName0"]        <a style='float: right;' class='btn-grey' href='javascript:this.close()' >
+            <img width='40px' height='40px' src='../../uploads/t2kefek3_Quit.png' />
+            Quit</a> </div>
+	<div class="clr"></div>
+	<div class="clr"></div>
+</div>
+<div class="middiv1">
+<div class="col-xs-12 col-sm-6 col-md-7"> 
+ @Html.Raw(ViewData["lessondesc"])
+</div>
+ <div class="col-xs-6 col-md-5">
+@Html.Raw(ViewData["graphics"])
+</div>
+
+<div class="start_button">@Html.Raw(ViewData["startbutton"]) </div>
+
+</div>
+</div>
+
+
+
+

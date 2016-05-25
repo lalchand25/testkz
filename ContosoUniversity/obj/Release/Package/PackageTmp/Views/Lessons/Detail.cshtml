@@ -1,0 +1,23 @@
+﻿@model OLProject.Models.tb_SubjectMaster
+
+
+
+      @{ Layout = "~/Views/Shared/adminpopup.cshtml"; }
+
+
+    @Session["projectmetatags"]
+
+<h2>Detail</h2>
+
+@Html.Raw(ViewData["urlpdf"])
+
+<h3>@Html.Raw(ViewData["lessonname"]) </h3>
+<h4>@Html.Raw(ViewData["lessondesc"]) </h4>
+
+
+ @Html.Raw(ViewData["lessonSpeech"])
+<br />
+<br />
+@Html.Raw(ViewData["slidedata"])
+
+

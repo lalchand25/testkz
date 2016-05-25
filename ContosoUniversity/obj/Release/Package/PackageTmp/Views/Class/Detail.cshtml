@@ -1,0 +1,32 @@
+﻿@model OLProject.Models.tb_ClassMaster
+
+      @{ Layout = "~/Views/Shared/adminPopup.cshtml"; }
+    @Session["projectmetatags"]
+
+
+
+<fieldset>
+    <div class="display-label"><b>Class Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClassName) 
+    </div>
+    <br />
+<br />
+
+    <div class="display-label"><b>Description</b></div>
+    <div class="display-field">
+        
+         @Html.Raw(ViewData["desc"] )
+    </div>
+<br />
+<br />
+
+    <div class="display-label"><b>Display Order</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisplayOrder) 
+    </div>
+
+</fieldset>
+ 
+
+

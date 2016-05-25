@@ -1,0 +1,31 @@
+﻿@using OLProject.Models;
+@{ 
+    kzonlineEntities db = new kzonlineEntities();
+    var toprec = (from m in db.tb_SubjectMaster where m.Publish == true select m).Take(4);
+
+    //var toprec = from m in db.tb_SubjectMaster where m.Publish == true select m;
+
+
+
+    foreach (var item in toprec)
+    {
+
+        string price = String.Format("{0:0}", item.Price);
+
+        <li> 
+    <div class='thumb'>
+        <a href='#'>
+            <img alt='' src='../uploads/@item.SubjectImge ' style='width: 96px; Height: 96px;' />
+        </a>
+    </div>
+    <div class='text'>
+        <h4><a href='/course/coursedetail/@item.SubjectId'>@item.SubjectName </a></h4>
+        <p> @item.ShortDescription </p>
+
+        <span class='rate'><small>$</small> @price </span>
+    </div>
+            </li>
+      
+    }
+}
+

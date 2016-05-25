@@ -1,0 +1,46 @@
+﻿@using OLProject.Models
+<div class="main_top_menu">
+    <div class="top_menu2">
+        <ul>
+
+            @{
+                if (Session["pmsuserid"] != null && Session["moduleid"] != null)
+                {
+
+                @Html.Raw(clsCommon.getTab(Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["moduleid"])));
+                    //Response.Write(clsCommon.getTab(0, 0));
+
+                }
+                else
+                {
+
+                @Html.Raw(clsCommon.getTab(0, 0));
+
+                }
+            }
+
+            <li><a href='/Login/logoff'>Log off</a> </li>
+            
+        </ul>
+    </div>
+</div>
+<div class="main_top_header">
+    <div class="top_header">
+
+        <div class="profile_display">
+            @if (Session["pmsuserid"] != null)
+            {
+                @Html.Raw("<table align='right'>                       <tr>                           <td>");
+                @Html.Raw("<b>Welcome " + Session["pmsusername"] + "</b><br />                               Category " + Session["cateName"] + "<br />                               Your Code : " + Session["pmsuserid"]);
+                @Html.Raw("</td>                           ");
+                @Html.Raw("<td>");
+                @Html.Raw("<img src='../../uploads/" + Session["Imagepath"] + "' alt='Profile Picture' width='37px' height='50px' />");
+                @Html.Raw("</td>                           ");
+                @Html.Raw("                       </tr>                   </table>            ");
+
+
+            }
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+﻿@model ContosoUniversity.Models.AgentMaster
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Create Agent</h2>
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#DateOfBirth").datepicker({
+            changeMonth: true,
+            changeYear: true,
+
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function UpdateCatList() {
+
+        destElement = document.getElementById("CountryID");
+        id = destElement.value
+
+        var url = '/agent/statelist/' + id;
+
+        $("#tasklistResult").load(url);
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCity() {
+        //alert("hell")
+        destElement = document.getElementById("StateID");
+        id = destElement.value
+
+        var url = '/agent/citylist/' + id;
+        $("#cityDiv").load(url);
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@using (Html.BeginForm("Create", "Agent", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("Base")
+    
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

@@ -1,0 +1,109 @@
+﻿@@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+
+@@ Register Src="AppHeader.ascx" TagName="AppHeader" TagPrefix="uc1" 
+@@ Register Src="AppFooter.ascx" TagName="AppFooter" TagPrefix="uc2" 
+@using OLProject.Models;
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=1000,height=700,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-47212041-1', 'goonlineschool.com');
+        ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+    <div class="main_top_menu">
+        <div class="top_menu2">
+            <ul>
+                @ 
+                    if (Session["pmsuserid"] != null && Session["moduleid"] != null)
+                    {
+                        Response.Write(clsCommon.getTab(Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["moduleid"])));
+                
+                <li><a href='/Login/logoff'>Log off</a> </li>
+                @ 
+         
+                }
+                else
+                {
+                    Response.Write(clsCommon.getTab(0, 0));
+                
+                <li><a href="/Register/package">Register</a></li>
+                <li>| </li>
+                    <li>  <a href="/register/index?regtype=2&pkgid=0">Register free for Demo </a></li>
+                    <li> | </li>
+                <li><a href="/login/logon">Login</a></li>
+                @     
+      
+                }
+                
+            </ul>
+        </div>
+    </div>
+
+
+        <div class="main">
+        <div class="left_right">
+        </div>
+        <div class="center_body">
+            <div class="login_wrap">
+         @--
+                <div class="logo"> <a href="/Home"> 
+                    <img src="../../Content/Login_files_asis/logo123.png" /> </a>
+                </div>--
+
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+        </div>
+        </div>
+        <div class="left_right">
+        </div>
+    </div>
+
+    <div class="clr">
+    </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="main_bottom">
+        <div class="bottom">
+            <div class="bottom_h2">
+                <h2>
+                    Copyright@2014 goonlineschool.com
+                </h2>
+            </div>
+            <div class="bottom_menu">
+                <ul>
+                    <li><a href="/home/terms">Terms of Use</a></li>
+                    <li>| </li>
+                    <li><a href="/home/privacy">Privacy Policy</a></li>
+                    @--    <li><a href="/home/contactus">Contact Us</a></li>
+            <li>| </li>--
+                    @--  <li><a href="/home/webmaster">Webmaster</a></li>
+                 <li>| </li>--
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

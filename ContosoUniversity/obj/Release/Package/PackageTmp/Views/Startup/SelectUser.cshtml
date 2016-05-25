@@ -1,0 +1,207 @@
+﻿@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+
+@Session["projectmetatags"]
+
+
+
+<script src="../../jscripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    //    onload = function () {
+    //        var url = '/Startup/UnitList/Html.Raw(ViewData["Classid1"] ';
+    //        $("#tasklistResult").load(url);
+
+    //        var url1 = '/Startup/LessonList/Html.Raw(ViewData["Unit1"] ';
+    //        $("#tasklistResult1").load(url1);
+
+
+    //    }
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#accordion").accordion();
+    });
+
+    $(function () {
+        $("#tabs").tabs();
+    });
+
+    $("#someParentOfA").delegate("#someA", "click", function () {
+
+    });
+
+    $.fx.speeds._default = 500;
+    $(function () {
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: "blind",
+            hide: "explode",
+            height: 320,
+            width: 700,
+            modal: true
+
+        });
+            @ViewData["script"]
+
+              $("#opener").click(function (id) {
+                  LoadData(id);
+                  $("#dialog").dialog("open");
+
+
+                  return false;
+              });
+          });
+
+
+
+          function UpdateClassList1() {
+
+              var url = '/Startup/UnitList/@ViewData["Classid1"] ';
+
+        $("#tasklistResult").load(url);
+    }
+    function UpdateClassList(id) {
+        var url = '/Startup/UnitList/' + id;
+
+        $("#tasklistResult").load(url);
+
+        url = '/Startup/LessonList/0';
+        $("#tasklistResult1").load(url);
+
+    }
+
+    function UpdateUnitList(id) {
+        var url = '/Startup/LessonList/' + id;
+        $("#tasklistResult1").load(url);
+
+
+    }
+    function ShowSlide(id) {
+        var url = '/SlideShow/Index/' + id;
+        window.open(url, 'Browser', 'width=1100,height=750,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+
+    }
+
+    $(function () {
+
+        $("#dialog-confirm").dialog({
+            resizable: false,
+            height: 140,
+            modal: true,
+            buttons: {
+                "Yes": function () {
+                    //Function call to commit to database
+                },
+                "No": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    });
+</script>
+<script src="../../Silverlight.js" type="text/javascript"></script>
+
+<div class="Courses">
+    <div class="topdiv">
+        <div class="heading">@Session["pmsusername"]: @Session["currentSubject"]  Wiz</div>
+
+        <div class="clr"></div>
+    </div>
+
+    <div class="middiv">
+
+        <div class="unit">
+            <h2>Select User</h2>
+            <ul>
+                @Html.Raw(ViewData["userlist"])
+            </ul>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="clr"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="bottomdiv">
+
+        <a href='/Startup/index' class="btn-red" style="float: left;">Back</a>
+        <input type="submit" style="float: right;" class="btn-red" value="OK" />
+
+        <div class="clr"></div>
+    </div>
+</div>
+
+
+
+<div style="margin: 20px 0px;">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <img style="margin: 0px 40px 0px 0px" src="../../images/ad3.jpg" width="300"
+                    height="250" />
+                <img src="../../images/ad4.jpg"
+                    style="..: 0px 40px 0px 0px;" width="300" height="250" />
+                <img src="../../images/ad5.jpg" width="300" height="250" /></td>
+        </tr>
+        <tr>
+            <td style="padding: 20px 0px 0px 0px;" align="center">
+                <img src="../../images/ad6.jpg" /></td>
+        </tr>
+    </table>
+</div>
+
+<div class="clr"></div>
+</div>
+
+<div id="bottom">
+    <div class="who" style="margin-right: 30px;">
+        <h3>Who We Are?</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    </div>
+
+    <div class="who" style="margin-right: 30px;">
+        <h3>Students Testimonials</h3>
+        <p>
+            <img src="../../images/vdo.jpg" width="312" height="173" />
+        </p>
+    </div>
+
+    <div class="who">
+        <h3>Latest News</h3>
+        <ul>
+            <li>Duis aute irure dolor in reprehenderit </li>
+            <li>Duis aute irure dolor in reprehenderit </li>
+            <li>Duis aute irure dolor in reprehenderit </li>
+            <li>Duis aute irure dolor in reprehenderit </li>
+            <li>Duis aute irure dolor in reprehenderit </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="clr"></div>
+</div>
+
+
+
+

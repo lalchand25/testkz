@@ -1,0 +1,66 @@
+﻿@model OLProject.Models.LogOnModel
+
+
+@Session["projectmetatags"]
+
+<!--CONTANT START-->
+<div class="contant">
+    <div class="container">
+        <div class="row">
+		<div class="span3">
+					&nbsp;
+                        
+                    </div>
+		<div class="span6">
+                        <div class="form-box h">
+						 <link href="../../Content/Login_files_asis/login.css" rel="stylesheet" type="text/css" />
+            @using (Html.BeginForm())
+            { 
+                @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+                @Html.Hidden("returnurl", ViewData["returnurl"])
+
+ <form>
+                <div class="form-body">
+                   
+                        <fieldset>
+                            <label>
+                                Username</label>
+                            @Html.TextBoxFor(m => m.UserName, new { style = "width:100%;height: 35px;" })<br>
+                            <label class="clear">
+                                Password</label>
+                            @Html.PasswordFor(m => m.Password, new { style = "width:100%;height: 35px;" })<br>
+                            <label class="clear">
+                            </label>
+							<button id="tsubmit" type="submit" class="btn-style">Submit</button>
+                          
+                                                    </fieldset>
+                      </div>
+                       
+                    </form>
+                    
+               <div class="footer">
+                            <ul>
+                                        <li> <label>
+                                <input type="checkbox" name="doRememberUsername">
+                                Remember me</label> 
+                                        </li>
+                            <li><label>
+                                <a href="/login/forgotpassword/">Forgot password?</a></label></li>
+                            <!--<li><div class="get_started">
+                        <a href="/Register/package">Don't have a login? Get Started!</a>
+                    </div></li>-->
+                           </ul>
+                      </div> 
+            }
+
+                            
+                        </div>
+                    </div>
+                    <div class="span3">
+					&nbsp;
+                        
+                    </div>
+                </div>
+            </div>
+			</div>
+			</div>

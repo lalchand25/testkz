@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>College Management System</title>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/js/bootstrap.min.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    @* =========== Start for left menu  14/07/2015 *@
+    @*
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">*@
+    <style>
+        body,
+        html
+        {
+            height: 100%;
+            margin: 0;
+            font-family: helvetica;
+            font-weight: 100;
+        }
+
+        .container
+        {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            -webkit-transition: left 0.4s ease-in-out;
+            -moz-transition: left 0.4s ease-in-out;
+            -ms-transition: left 0.4s ease-in-out;
+            -o-transition: left 0.4s ease-in-out;
+            transition: left 0.4s ease-in-out;
+        }
+
+            .container.open-sidebar
+            {
+                left: 240px;
+            }
+
+        .swipe-area
+        {
+            position: absolute;
+            width: 50px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #f3f3f3;
+            z-index: 0;
+        }
+
+        #sidebar
+        {
+            background: #fff;
+            position: absolute;
+            width: 240px;
+            height: 100%;
+            left: -240px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            overflow: auto;
+        }
+
+
+
+        .main-content
+        {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            position: absolute;
+        }
+
+            .main-content .content
+            {
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                padding-left: 60px;
+                width: 100%;
+                margin: -18px 0 0 0;
+            }
+
+                .main-content .content h1
+                {
+                    font-weight: 100;
+                }
+
+                .main-content .content p
+                {
+                    width: 100%;
+                }
+
+            .main-content #sidebar-toggle
+            {
+                background: #DF314D;
+                border-radius: 3px;
+                display: block;
+                position: relative;
+                padding: 10px 7px;
+                float: left;
+            }
+
+                .main-content #sidebar-toggle .bar
+                {
+                    display: block;
+                    width: 18px;
+                    margin-bottom: 3px;
+                    height: 2px;
+                    background-color: #fff;
+                    border-radius: 1px;
+                }
+
+
+        #menu ul
+        {
+            list-style: none;
+            margin-top: 0;
+            padding: 0;
+        }
+
+            #menu ul li
+            {
+                border-bottom: 1px solid #2a2a2a;
+            }
+
+        #menu > ul > li > a
+        {
+            border-left: 4px solid #222;
+        }
+
+        #menu ul li a
+        {
+            color: inherit;
+            display: block;
+            padding: 8px 0 8px 7px;
+            text-decoration: none;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        #menu ul a i
+        {
+            margin-right: 10px;
+            font-size: 18px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+            #menu ul a i[class*='fa-caret']
+            {
+                float: right;
+            }
+
+        #menu ul a:hover,
+        #menu ul a.active
+        {
+            background-color: #111;
+            border-left-color: #FFCC33;
+            color: #FFCC33;
+        }
+
+            #menu ul a:hover i:first-child
+            {
+                color: #FFCC33;
+            }
+
+        /* Submenu */
+
+        #menu ul li a.active + ul
+        {
+            display: block;
+        }
+
+        #menu ul li ul
+        {
+            margin-top: 0;
+            display: none;
+        }
+
+            #menu ul li ul li
+            {
+                border-bottom: none;
+            }
+
+                #menu ul li ul li a
+                {
+                    padding-left: 30px;
+                }
+
+                    #menu ul li ul li a:hover
+                    {
+                        background-color: #1A1A1A;
+                    }
+
+        .main-content #sidebar-toggle .bar:last-child
+        {
+            margin-bottom: 0;
+        }
+    </style>
+    <link href="~/Content/style4LeftMenu.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    @* ===========  End for left menu  14/07/2015 *@
+
+
+
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=430,height=250,top=0,screenY=25,left=0,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+
+        function popup(pageURL, title, popupWidth, popupHeight) {
+            var left = (screen.width / 2) - (popupWidth / 2);
+            var top = (screen.height / 2) - (popupHeight / 2);
+            var targetPop = window.open(pageURL, title, 'toolbar=no, location=no, directories=no,          status=no, menubar=no, scrollbars=YES, resizable=YES, copyhistory=no, width=' + popupWidth + ',          height=' + popupHeight + ', top=' + top + ', left=' + left);
+        }
+
+
+
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        function OpenPopupCenter(pageURL, title, w, h) {
+            var left = (screen.width - w) / 2;
+            var top = (screen.height - h) / 4;  // for 25% - devide by 4  |  for 33% - devide by 3
+            var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        }
+    </script>
+</head>
+@using ContosoUniversity.Models;
+@if (Session["pmsUserID"] == null)
+{
+
+    Response.Redirect("/account/login");
+
+
+
+}
+
+<div class="container open-sidebar">
+    <div id="sidebar">
+        <nav id="menu" class="left">
+            <ul>
+                <li><a href="~/home/Index" class="active"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="~/home/About"><i class="fa fa-info-circle"></i>About</a></li>
+
+
+
+
+
+                @if (Session["pmsuserid"] != null && Session["moduleid"] != null)
+                {
+                         
+                    @Html.Raw(clsCommon.getTab(Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["moduleid"])));
+                                                                                                                            scidataEntities db = new scidataEntities();
+                                                                                                                            int userid = Convert.ToInt32(Session["pmsuserid"]);
+                                                                                                                            var tb = (from m in db.pms_UserMaster where m.UserID == userid select m).Single();
+                                                                                                                            if (tb.UserCateID == 1)
+                                                                                                                            {
+                    <li><a href="~/permissions">Permissions</a></li>
+                                                                                                                            }
+                }
+                else
+                {
+                    //  Response.Write(clsCommon.getTab(0, 0));
+                }
+
+
+                @*
+            </ul>
+            </li>
+
+                <li><a href="#"><i class="fa fa-laptop"></i>Admission <i class="fa fa-caret-down"></i></a>
+                    <ul>
+
+                        <li><a href="~/application/index">Application Form</a></li>
+
+
+
+                    </ul>
+                </li>
+            <li><a href="#"><i class="fa fa-laptop"></i>Student <i class="fa fa-caret-down"></i></a>
+                <ul>
+
+
+                    <li><a href="~/application/enrolmentlist">Student Enrolment</a></li>
+                    <li><a href="~/application/passoutlist">Passout Students</a></li>
+
+
+
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-laptop"></i>Reports <i class="fa fa-caret-down"></i></a>
+                <ul>
+                    <li><a href="#">Course</a></li>
+                    <li><a href="#">Service</a></li>
+
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>*@
+
+
+
+
+
+            </ul>
+
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="swipe-area"></div>
+        <a href="#" data-toggle=".container" id="sidebar-toggle"><span class="bar"></span><span class="bar"></span><span class="bar"></span></a>
+        <div class="content">
+
+            <div style="width: 100%; height: 760px; overflow: scroll;">
+                <div style="width: 98%;">
+
+                    @*
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img src="~/Images/logo3.png" />
+                        </div>
+                        <div class="col-lg-9"></div>
+                    </div>*@
+
+                    <div class="row" style="margin: 0 0 5px 0;">
+                        <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12">
+                            <img src="~/Images/logo3.png" style="width: 100%;" class="img-responsive">
+                        </div>
+                        <div class="col-lg-7 col-md-5 col-sm-6 col-xs-12">
+
+
+
+
+                            <div class="profile">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+
+                                                @if (Session["pmsuserid"] != null && Session["moduleid"] != null)
+                                                {
+                                                    if (Session["LastName"] != null && Session["LastName"] != "")
+                                                    {
+                                                    <p style="float: right; margin: 0;">
+                                                        Welcome       @Html.Raw(Session["LastName"].ToString())  <a href="/account/LogOff">LogOff </a>
+
+                                                    </p>
+                                                    }
+                                                    else
+                                                    {
+                                                    
+                                                    <p style="float: right; margin: 0;"><a href="/account/LogOff">LogOff </a></p>
+                                                    }
+
+
+                                                }
+                                                else
+                                                { <p style="float: right; margin: 0;">
+                                                    <a href="/account/login" style="color: #FFFFFF;"><b>Login </b></a>
+                                                    <a href="/account/regsUser" style="color: #FFFFFF;"><b>| Register </b></a>
+                                                </p>
+                                                }
+
+
+
+
+                                            </td>
+                                            <td>
+                                                <img src="~/Images/ORsAx_EV014-003.jpg" class="img-circle" style="margin: 0 0 0 10px;" />
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            <div class="si">
+                                <div class="icon">
+                                    <img src="~/Images//f1.png">
+                                </div>
+                                <div class="icon">
+                                    <img src="~/Images//t1.png">
+                                </div>
+                                <div class="icon">
+                                    <img src="~/Images//g1.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="EntryPopup">
+
+
+
+
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+@*
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>*@
+
+@* ===========  start for left menu  14/07/2015 *@
+<script>
+    $(window).load(function () {
+        $("[data-toggle]").click(function () {
+            var toggle_el = $(this).data("toggle");
+            $(toggle_el).toggleClass("open-sidebar");
+        });
+        $(".swipe-area").swipe({
+            swipeStatus: function (event, phase, direction, distance, duration, fingers) {
+                if (phase == "move" && direction == "right") {
+                    $(".container").addClass("open-sidebar");
+                    return false;
+                }
+                if (phase == "move" && direction == "left") {
+                    $(".container").removeClass("open-sidebar");
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+
+
+
+<script>
+    $("#showmenu").click(function (e) {
+        e.preventDefault();
+        $("#menu").toggleClass("show");
+    });
+    $("#menu a").click(function (event) {
+
+        //event.preventDefault();
+
+        if ($(this).next('ul').length) {
+            $(this).next().toggle('fast');
+            $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+        }
+    });
+</script>
+
+@* ===========  End for left menu  14/07/2015 *@
+
+
+<body>
+</body>
+</html>

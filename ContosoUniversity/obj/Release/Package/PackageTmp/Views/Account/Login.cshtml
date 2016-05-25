@@ -1,0 +1,177 @@
+﻿@model ContosoUniversity.Models.LoginModel
+
+<style type="text/css">
+    .style1
+    {
+        color: #CC3300;
+    }
+
+    .auto-style1
+    {
+        font-size: 26px;
+    }
+
+    input
+    {
+        width: 100%;
+        border: 1px solid #ccc;
+        padding: 3px 10px;
+        margin: 5px 0 0 0;
+        border-radius: 5px;
+    }
+
+    .submit
+    {
+        width: 120px;
+        border: none;
+        padding: 3px 10px;
+        margin: 5px 0 0 0;
+        border-radius: 5px;
+        font-size: 14px;
+        background: #333;
+    }
+
+    table h6 a
+    {
+        color: #ad103b;
+        text-decoration: none;
+        margin: 0;
+    }
+
+        table h6 a:hover
+        {
+            color: #ad103b;
+            margin: 0;
+            text-decoration: underline;
+        }
+</style>
+
+
+
+<div class="container">
+    <hgroup class="title">
+        @{
+            ViewBag.Title = "Login for Returning Customer";
+        }
+    </hgroup>
+
+    <div class="container-fluid">
+
+
+
+        @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl, shopping = ViewBag.shopping }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+                
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-5">
+                        <table>
+                            <tr>
+                                <td colspan="3">
+                                    <span class="auto-style1">Login </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&nbsp;           
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(m => m.UserName)</td>
+                                <td colspan="2">@Html.TextBoxFor(m => m.UserName)
+                                    @Html.ValidationMessageFor(m => m.UserName)
+                                    @*    @ViewData["msg"] *@
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>@Html.LabelFor(m => m.Password)</td>
+                                <td colspan="2">@Html.PasswordFor(m => m.Password)
+                                    @Html.ValidationMessageFor(m => m.Password) </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td colspan="2">
+
+                                    @*<input type="submit" class="submit" value="Log in" />*@ 
+
+
+                                     <input type="submit"  value="Log in" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3">&nbsp;
+                        <b>
+                            @ViewData["msg"] </b>
+                                </td>
+
+                            </tr>
+                        </table>
+                        <table>
+
+                            <tr>
+                                <td>
+
+                                    <h6> @*<a href="/account/regsUser" style="font-size: 20px;">Click Here to Register New Customer </a>&nbsp;&nbsp;*@
+                                    </h6>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <h6>
+                                      @*  <a href="/account/forgotPassword" style="font-size: 20px">Forgot your password? </a>*@
+                                    </h6>
+
+                                </td>
+
+                            </tr>
+
+
+
+                        </table>
+                    </div>
+                    <div class="col-lg-4">
+                        <p style="margin: 0; font-size: 16px; color: #ad103b; font-weight: bold;">
+                            <br />
+                      
+                      
+                     
+
+                          @*  Subscribe now for<br />
+                            <br />
+
+                            * NO DELIVERY CHARGES<br />
+
+                            * NO MINIMUM ORDERS<br />
+
+                            * NO MEMBERSHIP FEE FOR FIRST MONTH &nbsp; &nbsp;&nbsp; &nbsp; AND THEN 14.89 PER MONTH ONLY *@
+                        </p>
+                    </div>
+                    <div class="col-lg-1"></div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+  
+        }
+    </div>
+@*    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@
+</div>

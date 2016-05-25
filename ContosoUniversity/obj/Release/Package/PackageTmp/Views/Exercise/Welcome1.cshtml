@@ -1,0 +1,55 @@
+﻿  @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+@using OLProject.Models;
+
+		@Session["projectmetatags"]
+
+
+
+
+<form  action="/Exercise/Welcome1/" method="POST" >
+    <h2>Your Quiz Begin Here       <a style='float: right;' class='btn-grey' href='javascript:this.close()' >
+            <img width='30px' height='30px' src='../../uploads/t2kefek3_Quit.png' />
+            Quit</a></h2>
+    
+    @if (Convert.ToInt32(ViewData["total"]) > 0)
+      {
+	  <div class="topdiv">
+	<div class="clr"></div>
+	<div class="clr"></div>
+	<div class="clr"></div>
+</div>
+<div class="middiv1"> 
+    
+                @Html.Raw(ViewData["Intruductionofpage"])
+				              
+         
+        
+        <div class="display-label"><strong>Subject Name:</strong></div>
+		<div class="display-field">@Html.Raw(ViewData["SubjectName"])</div>
+        <div class="display-label"><strong>Class Name:</strong></div>
+		<div class="display-field">@Html.Raw(ViewData["ClassName"])</div>
+        <div class="display-label"><strong>Passing Score:</strong></div> <div class="display-field">@Html.Raw(ViewData["passingScore"])</div>
+      <div class="display-label"><strong>Total Records:</strong></div>
+	  <div class="display-field">@Html.Raw(ViewData["total"])</div>
+      
+      <div class="display-label">Question Required or test</div>
+           <div class="display-field"><input id="Question" name ="Question" type="text" value="@Html.Raw(ViewData["total"])" style="width: 34px" /></div>
+        
+    
+      <input type="image" src="../../siteimages/start.png" />
+        
+    
+    
+   
+	  </div>     
+    }
+      else
+      {        
+           
+             <h2 style="color: #FF0000">Quiz not found</h2>
+
+           }
+    </form>
+

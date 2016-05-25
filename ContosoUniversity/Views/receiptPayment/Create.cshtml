@@ -1,0 +1,34 @@
+﻿@model ContosoUniversity.Models.tb_ReceiptPayment
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $("#ReceiptDate").datepicker();
+    });
+</script>
+
+<h2>Create Receipt</h2>
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+@using (Html.BeginForm("Create", "receiptpayment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("Base")
+    
+}
+
+
+
+
+

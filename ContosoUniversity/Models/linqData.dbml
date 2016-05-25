@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="goonlineschool" Class="linqDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=goonlineschool.db.12175908.hostedresource.com;Initial Catalog=goonlineschool;Persist Security Info=True;User ID=goonlineschool;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="goonlineschoolConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vwTaskDetail" Member="vwTaskDetails">
+    <Type Name="vwTaskDetail">
+      <Column Name="ModuleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TaskName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="urlmvc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Displayorderno" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DispOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

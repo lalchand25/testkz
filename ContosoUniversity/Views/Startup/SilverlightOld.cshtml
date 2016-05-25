@@ -1,0 +1,27 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Security.Master"  Inherits="System.Web.Mvc.ViewPage<IEnumerable<OLProject.Models.tb_SubjectMaster>
+
+
+	Index
+
+
+<h2>Subjects Information</h2>
+
+ @--<p>
+       <a href="javascript:OpenPopup('http://demo.gsmmastersonline.com/#/MainStart/');" id='contract' runat='server' >Start Reading</a>
+    </p>
+--
+   
+
+    <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%">
+		  <param name="source" value="@Session["siteurl"] "/>
+		  <param name="onError" value="onSilverlightError" />
+		  <param name="background" value="white" />
+          <param name="initParams" value="page=StartupPage,para=@Session["StartupPagePara"] " />
+		  <param name="minRuntimeVersion" value="4.0.50826.0" />
+		    <param name="windowless" value="true" />
+	      <param name="autoUpgrade" value="true" />
+		  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0" style="text-decoration:none">
+ 			  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
+		  </a>
+	    </object>
+

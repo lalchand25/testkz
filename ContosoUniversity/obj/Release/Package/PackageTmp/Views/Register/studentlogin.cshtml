@@ -1,0 +1,168 @@
+﻿@model  OLProject.Models.tb_UserMaster
+
+@{ Layout = "~/Views/Shared/_layout.cshtml";
+}
+<div class="page-heading">
+     <div class="container">
+            <h2>About The Company</h2>
+            <p>Home / About us</p>
+        </div>
+    </div>
+
+<!--CONTANT START-->
+<div class="contant">
+    <div class="container">
+
+      
+
+        <div class="row">
+            <div class="span9">
+                <div class="form-box">
+                      <p style="margin: 18px 0 0 0px; text-align:center;"> <img src="~/Images/step-2.png" /> </p> 
+                    @Html.ValidationSummary()
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true) 
+                        @Html.Hidden("regtype", ViewData["regtype"])
+                        @Html.Raw(ViewData["error"])
+                        @Html.Raw(ViewData["usermaincatid"])
+                
+
+                        <div class="form-body">
+                            <fieldset>
+                                <h5>Registration done, Please check your email for confirmation, following information is optional.</h5>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <label>First Name</label>
+                                        @Html.TextBoxFor(model => model.FirstName, new { @class = "input-block-level" })
+                                        @* <input type="text" placeholder="Enter your First Name" class="input-block-level">*@
+                                    </div>
+                                    <div class="span6">
+                                        <label>Last Name</label>
+                                        @Html.TextBoxFor(model => model.LastName, new { @class = "input-block-level" })
+                                        @*  <input type="text" placeholder="Enter your Last Name" class="input-block-level">*@
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <label>Enter Email</label>
+                                        @Html.TextBoxFor(model => model.EmailID, new { @class = "input-block-level" })
+                                        @*   <input type="text" placeholder="Enter your E-mail ID" class="input-block-level">*@
+                                    </div>
+                                    <div class="span6">
+                                        <label>Enter Phone number</label>
+                                        @Html.TextBoxFor(model => model.ContactNo, new { @class = "input-block-level" })
+                                        @*  <input type="text" placeholder="Enter your Phone Number" class="input-block-level">*@
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <label>Your City</label>
+                                        @Html.TextBoxFor(model => model.TownCity, new { @class = "input-block-level" })
+
+                                    </div>
+                                    <div class="span6">
+                                        <label>Gender</label>
+                                        <select class="input-block-level">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <label>Education Level</label>
+                                        @Html.TextBoxFor(model => model.AvtarName, new { @class = "input-block-level" })
+                                        @* <input type="text" placeholder="Enter your Education Level" class="input-block-level">*@
+                                    </div>
+                                    <div class="span6">
+                                        <label>Age</label>
+                                        @Html.TextBoxFor(model => model.Address, new { @class = "input-block-level" })
+                                        @*  <input type="text" placeholder="Enter your age" class="input-block-level">*@
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="footer">
+
+                            @{ if (ViewBag.cattype != null)
+                               {
+                                   Int32 catid = Convert.ToInt32(ViewBag.cattype);
+                                   if (catid == 9)
+                                   { 
+                                       
+                                <h2>Your Preferences</h2>
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <label>Select Your Course</label>
+
+                                        @Html.DropDownList("ClassID", (SelectList)ViewBag.CourseSubjectList, "Select")
+
+
+
+                                        @*  <select class="input-block-level">
+                                            <option>PMT</option>
+                                            <option>Mobile App Development</option>
+                                        </select>*@
+                                        <input type="text" placeholder="Enter Your Course" class="input-block-level">
+                                    </div>
+                                </div>
+
+                                      }
+                               }
+                                       
+                            }
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <label>Additional Message</label>
+                                        <textarea placeholder="Your Message" class="input-block-level" rows="8"></textarea>
+                                    </div>
+                                    <p class="pull-left">By registering, You accept Terms &amp; Conditions</p>
+                                    <button type="submit" class="btn-style pull-right">Submit</button>
+                                </div>
+                             
+
+                        </div>
+                            
+@*
+
+                            <input type="submit" value="Sign Up" class="btn-style" />*@
+                    }
+
+
+                </div>
+            </div>
+
+            <div class="span3">
+                <div class="sidebar">
+                    <!--COURSE CATEGORIES WIDGET START-->
+                    <div class="widget widget-course-categories">
+                        <h2>Course Categorty</h2>
+                        <ul>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Marketing</a></li>
+                            <li><a href="#">Design</a></li>
+                            <li><a href="#">Office Productivity</a></li>
+                            <li><a href="#">IT &amp; Software</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Personal Development</a></li>
+                            <li><a href="#">Photography</a></li>
+                            <li><a href="#">Health &amp; Fitness</a></li>
+                            <li><a href="#">Teacher Training</a></li>
+                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Math &amp; Science</a></li>
+                            <li><a href="#">Social Science</a></li>
+                        </ul>
+                    </div>
+                    <!--COURSE CATEGORIES WIDGET END-->
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+   
+<!--CONTANT END-->

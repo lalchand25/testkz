@@ -1,0 +1,72 @@
+﻿@model OLProject.Models.tb_ButtonMaster 
+ 
+<form   method="post"  runat="server" > 
+    <table width="95%" align="center" class='form2'>
+    <tr>
+    <td style="Width:20%">
+     </td>
+    <td style="Width:80%">
+     </td>
+    </tr>
+    @using (Html.BeginForm())
+       {
+         @Html.ValidationSummary(true)
+        <tr>
+    <td>
+   <b>Button Name</b> </td>
+    <td ><div class="editor-field">
+      @Html.TextBoxFor(model => model.ButtonName)
+      <b> @Html.ValidationMessageFor(model => model.ButtonName)</b>
+       </div>
+      </td>
+    </tr>
+                    
+        <tr>
+    <td align="left">
+         <b>Icons Path</b></td>
+    <td align="left">
+         <div>
+               <asp:FileUpload ID="FileUpload0" runat="server" class="multi" accept="png" /> <br />
+             Formats : png,jpg,gif,jpeg. 
+             Maximum Size : 20kb
+             </div>
+             </td>
+    </tr>
+
+      <tr>
+    <td align="left">
+         <b>Disable Icons Path</b></td>
+    <td align="left">
+         <div>
+               <asp:FileUpload ID="FileUpload1" runat="server" class="multi" accept="png" /> <br />
+             Formats : png,jpg,gif,jpeg. 
+             Maximum Size : 20kb
+             </div>
+             </td>
+    </tr>
+       <tr>
+    <td>
+         </td>
+    <td>
+            @if (Convert.ToInt32( ViewData["buttonname"]) == 1)
+              { 
+               <input type="image" src="../../siteimages/submit.png" /><br />
+               }
+             @if (Convert.ToInt32( ViewData["buttonname"]) == 2)
+              { 
+                <input type="image" src="../../siteimages/update.png" /><br />
+               }
+            @if (Convert.ToInt32( ViewData["buttonname"]) == 3)
+              { 
+                 <input type="image" src="../../siteimages/Delete.png" /><br />
+               }
+              
+
+        
+   @Html.Raw(ViewData["errorMsg"] )
+        &nbsp;</td>
+    </tr>                  
+     }
+            </table>
+    </form>
+ 

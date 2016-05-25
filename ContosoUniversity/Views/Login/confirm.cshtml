@@ -1,0 +1,74 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/home.Master" Inherits="System.Web.Mvc.ViewPage" 
+
+
+@Session["projectmetatags"]
+
+
+
+   <div id="body-text">
+        <div class="textBox_full2">
+       
+
+
+    <h2>Confirmation</h2>
+
+     <div id="steps">
+                <ul>
+                    <li>
+                        <div class="step-div1">
+                        </div>
+                    </li>
+                    <li class="black">Offers</li>
+                    <li>
+                        <div class="step-div3">
+                        </div>
+                    </li>
+                    <li class="black">Registration</li>
+                    <li>
+                        <div class="step-div5">
+                        </div>
+                    </li>
+                    <li class="red">Confirmation</li>
+                    <li>
+                        <div class="step-div2">
+                        </div>
+                    </li>
+                    <li class="black">Payments</li>
+                    <li>
+                        <div class="step-div3">
+                        </div>
+                    </li>
+                    <li class="black">Completed</li>
+                    <li>
+                        <div class="step-div4">
+                        </div>
+                        @--  <div class="step-div6">
+                                </div>--
+                    </li>
+                </ul>
+            </div>
+<br />
+   &nbsp;&nbsp;&nbsp;
+            <br />
+            &nbsp;&nbsp;&nbsp;
+            <br />
+            &nbsp;&nbsp;&nbsp;
+<br />
+     @Html.Raw(ViewData["results"] )  
+     <br />
+     <br />
+     <p>
+        Click here to redirect on login page. @Html.ActionLink("Login", "logon","login")  
+    </p>
+    <br />
+<br />
+    <br />
+<br />
+    </div>
+     <div class="textBox_full_right">
+        <h2>
+        
+        </h2>
+    </div>
+    </div>
+

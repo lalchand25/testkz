@@ -1,0 +1,166 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/AdminSecurity1.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" 
+
+
+	Load
+
+
+
+<script src="../../jscripts/jquery-1.5.1.min.js" type="text/javascript"></script>
+
+<script type= "text/javascript">
+    onload = function () {
+        var url = '/Startup/UnitList/@Html.Raw(ViewData["Classid1"] ';
+        $("#tasklistResult").load(url);
+
+        var url = '/Startup/LessonList/@Html.Raw(ViewData["Unit1"] ';
+        $("#tasklistResult1").load(url);
+
+
+    }
+    
+</script>
+
+
+<script type="text/javascript">
+          $(document).ready(function () {
+              $("#accordion").accordion();
+          });
+
+          $(function () 
+          {
+              $("#tabs").tabs();
+          });
+
+          $("#someParentOfA").delegate("#someA", "click", function(){
+
+});
+
+          $.fx.speeds._default = 500;
+          $(function () {
+              $("#dialog").dialog({
+                  autoOpen: false,
+                  show: "blind",
+                  hide: "explode",
+                  height: 320,
+                  width: 700,
+                  modal: true
+
+              });
+            @Html.Raw(ViewData["script"]
+         
+              $("#opener").click(function (id) {
+                  LoadData(id);
+                  $("#dialog").dialog("open");
+
+
+                  return false;
+              });
+          });
+
+   
+
+    function UpdateClassList1()
+     {
+        alert("hello");
+        var url = '/Startup/UnitList/@Html.Raw(ViewData["Classid1"] ';
+      
+        $("#tasklistResult").load(url);
+     }
+     function UpdateClassList()
+     {
+       destElement = document.getElementById("ClassId");
+       id= destElement.value
+       var url = '/Startup/UnitList/' +id;
+      
+        $("#tasklistResult").load(url);
+      
+    }
+     
+     function UpdateUnitList()
+     {
+       destElement = document.getElementById("UnitId");
+       id= destElement.value
+       var url = '/Startup/LessonList/' +id;
+      
+        $("#tasklistResult1").load(url);
+
+
+    }
+      function ShowSlide()
+     {
+       destElement = document.getElementById("LessonId");
+       id= destElement.value
+       var url = '/SlideShow/Index/' +id;
+       window.open(url, 'Browser', 'width=1100,height=600,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+        
+    }
+
+$(function() {
+
+    $( "#dialog-confirm" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+            "Yes": function() {
+                //Function call to commit to database
+            },
+            "No": function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+  @--  <script src="../../Silverlight.js" type="text/javascript"></script>
+<h3 style="color: #CC0000">Student Working Area</h3>
+    <table style="width: 100%;" bgcolor="#E8DB87" border='1' >
+    <tr>
+    <td style=" text-align: center; font-size: large">
+    
+        <strong>Class</strong></td>
+    <td style=" text-align: center; font-size: large" class="field-validation-error">
+    
+        <strong>Unit</strong></td>
+     
+   <td style=" text-align: center; font-size: large; color: #0000FF;">
+    
+        <strong>Lessons</strong></td>
+   
+    
+    </tr>
+        <tr>
+            <td height="400px" width='33%' valign="top" align="left" >
+             @Html.ListBox("ClassId", (SelectList)ViewData["Classlist"], new { style = "width: 98%;Height:100%;font-weight:BOLD; bgcolor='#FFFFC'", onchange = "UpdateClassList();" })
+
+            </td>
+         <td height="400px"  width='33%' valign="top" align="center">
+
+         <div id="tasklistResult" title="Inner Container">
+         </div><br />          <img alt="" src="../../Images/stress_study.gif" 
+                 style="width: 330px; height: 199px" />
+             
+</td>
+         <td height="400px"  width='33%' valign="top" align="right" >
+                <div id="tasklistResult1" title="Inner Container" Height="100%">
+         </div>
+             
+</td>
+            
+        </tr>
+        
+       
+    </table>--
+
+

@@ -1,0 +1,27 @@
+﻿@model OLProject.Models.tb_CountryMaster
+
+   @using (Html.BeginForm())
+       {
+    @Html.ValidationSummary(true) 
+    <fieldset>
+        <legend>Country Information</legend>
+        <div class="editor-label">
+            Country Name
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CountryName, new  { Style="Width:250px" })
+            @Html.ValidationMessageFor(model => model.CountryName) 
+        </div>
+        
+  
+   
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    } 
+    <div>
+        @Html.ActionLink("Cancel & Back to List", "Index") 
+    </div>
+

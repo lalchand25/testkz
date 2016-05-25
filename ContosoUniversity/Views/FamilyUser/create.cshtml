@@ -1,0 +1,35 @@
+﻿@model OLProject.Models.tb_UserMaster
+
+  @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+		@Session["projectmetatags"]
+
+
+
+<script>
+window.onunload = function () {
+            window.opener.location.href = window.opener.location;
+}
+
+ </script>
+  
+<br />
+<br />
+ 
+    @if (ViewData["msgStatus"] == null)
+     { 
+   @Html.Partial("BaseCategory1"); 
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+   
+  
+
+
+

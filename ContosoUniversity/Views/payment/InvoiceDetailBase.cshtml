@@ -1,0 +1,81 @@
+﻿@model ContosoUniversity.Models.tb_InvoiceDetail
+
+
+
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Description
+                        <br />
+            @Html.EditorFor(model => model.Description)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.Description) </div>
+
+        </div>
+    </div>
+<div class="row">
+   <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            Unit
+                        <br />
+            @Html.TextBoxFor(model => model.Unit)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.Unit) </div>
+
+
+        </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            Fee $
+                        <br />
+            @Html.EditorFor(model => model.Amount)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.Amount) </div>
+
+        </div>
+   
+</div>
+<br />
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+                     
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit" formnovalidate name="btnSubmit" style="width: 120px;">
+                
+                   
+        }
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

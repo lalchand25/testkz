@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+
+    Layout = "~/views/shared/adminpopup.cshtml";
+}
+@using OLProject.Models;
+
+
+<h2>Create</h2>
+
+
+
+
+@using (Html.BeginForm("Create", "uploadImages", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+	<input type="file" id="fileToUpload" name="files" multiple />
+	<br />
+    <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+	
+}
+
+@{
+    kzonlineEntities db = new kzonlineEntities();
+    var tb = from m in db.tb_ImagesUploaded select m;
+	
+		<br />
+	
+	<div class="imgdiv">
+		
+	       <ul>
+
+	   
+			     @Html.Raw(ViewBag.strTable)
+
+  
+ 
+      </ul>
+</div>
+}

@@ -1,0 +1,21 @@
+﻿@model OLProject.Models.tb_Question
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+@Session["projectmetatags"]
+
+<h2>&nbsp;</h2>
+
+
+@if (ViewData["msgStatus"] == null)
+{
+    using (Html.BeginForm("create", "Question", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("BaseSubject");
+    }
+}
+else
+{
+    <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+}
+
+

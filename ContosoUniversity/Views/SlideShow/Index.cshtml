@@ -1,0 +1,72 @@
+﻿@using OLProject.Models;
+  @{ Layout = "~/Views/Shared/adminpopup.cshtml"; }
+
+@Session["projectmetatags"]
+
+
+
+<script type="text/javascript">
+    function OpenPopup1(url, windoname) {
+        window.open(url, windoname, 'target=blank,width=820,height=450,top=250,screenY=250,left=350,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+    }
+</script>
+<script type="text/javascript">
+    function MyFunction() {
+        destElement = document.getElementById("tts");
+        document.getElementById("tasklistResult1").innerHTML = "<audio autoplay='true' width='100px' controls><source src='http://tts-api.com/tts.mp3?q=" + destElement.value + "'  type='audio/mpeg'></audio><a href='#' onclick='MyFunction1();return false;'><img src='../../siteimages/HideAudio.png' width='22px' height='22px' /></a>";;
+        document.getElementById("tasklistResult1").style.display = 'block'
+    }
+
+    function MyFunction1() {
+        destElement = document.getElementById("tts");
+        document.getElementById("tasklistResult1").style.display = 'none'
+    }
+</script>
+
+<div class="Courses">
+    <h2>@Html.Raw(ViewData["classname"]) / @Html.Raw(ViewData["uname"]) / @Html.Raw(ViewData["LessionName"])</h2>
+    <div class="topdiv">
+        <div class="bred">@Session["ModuleName0"]
+
+        </div>
+        <div class="buttons">
+            @Html.Raw(ViewData["pageLinks"])
+            <a style='float: right;' class='btn-grey' href='javascript:this.close()' />
+            <img width='60px' height='60px' src='../../uploads/t2kefek3_Quit.png' /><br />
+            Quit</a>
+                @Html.Raw(ViewData["SpeechButton"])
+        </div>
+        <br />
+        <div id="tasklistResult1" title="Inner Container" style="margin: 10px 0 0 0;">
+        </div>
+        <div class="clr"></div>
+    </div>
+    <div class="middiv1">
+
+        <textarea rows="4" cols="50" id="tts" name="tts" style="display: none;">
+ @Html.Raw(ViewData["lessonSpeech"])
+</textarea>
+
+        @Html.Raw(ViewData["slidedata"])
+        <br />
+        @Html.Raw(ViewData["SlideDescription"])
+        <br />
+        @Html.Raw(ViewData["startbutton"])
+        <div class="clr"></div>
+    </div>
+    <div class="bottomdiv" style="background: #e8424e;">
+
+        @Html.Raw(ViewData["buttons"])
+        <div class="clr"></div>
+    </div>
+
+    @if (ViewData["comments"] != null)
+    { 
+        @Html.Raw(ViewData["comments"])
+    }
+</div>
+
+
+
+
+

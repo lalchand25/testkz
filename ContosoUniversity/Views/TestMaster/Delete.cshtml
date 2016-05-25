@@ -1,0 +1,31 @@
+﻿
+   @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+	@Session["projectmetatags"]
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+ </script>
+  
+ @if (ViewData["msgStatus"] == null)
+     { 
+     
+     <h1>Are you Sure to Delete it??</h1>
+
+   @Html.Partial("BaseTest"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+     
+
+

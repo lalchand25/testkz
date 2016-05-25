@@ -1,0 +1,19 @@
+﻿@model OLProject.Models.tb_Solution
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+		@Session["projectmetatags"]
+
+
+<h2>&nbsp;</h2>
+
+ @if (ViewData["msgStatus"] == null)
+     { 
+   @Html.Partial("BaseSubject"); 
+ }
+     else
+     {
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+  }
+
+

@@ -1,0 +1,18 @@
+﻿@model OLProject.Models.tb_LessionMaster 
+
+
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+	@Session["projectmetatags"]
+
+
+
+  
+@using (Html.BeginForm("edit", "Lessons", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+  
+   @Html.Partial("LessonBase"); 
+ }
+    
+
+

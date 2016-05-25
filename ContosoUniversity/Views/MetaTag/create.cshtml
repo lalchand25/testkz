@@ -1,0 +1,136 @@
+﻿@model OLProject.Models.tb_MetatagMaster
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+@Session["projectmetatags"]
+
+
+<br />
+<br />
+<br />
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true) 
+    <table style="width: 100%;">
+
+        <tr>
+            <td valign="top" style="width: 20%">
+                <div class="editor-label">
+                    Page Name:
+                </div>
+            </td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.PageName, new { style = "width:250px" })
+                    @Html.ValidationMessageFor(model => model.PageName)
+                </div>
+
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">Page Title:</td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Title, new { style = "width:250px" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">Description:</td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Description, new { style = "width:500px" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">Author:</td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Author, new { style = "width:250px" })
+                    @Html.ValidationMessageFor(model => model.Author)
+                </div>
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">Robo Tag:</td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.RobotTag, new { style = "width:250px" })
+                    @Html.ValidationMessageFor(model => model.RobotTag)
+                </div>
+            </td>
+
+        </tr>
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">Keywords:</td>
+            <td valign="top" style="width: 80%">
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Keywords, new { style = "width:500px" })
+                    @Html.ValidationMessageFor(model => model.Keywords)
+                </div>
+            </td>
+
+        </tr>
+
+
+
+
+
+        <tr>
+            <td valign="top" style="width: 20%">&nbsp;</td>
+            <td valign="top" style="width: 80%">
+
+
+                <input type="submit" value="Create" /></td>
+
+        </tr>
+
+
+
+
+
+    </table>
+           
+            
+            
+           
+            
+           
+            
+
+}
+
+
+
+

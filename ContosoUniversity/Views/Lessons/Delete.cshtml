@@ -1,0 +1,31 @@
+﻿@model OLProject.Models.tb_LessionMaster
+
+
+
+
+@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+@*@Session["projectmetatags"]*@
+
+
+
+
+
+@if (ViewData["msgStatus"] == null)
+{
+
+
+    <h2>Are you sure you want to delete this?</h2>
+    using (Html.BeginForm("delete", "Lessons", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {   
+    @Html.Partial("LessonBase");
+    }
+}
+else
+{
+
+    <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+}
+
+

@@ -1,0 +1,136 @@
+﻿@model OLProject.Models.tb_QuizDetail 
+  
+   
+  
+
+ <fieldset>
+<form   method="post"  runat="server" > 
+  @using (Html.BeginForm())
+       {
+        @Html.ValidationSummary(true)
+    
+    <table style="width: 100%;" >
+        <tr>
+            <td width="100%"  valign="top">
+            
+               @Html.TextAreaFor(model => model.Decription, new { Style = "Width:100%" })
+                @Html.ValidationMessageFor(model => model.Decription)
+            </td>
+             </tr>
+<tr>
+            <td>
+       
+                <table style="width:50%;" >
+                    <tr>
+                        <td width="15%">
+                            <b>Select&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></td>
+                        <td width="50%">
+                             <b>Answers</b></td>
+                     
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            @Html.CheckBox("Check1") 
+                @Html.ValidationMessageFor(model => model.Check1) </td>
+                        <td>
+                             @Html.TextBoxFor(model => model.Ans1, new  { style="width:450px" })
+                @Html.ValidationMessageFor(model => model.Ans1) </td>
+                   
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                             @Html.CheckBox("Check2")</td>
+                                   <td>
+                             @Html.TextBoxFor(model => model.Ans2, new  { style="width:450px" })
+                @Html.ValidationMessageFor(model => model.Ans2) </td>
+                      
+                       
+                    </tr>
+             <tr>
+                        <td>
+                             @Html.CheckBox("Check3")
+                @Html.ValidationMessageFor(model => model.Check3) </td>
+                                               <td>
+                             @Html.TextBoxFor(model => model.Ans3, new  { style="width:450px" })
+                @Html.ValidationMessageFor(model => model.Ans3) </td>
+                     
+                       </tr>
+                    
+                    <tr>
+                        <td>
+                             @Html.CheckBox("Check4")
+                @Html.ValidationMessageFor(model => model.Check4) </td>
+                                                <td>
+                             @Html.TextBoxFor(model => model.Ans4, new  { style="width:450px" })
+                @Html.ValidationMessageFor(model => model.Ans4) </td>
+                     
+                       
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <strong>Points:</strong></td>
+                        <td>
+                             @Html.TextBoxFor(model => model.PointValue, new { style = "width:50px" })
+                @Html.ValidationMessageFor(model => model.PointValue) </td> 
+                        
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <strong>No of Tries</strong></td>
+                        <td>
+                           @Html.TextBoxFor(model => model.NoTries, new { style = "width:50px" })
+                @Html.ValidationMessageFor(model => model.NoTries) </td> 
+                        
+                    </tr>
+                 
+
+                                     <tr>
+                        <td>
+                            <strong>Show In Exam:</strong></td>
+                        <td>
+                           @Html.CheckBox("ShowInExam")
+                 </td> 
+                        
+                    </tr>
+
+        <tr>
+         <td colspan="3">
+            @if (Convert.ToInt32( ViewData["buttonname"]) == 1)
+              { 
+              <input type="image" src="../../siteimages/submit.png" /><br />
+               }
+             @if (Convert.ToInt32( ViewData["buttonname"]) == 2)
+              { 
+              <input type="image" src="../../siteimages/Update.png" /><br />
+               }
+            @if (Convert.ToInt32( ViewData["buttonname"]) == 3)
+              { 
+               <input type="image" src="../../siteimages/Delete.png" /><br />
+               }
+              
+
+          
+   @Html.Raw(ViewData["errorMsg"] )
+        &nbsp;</td>
+    </tr>         
+                   
+             
+                </table>
+       
+            </td>
+            
+        </tr>
+    
+    </table>
+
+
+    }
+
+
+    </form>
+  </fieldset>

@@ -1,0 +1,22 @@
+﻿@model OLProject.Models.tb_ThemeContent
+
+
+	@Session["projectmetatags"]
+
+
+
+     
+
+  @if (ViewData["msgStatus"] == null)
+     { 
+       <h3>Are you sure you want to delete this?</h3>
+   @Html.Partial("BaseTheme"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+
+

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<OLProject.Models.tb_HeaderMaster>
+@using OLProject.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/adminsecurity.cshtml";
+}
+
+
+	@Session["projectmetatags"]
+
+
+
+    <h2>Header Information</h2>
+    
+  <table width="100%">
+  <tr>
+    <td width="92%">&nbsp;</td>
+    <td width="8%"><div align="center"><a href="javascript:OpenPopup('/HeaderInfo/create/');" id='A1' runat='server' ><img src="@Url.Content("~/siteImages/create.png")" border="0" alt="edit" style="width: 50px;height: 50px;" /></a></div></td>
+  </tr>
+  <tr>
+    <td width="92%">&nbsp;</td>
+    <td width="8%"><div align="center">Create</div></td>
+  </tr>
+</table>
+
+ <table id="resultForm:result_table" class="result_table2" width="100%">
+     
+    @Html.Raw(clsCommon.getHeader(48)) 
+    @Html.Raw(ViewData["data"]) 
+     
+    </table>

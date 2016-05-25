@@ -1,0 +1,68 @@
+﻿@model ContosoUniversity.Models.tb_InvoiceDetail 
+
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+
+     
+         <tr> <td>   @Html.EditorFor(model => model.ProgrameCode)       </td> <td> Details </td> <td> Fee Unit </td><td> Total </td>                </tr>
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+            @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+            {
+                <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">@*
+            
+              <button class="btn btn-success" onclick="OpenPopupCenter('/application/edit/1', 'Edit!?', 1300, 750);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </button>*@
+               
+            }
+
+            @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+            {
+                <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+            }
+            @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+            {
+                <input class="btn btn-success" formnovalidate value="Delete" type="submit" name="btnSubmit" style="width: 120px;">
+                
+                   
+            }
+            <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+
+            @*  <button  type='submit' class="minus"  name='buttonName' value="@prodDecrease" >- </button>*@
+
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

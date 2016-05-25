@@ -1,0 +1,117 @@
+﻿@model  OLProject.Models.tb_UserMaster
+
+@{ Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<!--CONTANT START-->
+<!--BANNER START-->
+    <div class="page-heading">
+     <div class="container">
+            <h2> </h2>
+            <p></p>
+        </div>
+    </div>
+    <!--BANNER END-->
+
+<div class="contant">
+    <div class="container">
+      
+        <div class="row">
+                <div class="span3"> &nbsp;
+                    </div>
+            <div class="span6">
+                <div class="form-box">
+                     <p style="margin: 18px 0 0 0px; text-align:center;"> <img src="~/Images/step-1.png" /> </p>  
+               
+
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-body">
+                            <fieldset>
+                                <legend>First time here? Sign up now!</legend>
+
+
+
+                                @Html.ValidationSummary(true)
+                                @Html.Hidden("regtype", ViewData["regtype"])
+                                @Html.Raw(ViewData["error"])
+                                @Html.Raw(ViewData["usermaincatid"])
+
+
+                                <div class="row-fluid">
+
+
+                                    <div class="span6">
+                                        <label>First Name</label>
+                                        @Html.TextBoxFor(model => model.FirstName, new { @class = "input-block-level" })
+                                           <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+                                    </div>
+                                    <div class="span6">
+                                        <label>Last Name</label>
+                                        @Html.TextBoxFor(model => model.LastName, new { @class = "input-block-level" })
+                                            <div class="msgValidation">@Html.ValidationMessageFor(model => model.LastName) </div>
+
+                                    </div>
+                                </div>
+
+                                <label>Email Address</label>
+                                @Html.TextBoxFor(model => model.EmailID, new { @class = "input-block-level" })
+                                 <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmailID) </div>
+                               
+
+                                <label>Password</label>
+                                @Html.PasswordFor(model => model.UserPassword, new { @class = "input-block-level" })
+                                <div class="msgValidation">@Html.ValidationMessageFor(model => model.UserPassword) </div>
+
+                                <label>Confirm Password</label>
+                                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "input-block-level" })
+                                <div class="msgValidation">@Html.ValidationMessageFor(model => model.ConfirmPassword) </div>
+
+                                @* <input type="password" placeholder="Enter Password" class="input-block-level">*@
+                                <input type="submit" value="Sign Up" class="btn-style" />@* 
+                                    <a href="student-login.html">
+                                    
+                                    </a>*@
+
+                            </fieldset>
+                           
+                             @*    @Html.ValidationSummary()*@
+
+                            
+                        </div>
+                    }
+
+                    @*   <div class="row-fluid">
+
+
+                                            <div class="span6">
+                                                <label>First Name</label>
+                                                
+                                                <input type="text" placeholder="First Name" class="input-block-level">
+                                            </div>
+                                            <div class="span6">
+                                                <label>Last Name</label>
+                                                <input type="text" placeholder="Last Name" class="input-block-level">
+                                            </div>
+                                        </div>
+
+                                        <label>Email Address</label>
+                                        <input type="text" placeholder="Enter your E-mail ID" class="input-block-level">
+                                        <label>Password</label>
+                                        <input type="password" placeholder="Enter Password" class="input-block-level">
+                                        <a href="student-login.html">
+                                            <div class="btn-style">Sign Up</div>
+                                        </a>
+                                 *@
+
+                    <div class="footer">
+                        <p>By Registering, You Accept Terms &amp; Conditions</p>
+                    </div>
+
+                </div>
+            </div>
+                  <div class="span3"> &nbsp; </div>
+        </div>
+    </div>
+ <!--CONTANT END-->

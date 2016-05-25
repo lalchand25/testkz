@@ -1,0 +1,191 @@
+﻿@model ContosoUniversity.Models.tb_classMaster
+
+<script>
+    $(document).ready(function () {
+        $("#StartDate").datepicker();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#EndDate").datepicker();
+    });
+</script>
+
+
+
+<script type="text/javascript">
+
+    function UpdateCatList() {
+
+        destElement = document.getElementById("ProgramMasterID");
+        id = destElement.value
+
+        var url = '/classMaster/programList/' + id;
+
+        $("#tasklistResult").load(url);
+    }
+
+
+</script>
+
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Program 
+                        <br />
+
+
+    
+
+            @Html.DropDownList("ProgramMasterID", (SelectList)ViewData["dataPrgoram"], "Select", new { onchange = "UpdateCatList();" })
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgramMasterID) </div>
+
+
+
+            <div id="tasklistResult" style="width: 100%;">
+
+                @Html.Partial("programList")
+
+
+            </div>
+
+
+            @*  @Html.TextBoxFor(m => m.ClassName, new { @autofocus = "autofocus" })*@
+
+
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Start Date
+                        <br />
+
+
+
+
+            @Html.TextBoxFor(m => m.StartDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.StartDate) </div>
+
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            End  Date
+                        <br />
+
+
+            @Html.TextBoxFor(m => m.EndDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.EndDate) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Class Time
+            <br />
+            @Html.DropDownList("ClassTime", (SelectList)ViewData["clsData"], "Select")
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Instructor 
+                        <br />
+
+
+            @Html.DropDownList("InstructorID", (SelectList)ViewData["istrList"], "Select")
+
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.InstructorID) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Max. Class Size 
+                        <br />
+
+
+            @Html.TextBoxFor(m => m.ClassSize)
+
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ClassSize) </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <br />
+
+    
+        
+
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+
+     
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">@*
+            
+              <button class="btn btn-success" onclick="OpenPopupCenter('/application/edit/1', 'Edit!?', 1300, 750);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </button>*@
+               
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit"  formnovalidate name="btnSubmit" style="width: 120px;">
+                
+                   
+        }
+          <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

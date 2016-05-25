@@ -1,0 +1,33 @@
+﻿@model ContosoUniversity.Models.tb_ReceiptPayment
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        $("#ReceiptDate").datepicker();
+    });
+</script>
+<h2>Delete Receipt</h2>
+
+<h4>Are you sure you want to delete this?</h4>
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+@using (Html.BeginForm("Delete", "receiptpayment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    @Html.Partial("Base")
+    
+}
+
+

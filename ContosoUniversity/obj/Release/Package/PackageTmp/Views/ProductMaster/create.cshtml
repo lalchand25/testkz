@@ -1,0 +1,31 @@
+﻿@model OLProject.Models.tb_ProductMaster
+
+     @{ Layout = "~/Views/Shared/adminPopup.cshtml";
+      }
+	@Session["projectmetatags"]
+
+
+<h2>Product Master </h2>
+<script>
+window.onunload = function () {
+            window.opener.location.href = window.opener.location;
+}
+
+ </script>
+  
+  @if (ViewData["msgStatus"] == null)
+     { 
+    
+   @Html.Partial("BaseProduct"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+   
+  
+
+
+

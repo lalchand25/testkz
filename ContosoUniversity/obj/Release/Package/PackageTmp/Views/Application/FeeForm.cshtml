@@ -1,0 +1,254 @@
+﻿@model ContosoUniversity.Models.tb_FeeForm
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Fee Form </h2>
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#StartDate").datepicker();
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#EndDate").datepicker();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#DateofBirth").datepicker();
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#LastDateAttended").datepicker();
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+    function UpdateStateListCadd() {
+
+        destElement = document.getElementById("CurrentCountryID");
+        id = destElement.value
+
+        var url = '/application/statelist/' + id;
+        $("#tasklistResult1").load(url);
+    }
+
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCityCadd() {
+
+        destElement = document.getElementById("CurrentStateID");
+        id = destElement.value
+
+        var url = '/application/citylist/' + id;
+        $("#cityDiv1").load(url);
+    }
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+    function UpdateStateListPadd() {
+        //  alert("hell")
+        destElement = document.getElementById("PermanentCountryID");
+        id = destElement.value
+
+        var url = '/application/pstatelist/' + id;
+        $("#tasklistResult2").load(url);
+    }
+
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCityPadd() {
+        //  alert("hell")
+        destElement = document.getElementById("PermanentStateID");
+        id = destElement.value
+
+        var url = '/application/pcitylist/' + id;
+        $("#cityDiv2").load(url);
+    }
+
+
+</script>
+
+<script type="text/javascript">
+
+    function UpdateStateListEadd() {
+
+        destElement = document.getElementById("EmergencyCountryID");
+        id = destElement.value
+
+        var url = '/application/estatelist/' + id;
+        $("#tasklistResult3").load(url);
+    }
+
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCityEadd() {
+        //alert("hell")
+        destElement = document.getElementById("EmergencyStateID");
+        id = destElement.value
+
+        var url = '/application/ecitylist/' + id;
+        $("#cityDiv3").load(url);
+    }
+
+
+</script>
+
+
+@*@if (ViewData["msgStatus"] == null)
+{ 
+    @Html.Partial("Base")
+   
+}
+else
+{
+    <h1>@ViewData["errorMsg"]</h1>
+}
+*@
+
+
+
+@using (Html.BeginForm("FeeForm", "Application", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    
+  
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @Html.RadioButtonFor(model => model.ModeOfPayment, "Cheque", true) <b> Cheque </b>
+    	 Please make cheques payable to: <b>Cornerstone International Education Inc. </b> 
+	A $100 fee is charged for non-sufficient funds. <br /> <br /><br />
+
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+           
+
+            @Html.RadioButtonFor(model => model.ModeOfPayment, "Credit Card Type:", false) <b> Credit Card Type: </b>
+                       
+     
+
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            @Html.RadioButtonFor(model => model.CardType, "Visa", true) Visa 
+            @Html.RadioButtonFor(model => model.CardType, "Mastercard", false) Mastercard
+        </div>
+        </div>
+           <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            CardNumber  
+            <br />
+            @Html.EditorFor(model => model.CardNumber)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.CardNumber) </div>
+
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            Expiry Date  
+            <br />
+            @Html.EditorFor(model => model.ExpireDate)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ExpireDate) </div>
+
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            Card Holders Name  
+            <br />
+            @Html.EditorFor(model => model.CardHoldersName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.CardHoldersName) </div>
+
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            CVV Number
+            <br />
+            @Html.EditorFor(model => model.CVVNumber)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.CVVNumber) </div>
+
+
+        </div>
+    </div>
+        <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <br />
+            <br />
+           @Html.RadioButtonFor(model => model.ModeOfPayment, "Wire Transfer Bank Information", false) <b> Wire Transfer Bank Information</b>
+            <br />
+    
+&nbsp;&nbsp;&nbsp;&nbsp;Account Name: CORNERSTONE INTERNATIONAL EDUCATION INC.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Bank name: TD Canada Trust<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Bank Institution: 004<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Branch Transit: 9713<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Branch Address: 2100-3779 Sexsmith Road, Richmond BC, V5X3Z9<br />
+&nbsp;&nbsp;&nbsp;&nbsp;SWIFT: TDOMCATTTOR<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Account Number: 9713-5224018<br />
+            <br />
+            <br />
+            *** Student must pay extra $30 wire transfer bank fee ***
+            </div>
+            </div>
+    
+       <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

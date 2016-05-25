@@ -1,0 +1,32 @@
+﻿@model ContosoUniversity.Models.tb_sessionMaster
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Edit Session</h2>
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+   
+    @Html.Partial("Base")
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

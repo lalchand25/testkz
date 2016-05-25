@@ -1,0 +1,10 @@
+﻿@model OLProject.Models.tb_CityMaster
+   @{ Layout = "~/Views/Shared/adminpopup.cshtml"; }
+
+    @Session["projectmetatags"]
+
+
+    <h2> Create District </h2>
+ @Html.Raw(ViewData["error"])
+    @Html.Partial("comState");  
+

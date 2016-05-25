@@ -1,0 +1,82 @@
+﻿@model IEnumerable<OLProject.Models.tb_CountryMaster>
+
+@{
+    Layout = "~/Views/Shared/adminsecurity.cshtml";
+    }
+@Session["projectmetatags"]
+
+
+
+
+<h2>@Session["menutaskname"]</h2>
+
+
+<table border="0" style="width: 100%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="4" align="right"><a href="javascript:OpenPopup('/country/create/');" id='contract' runat='server'>
+            <img src="@Url.Content("~/siteImages/create.png")" border="0" alt="edit" style="width: 74px;height: 28px;" /></a></td>
+    </tr>
+    <tr>
+        <td colspan="4" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>Icon    </td>
+        <td>Name </td>
+
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+
+    <tr>
+        <td colspan="4" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" />
+        </td>
+    </tr>
+
+
+
+
+    @{foreach (var item in Model)
+      { 
+    
+        <tr>
+
+            <td align="center" width="5%">
+                <img src="@Url.Content("~/Images/object_02.ico")" border="0" alt="edit" style="width: 22px;
+                    height: 22px;" />
+            </td>
+
+            <td>
+                @item.CountryName
+            </td>
+
+
+            <td align="center" width="5%">
+                <a href="@Url.Action("Edit", "Country", new { id = item.CountryID })">
+                    <img src="@Url.Content("~/SiteImages/edit.png")" border="0" alt="edit" style="width: 74px;    height: 28x;" /></a>
+            </td>
+            <td align="center" width="5%">
+                <a href="@Url.Action("Delete", "Country", new { id = item.CountryID })">
+                    <img src="@Url.Content("~/SiteImages/delete.png") " border="0" alt="Delete" style="width: 74px;            height: 28px;" /></a>
+            </td>
+
+
+        </tr>
+    
+      } 
+     
+     
+    }
+    <tr>
+        <td colspan="4" style="border-bottom: 1px solid #c2c2c2;">
+            <img src="../../Images/clr.gif" alt="" width="1" height="15" />
+        </td>
+    </tr>
+</table>
+
+
+
+

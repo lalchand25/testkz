@@ -1,0 +1,34 @@
+﻿@model IEnumerable<OLProject.Models.tb_Contactus>
+  @{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+@Session["projectmetatags"]
+
+
+
+<h2>List Of Have A Questions</h2>
+
+<p>
+</p>
+
+<table id="resultForm:result_table" class="table table-striped table-bordered table-hover">
+
+<thead>
+
+    <tr>
+		<th>Name</th>
+
+        <th>Email ID</th>
+        <th> Contact No  </th>
+        <th>Questions    </th>
+      
+    </tr>
+	</thead>
+	<tbody>
+    
+    @Html.Raw(ViewData["data"])
+    </tbody>
+</table>
+
+
+
+

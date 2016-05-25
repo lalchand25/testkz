@@ -1,0 +1,235 @@
+﻿@model ContosoUniversity.Models.tb_programme
+
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        var nextDayDate = new Date();
+        nextDayDate.setDate(nextDayDate.getDate() + 1);
+        $("#StartDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            startDate: nextDayDate,
+            minDate: nextDayDate
+        });
+    });
+
+    $(function () {
+        var nextDayDate = new Date();
+        nextDayDate.setDate(nextDayDate.getDate() + 0);
+        $("#EndDate").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            startDate: nextDayDate,
+            minDate: nextDayDate
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateCatList() {
+
+        destElement = document.getElementById("CountryID");
+        id = destElement.value
+
+        var url = '/agent/statelist/' + id;
+        $("#tasklistResult").load(url);
+    }
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function UpdateDistList() {
+        //  alert("hell")
+        destElement = document.getElementById("StateID");
+        id = destElement.value
+
+        var url = '/agent/citylist/' + id;
+        $("#cityDiv").load(url);
+    }
+
+
+</script>
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+ 
+    <div class="row">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Program Name
+                        <br />
+                  @Html.DropDownList("ProgrameMasterID", (SelectList)ViewData["dataPrgoram"], "Select")
+    
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgrameMasterID) </div>
+
+        </div>
+      
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Course Detail
+                        <br />
+            @Html.EditorFor(model => model.ProgrameDetailName)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgrameDetailName) </div>
+
+        </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Course Code
+                        <br />
+            @Html.EditorFor(model => model.ProgrameCode)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgrameCode) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Cost $
+                        <br />
+            @Html.EditorFor(model => model.ProgrameCost)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ProgrameCost) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Computer Or Tablet $
+                        <br />
+            @Html.EditorFor(model => model.ComputerOrTablet)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.ComputerOrTablet) </div>
+
+        </div>
+
+
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Lab Fee $
+                        <br />
+            @Html.EditorFor(model => model.LabFee)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.LabFee) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Registration Fee Domestic $
+                        <br />
+            @Html.EditorFor(model => model.RegistrationFeeDomestic)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.RegistrationFeeDomestic) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Registration Fee International $
+                        <br />
+            @Html.EditorFor(model => model.RegistrationFeeInternational)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.RegistrationFeeInternational) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Supplies Material $
+                        <br />
+            @Html.EditorFor(model => model.SuppliesMaterial)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.SuppliesMaterial) </div>
+
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            Text Books Charges $
+                        <br />
+            @Html.EditorFor(model => model.TextbooksCharges)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.TextbooksCharges) </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            TuitionsFee $
+                        <br />
+            @Html.EditorFor(model => model.TuitionsFee)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.TuitionsFee) </div>
+
+        </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+           Uniforms $
+                        <br />
+            @Html.EditorFor(model => model.Uniforms)
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.Uniforms) </div>
+
+        </div>
+    </div>
+
+
+
+    <br />
+
+      
+    
+        
+
+
+
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="height: 50px;">
+            <label for="name1">&nbsp;</label>
+
+
+
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">@*
+            
+              <button class="btn btn-success" onclick="OpenPopupCenter('/application/edit/1', 'Edit!?', 1300, 750);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </button>*@
+               
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" formnovalidate  value="Delete" type="submit" name="btnSubmit" style="width: 120px;">
+                
+                   
+        }
+              <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+        </div>
+    </div>
+          
+
+                     
+                        
+                         
+                        
+}
+
+
+
+
+
+
+
+
+
+
+
+

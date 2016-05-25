@@ -1,0 +1,59 @@
+﻿@model OLProject.Models.tb_UserMaster
+
+   @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+
+
+
+
+<h2>Teacher List</h2>
+  <table width="100%">
+    <tr>
+              <td colspan="8" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" widtd="1" height="15" /></td>
+            </tr>
+
+        <tr>
+            
+            <td>
+                <b>Email ID
+            </b>
+            </td>
+            <td>
+                <b>User Name
+            </b>
+            </td>
+         
+            
+            <td>
+                <b>Display Name
+            </b>
+            </td>
+            <td>
+                <b>Mobile No
+            </b>
+            </td>
+            <td>
+                <b>Address
+            </b>
+            </td>
+            <td>
+                <b>Edit
+            </b>
+            </td>
+        
+                <td>
+                <b>Send Email
+            </b>
+            </td>
+        
+           
+        </tr>
+        <tr>
+              <td colspan="8" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" widtd="1" height="15" /></td>
+            </tr>
+    
+   @Html.Raw(ViewData["userlist"] )
+    </table>
+
+
+

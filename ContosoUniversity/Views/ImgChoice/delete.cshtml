@@ -1,0 +1,34 @@
+﻿@model OLProject.Models.tb_QuizDetail
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+
+
+@Session["projectmetatags"]
+
+
+
+<script>
+    window.onunload = function () {
+        window.opener.location.href = window.opener.location;
+    }
+
+</script>
+
+
+
+@if (ViewData["msgStatus"] == null)
+{ 
+    <h2>Are you sure to delete this ?</h2>
+    using (Html.BeginForm("delete", "imgChoice", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("ImgChoice");
+    }
+}
+else
+{
+
+    <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+}
+
+
+

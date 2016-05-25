@@ -1,0 +1,586 @@
+﻿@model ContosoUniversity.Models.tb_ApplicationForm
+
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Program Applying for:  
+            @Html.DropDownList("ProgramID", (SelectList)ViewData["listProgram"], "Select")
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"></div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Nationality
+        <br />
+
+        @Html.EditorFor(model => model.Nationality)
+
+        <div class="msgValidation">
+
+            @Html.ValidationMessageFor(model => model.Nationality)
+
+        </div>
+
+
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12"></div>
+
+</div>
+
+
+<div class="row">
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Start Date
+                        <br />
+
+        @Html.TextBoxFor(m => m.StartDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.StartDate) </div>
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        End Date
+                        <br />
+        @Html.TextBoxFor(m => m.EndDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EndDate) </div>
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Duration Months:
+                        <br />
+        @Html.EditorFor(model => model.Duration)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.Duration) </div>
+
+    </div>
+</div>
+
+<div class="row">
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        First Name
+                        <br />
+        @Html.EditorFor(model => model.FirstName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.FirstName) </div>
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        Middle Name
+                        <br />
+        @Html.EditorFor(model => model.MiddleName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.MiddleName) </div>
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        Surname
+                        <br />
+        @Html.EditorFor(model => model.LastName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.LastName) </div>
+
+    </div>
+
+
+
+
+    </div>
+<div class="row">
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Preferred Name(if applicable)      
+            <br />
+        @Html.EditorFor(model => model.EnglishName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishName) </div>
+
+
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+        Date of Birth:   
+            <br />
+
+        @Html.TextBoxFor(m => m.DateofBirth, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+
+        @*  @Html.EditorFor(model => model.DateofBirth, new { htmlAttributes = new { @class = "form-control" } })*@
+
+        @* @Html.TextBox("DateofBirth")*@
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.DateofBirth) </div>
+
+
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+        Gender:   
+            <br />
+        @Html.RadioButtonFor(model => model.Gender, "Male", true) Male 
+            @Html.RadioButtonFor(model => model.Gender, "Female", false) Female
+                       
+            <div class="msgValidation">@Html.ValidationMessageFor(model => model.Gender) </div>
+        
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Age  
+            <br />
+        @Html.EditorFor(model => model.Age)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.Age) </div>
+
+
+    </div>
+        </div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        E-Mail  
+            <br />
+        @Html.EditorFor(model => model.EmailID)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmailID) </div>
+
+
+    </div>
+
+
+</div>
+<div class="row">
+</div>
+<hr style="border-top: solid 1px; margin: 8px 0; color: #293a88;" />
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <b>Current Address: (In Canada)  </b>
+        <br />
+        @Html.EditorFor(model => model.CurrentAddress)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.CurrentAddress) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Country
+            <br />
+        @Html.DropDownList("CurrentCountryID", (SelectList)ViewData["ddCountryList"], "Select", new { onchange = "UpdateStateListCadd();" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.CurrentCountryID) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div id="tasklistResult1" style="width: 100%;">
+
+            @Html.Partial("statelist")
+
+        </div>
+
+        @Html.ValidationMessageFor(model => model.CurrentStateID)
+
+
+    </div>
+
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        City Name
+            <br />
+        @Html.EditorFor(model => model.CurrentCityName)
+        @*     <div id="cityDiv1" style="width: 100%;">
+
+
+                @Html.Partial("citylist")
+
+
+
+
+            </div>*@
+        <div class="msgValidation">
+            @Html.ValidationMessageFor(model => model.CurrentCityName)
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Postal Code
+            <br />
+        @Html.EditorFor(model => model.CurrentPostalCode)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.CurrentPostalCode) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Telephone No
+            <br />
+        @Html.EditorFor(model => model.CurrentTelephone)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.CurrentTelephone) </div>
+
+
+    </div>
+
+</div>
+
+<hr style="border-top: solid 1px; margin: 8px 0; color: #293a88;" />
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <b>Permanent Address: (Home Country) </b>
+        <br />
+        @Html.EditorFor(model => model.PermanentAddress)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.PermanentAddress) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Country
+            <br />
+
+        @Html.DropDownList("PermanentCountryID", (SelectList)ViewData["ddCountryList"], "Select", new { onchange = "UpdateStateListPadd();" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.PermanentCountryID) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div id="tasklistResult2" style="width: 100%;">
+
+            @Html.Partial("pstatelist")
+
+        </div>
+
+        @Html.ValidationMessageFor(model => model.PermanentStateID)
+
+
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        @*   <div id="cityDiv2" style="width: 100%;">
+
+
+                @Html.Partial("pcitylist")
+
+
+
+
+            </div>*@
+
+        City Name
+            <br />
+        @Html.EditorFor(model => model.PermanentCityName)
+
+        <div class="msgValidation">
+            @Html.ValidationMessageFor(model => model.PermanentCityName)
+        </div>
+    </div>
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Postal Code
+            <br />
+        @Html.EditorFor(model => model.PostalCode)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.PostalCode) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Telephone No
+            <br />
+        @Html.EditorFor(model => model.PermanentTelephone)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.PermanentTelephone) </div>
+
+
+    </div>
+
+</div>
+
+
+<hr style="border-top: solid 1px; margin: 8px 0; color: #293a88;" />
+
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <b>Emergency Contact: (Home Country)   </b>
+        <br />
+        @Html.EditorFor(model => model.EmergencyContactName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyContactName) </div>
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Country
+            <br />
+        @Html.DropDownList("EmergencyCountryID", (SelectList)ViewData["ddCountryList"], "Select", new { onchange = "UpdateStateListEadd();" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyCountryID) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div id="tasklistResult3" style="width: 100%;">
+
+            @Html.Partial("estatelist")
+
+
+        </div>
+
+        @Html.ValidationMessageFor(model => model.EmergencyStateID)
+
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        City Name
+            <br />
+        @Html.EditorFor(model => model.EmergencyCityName)
+
+
+        @*        <div id="cityDiv3" style="width: 100%;">
+
+
+                @Html.Partial("ecitylist")
+
+
+
+
+            </div>*@
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyCityName) </div>
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Postal Code
+            <br />
+        @Html.EditorFor(model => model.EmergencyPostal)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyPostal) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Telephone No
+            <br />
+        @Html.EditorFor(model => model.EmergencyTelephoneNo)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyTelephoneNo) </div>
+
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Relationship to Student
+            <br />
+        @Html.EditorFor(model => model.EmergencyRelationtoStudent)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyRelationtoStudent) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        E-Mail
+            <br />
+        @Html.EditorFor(model => model.EmergencyEmailid)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyEmailid) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Fax
+            <br />
+        @Html.EditorFor(model => model.EmergencyFax)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EmergencyFax) </div>
+
+
+    </div>
+</div>
+
+
+<hr style="border-top: solid 1px; margin: 8px 0; color: #293a88;" />
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="height: 20px;">
+        <b>EDUCATION BACKGROUND  </b>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Last School Attended: Name of School 
+            <br />
+
+        @Html.EditorFor(model => model.LastSchoolAttendedName)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.LastSchoolAttendedName) </div>
+
+
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        City, Country
+            <br />
+        @Html.EditorFor(model => model.SchoolCity)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.SchoolCity) </div>
+
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Last Date Attended
+            <br />
+        @Html.TextBoxFor(m => m.LastDateAttended, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.LastDateAttended) </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <b>Highest Level of Education Attained:  </b>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        English Mark(s) TOEFL   
+            <br />
+
+        @Html.EditorFor(model => model.EnglishMarksTofel)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishMarksTofel) </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        CBT
+            <br />
+        @Html.EditorFor(model => model.EnglishMarksCBT)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishMarksCBT) </div>
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        IBT
+            <br />
+        @Html.EditorFor(model => model.EnglishMarksIBT)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishMarksIBT) </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        IELTS 
+            <br />
+        @Html.EditorFor(model => model.EnglishMarksIELTS)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishMarksIELTS) </div>
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        OTHER(S)  
+            <br />
+        @Html.EditorFor(model => model.EnglishMarksOthers)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.EnglishMarksOthers) </div>
+
+    </div>
+
+
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <b>How did you hear about Cornerstone?  </b>
+
+
+
+
+        @Html.DropDownList("Howdidyouhereaboutcorestone", (SelectList)ViewData["ddAgent2"], "Select")
+
+
+
+    </div>
+</div>
+
+<div>
+    Upload Photo 
+                                    
+                                        <input type="file" id="fileToUpload" name="file" />
+
+
+</div>
+
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+            
+            @*
+            
+              <button class="btn btn-success" onclick="OpenPopupCenter('/application/edit/1', 'Edit!?', 1300, 750);" type="button">
+                            <i class="fa fa-edit"></i>
+                            Edit
+                        </button>*@
+               
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+            
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit" name="btnSubmit" formnovalidate  style="width: 120px;">
+                
+                   
+        }
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+
+        <input class="btn btn-danger" value="Cancel"  type="submit" formnovalidate name="btnSubmit"  style="width: 120px;">
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

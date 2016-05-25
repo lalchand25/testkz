@@ -1,0 +1,26 @@
+﻿@model OLProject.Models.tb_UnitMaster
+ @{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+@Session["projectmetatags"]
+
+
+
+
+
+@if (ViewData["msgStatus"] == null)
+{
+<h2>Unit</h2>
+    using (Html.BeginForm("create", "unit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("Base");
+    }
+}
+else
+{
+
+    <h2>@Html.Raw(ViewData["errorMsg"])</h2>
+   
+}
+
+
+

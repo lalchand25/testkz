@@ -1,0 +1,70 @@
+﻿   @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+
+@using OLProject.Models;
+
+	
+
+
+
+     <form method="post" id="form1" action="/TestCreation/CreatePermission">
+     @Html.Raw(ViewData["datalist1"] )
+   
+    <h1><span style="color: #FF0000">@Model.TestHeading </span></h1>
+    <table style="width: 100%;" class='form2'>
+        <tr>
+            <td>
+         
+        <table style="width: 100%;">
+         <tr><td style="width: 20%;"><div class="display-label"><strong>Subject Name:</strong></div></td><td style="width: 80%;"><div class="display-field">@clsCommon.getSubjectName(Convert.ToInt32(Model.SubjectId)) </div></td></tr>
+   @*       <tr><td style="width: 20%;"> <div class="display-label"><strong>Class Name:</strong></div></td><td style="width: 80%;"> <div class="display-field">@clsCommon.getClassName(Convert.ToInt32(Model.ClassId))</div></td></tr>
+     *@ 
+       
+       
+         <tr><td style="width: 20%;"><div class="display-label"><strong>Description:</strong></div></td><td style="width: 80%;"> <div class="display-field">@Html.Raw(Model.TestDesc) </div></td></tr>
+      
+        
+       
+
+        <tr><td style="width: 20%;"><div class="display-label"><strong>Passing Score:</strong></div></td><td style="width: 80%;"> <div class="display-field">@Html.Raw(Model.TestPassingScore) </div></td></tr>
+        <tr><td style="width: 20%;"><div class="display-label"><strong>If Pass:</strong></div></td><td style="width: 80%;"><div class="display-field">@Html.Raw(Model.IfPass) </div></td></tr>
+        <tr><td style="width: 20%;"> <div class="display-label"><strong>If Fail:</strong></div></td><td style="width: 80%;"><div class="display-field">@Html.Raw(Model.IfFail) </div></td></tr>
+      
+       
+        
+        
+        
+        
+        
+         
+                
+        </table>
+         
+       
+ 
+    
+    </td>
+               </tr>
+
+     @*   <tr>
+            <td style="text-decoration: underline"><br />
+                <b>Existing Lessons:</b></td>
+               </tr>
+
+               <tr>
+            <td>
+                 
+               @Html.Raw(ViewData["datalist"]) 
+                 
+               </td>
+          
+        </tr>
+        *@
+     
+        
+    </table>
+  
+  </form>
+ 
+
+

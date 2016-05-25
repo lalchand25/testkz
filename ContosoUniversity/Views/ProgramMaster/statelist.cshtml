@@ -1,0 +1,6 @@
+﻿@model ContosoUniversity.Models.tb_AgentMaster
+State <br />
+  
+    @Html.DropDownList("StateID", (SelectList)ViewData["slist"], "Select", new { onchange = "UpdateDistList();" })
+        
+

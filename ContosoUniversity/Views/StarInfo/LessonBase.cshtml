@@ -1,0 +1,75 @@
+﻿@model OLProject.Models.tb_StarInformation
+
+
+<form method="post" runat="server">
+    <table width="95%" align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+    
+            
+        
+            <tr>
+                <td><b>Star Name</b>
+                </td>
+                <td>@Html.TextBoxFor(model => model.StarName, new { Style = "Width:500px" })
+                    <b>@Html.ValidationMessageFor(model => model.StarName)</b>
+                </td>
+            </tr>
+            
+                
+            
+            <tr>
+                <td><b>Rating </b></td>
+                <td>@Html.TextBoxFor(model => model.StarScore, new { Style = "Width:100px" })
+                    <b>@Html.ValidationMessageFor(model => model.StarScore)</b>
+
+                </td>
+            </tr>
+               
+            
+            <tr>
+                <td><b>Image Path</b></td>
+                <td>@Html.TextBoxFor(model => model.ImagePath, new { Style = "Width:100px" })
+                    <asp:fileupload id="FileUpload0" runat="server" class="multi" accept="png" />
+                    <br />
+                    Formats : png,jpg,gif,jpeg. 
+                Maximum Size : 10kb</td>
+            </tr> 
+            <tr>
+                <td><b>MP3 to Play</b></td>
+                <td>@Html.TextBoxFor(model => model.Mp3Path, new { Style = "Width:100px" })
+                    <asp:fileupload id="FileUpload1" runat="server" class="multi" accept="png" />
+                    <br />
+                    Formats : png,jpg,gif,jpeg. 
+                Maximum Size : 200kb</td>
+            </tr> 
+          
+            <tr>
+                <td></td>
+                <td>
+                    @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+                    { 
+                        <input type="image" src="../../siteimages/submit.png" /><br />
+                    }
+                    @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+                    { 
+                        <input type="image" src="../../siteimages/Update.png" /><br />
+                    }
+                    @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+                    { 
+                        <input type="image" src="../../siteimages/Delete.png" /><br />
+                    }
+
+
+               
+   
+    @Html.Raw(ViewData["errorMsg"]) </td>
+            </tr>
+            
+        }
+    </table>
+
+
+</form>
+</fieldset>

@@ -1,0 +1,62 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/QuizSecurity.Master" Inherits="System.Web.Mvc.ViewPage<OLProject.Models.tb_QuizMaster>" 
+@using OLProject.Models;
+
+	@Session["projectmetatags"]
+
+
+
+
+<form  action="Welcome>
+    <h1 style="color: #FF0000"> Welcome you !!!!!!!!!!!! </h1>
+    <table style="width: 100%;">
+        <tr>
+            <td width="60%" height="300px" valign="top">
+           <table style="width: 100%;" class='form2'>
+        <tr>
+            <td>
+        @ Model.QuizDesc 
+    </td>
+               </tr>
+
+        
+        
+     
+        
+    </table>
+            </td>
+            <td>&nbsp; </td>
+            <td width="40%" valign="top" height="300px">
+                     <table style="width: 100%;" class='form2'>
+        <tr>
+            <td>
+         
+        <table style="width: 100%;">
+        <tr><td style="width: 30%;"><div class="display-label"><strong>Subject Name:</strong></div></td><td style="width: 70%;"><div class="display-field"></div></td></tr>
+        <tr><td style="width: 30%;"> <div class="display-label"><strong>Class Name:</strong></div></td><td style="width: 70%;"> <div class="display-field"></div></td></tr>
+        <tr><td style="width: 30%;"><div class="display-label"><strong>Passing Score:</strong></div></td><td style="width: 70%;"> <div class="display-field"></div></td></tr>
+       <tr><td style="width: 30%;"><div class="display-label"><strong>Total Records:@Html.Raw(ViewData["total"] </strong></div></td><td style="width: 70%;"> <div class="display-field"></div></td></tr>
+        <tr><td style="width: 30%;">&nbsp;</td><td style="width: 70%;" align="right">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /> <br /> 
+            @Html.Raw(ViewData["startbutton"]) </td></tr>
+        </table>
+         
+       
+ 
+    
+    </td>
+               </tr>
+
+      
+       
+        
+     
+        
+    </table>
+            </td>
+            
+        </tr>
+    
+    </table>
+
+    </form>
+

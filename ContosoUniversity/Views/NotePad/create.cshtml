@@ -1,0 +1,20 @@
+﻿@model OLProject.Models.tb_NotePadMaster
+
+<h2>&nbsp;</h2>
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+	@Session["projectmetatags"]
+
+
+
+  @if (ViewData["msgStatus"] == null)
+     { 
+   @Html.Partial("Base"); 
+ 
+ }
+     else
+     {
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+  }
+
+
+

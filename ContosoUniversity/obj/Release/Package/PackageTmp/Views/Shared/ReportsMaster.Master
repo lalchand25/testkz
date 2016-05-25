@@ -1,0 +1,53 @@
+﻿@@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+@using OLProject.Models;
+ 
+
+@@ Register src="AppFooter.ascx" tagname="AppFooter" tagprefix="uc2" 
+
+@@ Register src="AppHeader.ascx" tagname="AppHeader" tagprefix="uc3" 
+
+@@ Register src="CheckUser.ascx" tagname="CheckUser" tagprefix="uc1" 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" /> 
+    <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function OpenPopup(url) {
+            window.open(url, 'Browser', 'width=1160,height=730,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+    </script>
+
+</head>
+
+<body>
+     
+     
+     
+     
+     
+     <uc3:AppHeader ID="AppHeader1" runat="server" />
+      
+        <div id="body-text">
+        <marquee>@Session["marqmessage"]</marquee>  
+         <div class="textBox_fullnew"> 
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+   
+            </asp:ContentPlaceHolder>
+            </div>
+            </div>
+          
+      <uc2:AppFooter ID="AppFooter1" runat="server" />
+ 
+     
+ 
+     <uc1:CheckUser ID="CheckUser1" runat="server" />
+     
+ 
+     
+ 
+</body>
+</html>

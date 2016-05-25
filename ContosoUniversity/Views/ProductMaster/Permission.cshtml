@@ -1,0 +1,46 @@
+﻿
+     @{ Layout = "~/Views/Shared/adminPopup.cshtml";
+      }
+
+
+	@Session["projectmetatags"]
+
+<h2>Existing Permissions:</h2>
+
+
+@if (ViewData["msg"] == null)
+{ 
+   <form method="post" id="form1">
+    <table style="width: 100%;">
+        <tr>
+            <td colspan="2" style="text-decoration: underline">
+                </td>
+               </tr>
+ <tr>
+            <td colspan="2" style="text-decoration: underline">
+                <b>@Html.Raw(ViewData["permissionlist"])</b></td>
+               </tr>
+
+                
+        
+        
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                 
+                
+               <input type="image" src="../../siteimages/Update.png" /><br /></td>
+          
+        </tr>
+        
+    </table>
+</form>
+
+}
+else
+{ 
+
+   <h2>@Html.Raw(ViewData["msg"])</h2>
+}
+

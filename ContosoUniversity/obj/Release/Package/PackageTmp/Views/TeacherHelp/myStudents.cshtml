@@ -1,0 +1,127 @@
+﻿@model IEnumerable<OLProject.Models.tb_SubjectMaster>
+@using OLProject.Models;
+
+@{
+    ViewBag.Title = "myStudents";
+    Layout = "~/Views/Shared/AdminSecurity.cshtml";
+}
+
+<h2>Courses & Students List</h2>
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <!-- /.panel -->
+        <div class="panel panel-default">
+
+
+            @*<div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> New Message (1)
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Actions
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li>
+                                    <a href="#">Refresh</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>*@
+
+
+            <!-- /.panel-heading -->
+          
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+
+                                        <th>Course</th>
+                                        <th>Students</th>
+                                        <th>Email ID</th>
+                                        <th>Contact No</th>
+                                        <th>Messages </th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        kzonlineEntities db = new kzonlineEntities();
+
+                                    }
+
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+
+                                            <td colspan="5" ><strong>@item.SubjectName </strong></td>
+                                           
+                                        </tr>
+
+                                        var students = from m in db.tb_UserMaster where m.ClassId == item.SubjectId select m;
+                                        foreach (var itemStu in students)
+                                        {
+                                            <tr>
+                                                <td width="5%"> </td>
+                                           
+                                                <td> @itemStu.FirstName </td>
+                                         
+                                                <td>@itemStu.EmailID</td>
+                                                <td>
+                                                    @itemStu.ContactNo 
+                                                 
+                                 
+
+
+                                                   @* <a class="btn btn-default" href="#" onClick="javascript:window.open('conversation.html','','location=0,status=0,scrollbars=1,width=650,height=600');"><i class="fa fa-reply"></i></a>
+
+                                                *@
+                                                </td> 
+                                                
+                                                   
+                                                <td>
+                                                    <a href="javascript:OpenPopup1('/teacherhelp/indexTeacher/@itemStu.UserId');"><i class='fa fa-info-circle' style='color:#af36d2;'></i>Messages  </a>
+                                                </td>
+                                            </tr>
+
+                                        }
+
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    </div>
+                    <!-- /.col-lg-4 (nested) -->
+                    <!-- /.col-lg-8 (nested) -->
+                </div>
+                <!-- /.row -->
+          
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-8 -->
+    <!-- /.col-lg-4 -->
+</div>

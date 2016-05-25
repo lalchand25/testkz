@@ -1,0 +1,27 @@
+﻿       
+
+
+                 @{ Layout = "~/Views/Shared/adminPopup.cshtml";
+      }
+
+	@Session["projectmetatags"]
+
+
+
+<script>
+window.onunload = function () {
+            window.opener.location.href = window.opener.location;
+}
+
+ </script>
+
+ 
+  <h2>Category Information</h2>
+  @Html.Partial("BaseCategory"); 
+ 
+  
+   
+  
+
+
+

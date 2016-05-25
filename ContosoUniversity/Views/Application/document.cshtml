@@ -1,0 +1,96 @@
+﻿@model PagedList.IPagedList<ContosoUniversity.Models.tb_DocumentStudent>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Document";
+    Layout = "~/Views/Shared/adminPopup.cshtml";
+}
+
+<h2>Upload Documents </h2>
+
+
+<div class="table_div_Res">
+
+    <table class="table table-striped table-bordered table-hover" width="100%">
+
+
+
+
+        <thead>
+            <tr>
+
+
+
+                <th>Image </th>
+                <th>Document Description</th>
+
+                <th> Delete</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td></td>
+
+                    <td>
+                        <img src="~/uploads/@item.ImagePath"  width="100;" height="100;" />
+
+                    </td>
+
+                    <td>     <a href="/application/deleteDocument/@item.DocumentID" class="btn btn-warning"><i class="fa fa-sign-in"></i>Archive </a>
+</td>
+
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+@using (Html.BeginForm("document", "Application", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    @Html.AntiForgeryToken()
+    
+    <div>
+        <div class="row">
+            <div class="col-ls-6 col-md-6 col-sm-6">
+                Description
+            </div>
+            <div class="col-ls-6 col-md-6 col-sm-6">
+                Upload Document 
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-ls-6 col-md-6 col-sm-6">
+                <input name="desc" type="text" />
+            </div>
+
+
+
+            <div class="col-ls-6 col-md-6 col-sm-6">
+                <input type="file" id="fileToUpload" name="file" />
+            </div>
+
+        </div>
+    </div>
+
+    <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

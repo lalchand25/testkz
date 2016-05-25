@@ -1,0 +1,35 @@
+﻿@model OLProject.Models.tb_MetatagMaster
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+
+
+    <tr>
+        <td colspan="2">Title : @Model.Title
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" width="100%">Descirption : @Model.Description
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="top">
+            <br />
+            <a href="javascript:OpenPopup('/metatag/edit/@Model.MetaId ');">
+                <img src="@Url.Content("~/SiteImages/edit.png") "      border="0" alt="edit" style="width:50px;Height:50px;"/></a>
+        </td>
+        <td align="center" valign="top">
+            <br />
+            <a href="javascript:OpenPopup('/metatag/delete/@Model.MetaId ');">
+                <img src="@Url.Content("~/SiteImages/delete.png") " border="0"   alt="Delete" style="width:50px;Height:50px;"/></a>
+        </td>
+    </tr>
+
+
+
+</table>

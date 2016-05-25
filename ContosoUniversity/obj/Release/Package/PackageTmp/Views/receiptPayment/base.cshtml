@@ -1,0 +1,146 @@
+﻿@model ContosoUniversity.Models.tb_ReceiptPayment
+@using ContosoUniversity.Models;
+
+
+<script language="javascript" type="text/javascript">
+    function OpenPopupCenter(pageURL, title, w, h) {
+        var left = (screen.width - w) / 2;
+        var top = (screen.height - h) / 4;  // for 25% - devide by 4  |  for 33% - devide by 3
+        var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
+</script>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      Receipt No
+            <br />
+        @Html.EditorFor(model => model.ReceiptID)
+
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.ReceiptID) </div>
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+     Receipt Date
+           <br />
+
+
+        @Html.TextBoxFor(m => m.ReceiptDate, "{0:MM/dd/yyyy}",
+          new { @placeholder = "MM/DD/YYYY", @au19tocomplete = "off" })
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.ReceiptDate) </div>
+
+    </div>
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    </div>
+
+
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Student
+            <br />
+        @Html.DropDownList("StudentID", (SelectList)ViewData["listStu"], "Select")
+
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.StudentID) </div>
+
+
+    </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Invoice No
+            <br />
+@*        @Html.DropDownList("InvoiceNo", (SelectList)ViewData["listProg"], "Select")*@
+
+                    @Html.EditorFor(model => model.InvoiceNo)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.InvoiceNo) </div>
+
+
+    </div>
+
+
+       
+
+
+
+
+
+</div>
+
+
+<div class="row">
+
+     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        Amount
+            <br />
+
+
+                    @Html.EditorFor(model => model.Amount)
+        <div class="msgValidation">@Html.ValidationMessageFor(model => model.Amount) </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    </div>
+
+
+
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 1)
+        {
+            <input class="btn btn-success" value="Submit" type="submit" name="btnSubmit" style="width: 120px;">
+        }
+
+        @if (Convert.ToInt32(ViewBag.buttonname) == 2)
+        {
+            <input class="btn btn-success" value="Update" type="submit" name="btnSubmit" style="width: 120px;">
+        }
+        @if (Convert.ToInt32(ViewBag.buttonname) == 3)
+        {
+            <input class="btn btn-success" value="Delete" type="submit" formnovalidate name="btnSubmit" style="width: 120px;">
+        }
+
+        <input type="submit" formnovalidate name="btnSubmit" value="Cancel" class="btn btn-danger" style="width: 120px;">
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

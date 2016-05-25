@@ -1,0 +1,63 @@
+﻿@model OLProject.Models.tb_Subscription
+
+<br />
+<b>@Html.Raw(ViewData["lstatus"])</b><br />
+<fieldset>
+    <form method="post" runat="server">
+        <table width="95%" align="center" class='form2'>
+            <tr>
+                <td style="Width: 20%"></td>
+                <td style="Width: 80%"></td>
+
+            </tr>
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>
+                        <b>Subscription Name</b> </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.SubsName)
+                            <b>@Html.ValidationMessageFor(model => model.SubsName)</b>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>Duration Name</b> </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.Duration)
+                            <b>@Html.ValidationMessageFor(model => model.Duration)</b>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>@if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+                        { 
+                        <input type="image" src="../../siteimages/submit.png" /><br />
+                    }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+                        { 
+                            <input type="image" src="../../siteimages/update.png" /><br />
+                    }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+                        { 
+                            <input type="image" src="../../siteimages/delete.png" /><br />
+                    }
+
+
+
+                        @Html.Raw(ViewData["errorMsg"])
+                    </td>
+                </tr>
+            }
+        </table>
+    </form>
+</fieldset>

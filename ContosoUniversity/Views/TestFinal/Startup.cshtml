@@ -1,0 +1,322 @@
+﻿@model IEnumerable<OLProject.Models.tb_QuizDetail>
+
+   @{ Layout = "~/Views/Shared/adminpopup.cshtml";
+      }
+@Session["projectmetatags"]
+
+
+
+<script type="text/javascript" src="../../jquery-timer-demo/res/jquery.min.js"></script>
+<script type="text/javascript" src="../../jquery-timer-demo/jquery.timer.js"></script>
+<script type="text/javascript" src="../../jquery-timer-demo/res/demo.js"></script>
+<script type="text/javascript">
+
+    var Example2 = new (function () {
+        var $countdown,
+    $form, // Form used to change the countdown time
+    incrementTime = 70,
+    currentTime = @Session["timerTime"],
+    alert(currentTime);
+
+    updateTimer = function () {
+        $countdown.html(formatTime(currentTime));
+        if (currentTime == 0) {
+            Example2.Timer.stop();
+            timerComplete();
+            Example2.resetCountdown();
+            return;
+        }
+        currentTime -= incrementTime / 10;
+        if (currentTime < 0) currentTime = 0;
+    },
+        timerComplete = function () {
+
+            productSelectedCallback();
+
+        },
+        init = function () {
+            $countdown = $('#countdown');
+            Example2.Timer = $.timer(updateTimer, incrementTime, true);
+            $form = $('#example2form');
+            $form.bind('submit', function () {
+                Example2.resetCountdown();
+                return false;
+            });
+        };
+        this.resetCountdown = function () {
+            var newTime = parseInt($form.find('input[type=text]').val()) * 100;
+            if (newTime > 0) { currentTime = newTime; }
+            this.Timer.stop().once();
+        };
+        $(init);
+    });
+
+function productSelectedCallback()
+{
+    alert('Time is Over');
+    // document.getElementById("myform").submit();
+    // window.location.href="/TestFinal/results";
+}
+
+</script>
+
+
+<script type="text/javascript">
+    function validate() {
+        var retval = false;
+        for (var i = 0; i < document.myForm.ActualAns1.length; i++) {
+            if (document.myForm.ActualAns1[i].checked) {
+                retval = true;
+            }
+        }
+        if (retval == false) {
+            alert("Option not selected");
+
+        }
+        return retval;
+    }
+</script>
+
+<script type="text/javascript">
+    var int = self.setInterval(function () { clock() }, 1000);
+    function clock() {
+        var d = new Date();
+        alert(d.getMinutes());
+        var t = d.toLocaleTimeString();
+        document.getElementById("clock").value = t;
+    }
+</script>
+
+@*@--<input type="text" id="Text1" />
+<input type="text" id="clock1" />
+--*@
+<script type="text/javascript">
+    var int = self.setInterval(function () { clock() }, 1000);
+    function clock() {
+        var d = new Date();
+        var mint1 = d.getMinutes();
+        var iind1 = d.getSeconds();
+        var hrs1 = d.getHours();
+
+        var d1 = new Date('@Session["enddate"]');
+     
+        var mint2 = d1.getMinutes();
+        var iind2 = d1.getSeconds();
+        var hrs2 = d1.getHours();
+
+        var t = d.toLocaleTimeString();
+        var t1 = d1.toLocaleTimeString();
+
+        //         document.getElementById('clock').value = t;
+        //        document.getElementById('clock1').value = t1;
+
+        totdiff = (iind2 + mint2 * 60 + hrs2 * 3600) - (iind1 + mint1 * 60 + hrs1 * 3600);
+        var divisor_for_minutes = Math.floor(totdiff / 60);
+
+        document.getElementById('clock1').value = divisor_for_minutes + ":" + Math.floor(totdiff % 60);
+        document.getElementById('clock2').value = totdiff;
+
+        if (totdiff <= 0) 
+        {
+            document.getElementById('clock2').value = 0;
+            alert('Time is over')
+        }
+
+    }
+
+    //Html.Raw(ViewData["javascript"] 
+    //    var int = self.setInterval(function () { clock() }, 1000);
+    //    function clock() 
+    //    {
+    //        var d = new Date();
+    //        //alert(d.getMinutes());
+    //        var t = d.toLocaleTimeString();
+    //        document.getElementById("clock").value = t;
+    //    }
+</script>
+
+@*@--<input type="text" id="clock" />
+<input type="text" id="Text1" />--*@
+<h2>Stat Final Exam</h2>
+<form id="myForm" name="myForm" action="/testfinal/Startup" method="post" onsubmit="javascript:return validate();">
+     <table class="table table-striped table-bordered table-hover" id="resultForm:result_table">
+        <tr>
+            <td width='10%'>Time Left:</td>
+            <td width='85%'>
+                <input type="text" id="clock1" name="clock1" /><input type="hidden" id="clock2" name="clock2" /></td>
+        </tr>
+      
+		
+        @{int mcounter = 0;}
+        @foreach (var item in Model)
+       {
+           mcounter += 1;
+           
+            @Html.Hidden("ActualAns", item.ActualAns)
+            @Html.Hidden("AutoId", item.AutoId)
+            @Html.Hidden("QuesTypeId", item.QuesTypeId)
+
+
+
+            <tr>
+                <td colspan='2'> 
+                    @if (item.QuesTypeId == 5)
+                {
+                        <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Decription" />
+
+                }
+                else
+                { 
+                        <p style="font:14px; font-weight:bold;">@Html.Raw(item.Decription) <span style="float:right;">@Html.Raw(ViewData["dispmess"])</span></p>
+                }
+
+                </td>
+            </tr>
+        
+           
+           if (item.QuesTypeId == 1) //Multiple Options
+       {
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 1)</td>
+                <td>1.@item.Ans1<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 2)</td>
+                <td>2.@item.Ans2<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 3)</td>
+                <td>3.@item.Ans3<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 4)</td>
+                <td>4.@item.Ans4<br />
+                </td>
+            </tr>
+         }
+
+            if (item.QuesTypeId == 5) //Multiple Options
+       {
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 1)</td>
+                <td>1.@item.Ans1<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 2)</td>
+                <td>2.@item.Ans2<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 3)</td>
+                <td>3.@item.Ans3<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 4)</td>
+                <td>4.@item.Ans4<br />
+                </td>
+            </tr>
+         }
+
+
+            if (item.QuesTypeId == 2) //Multiple correct
+          {
+            <tr>
+                <td>@Html.CheckBox("check1", false)</td>
+                <td>@item.Ans1<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.CheckBox("check2", false)</td>
+                <td>@item.Ans2<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.CheckBox("check3", false)</td>
+                <td>@item.Ans3<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.CheckBox("check4", false)</td>
+                <td>@item.Ans4<br />
+                </td>
+            </tr>
+         }
+            if (item.QuesTypeId == 3) //Only True False
+    {
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 1)</td>
+                <td>1.@item.Ans1<br />
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.RadioButton("ActualAns1", 2)</td>
+                <td>2.@item.Ans2<br />
+                </td>
+            </tr>
+
+
+         }
+
+            if (item.QuesTypeId == 4) //Images
+       {
+            <tr>
+                <td align='center'>@Html.RadioButton("ActualAns1", 1)</td>
+                <td>
+                    <div class="imgrp">
+                        <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans1" />
+                    </div>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>@Html.RadioButton("ActualAns1", 2)</td>
+                <td>
+                    <div class="imgrp">
+                        <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans2" />
+                    </div>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>@Html.RadioButton("ActualAns1", 3)</td>
+                <td>
+                    <div class="imgrp">
+                        <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans3" />
+                    </div>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td align='center'>@Html.RadioButton("ActualAns1", 4)</td>
+                <td>
+                    <div class="imgrp">
+                        <img alt="Image" width="100px" height="50px" src="../../uploads/@item.Ans4" />
+                    </div>
+                    <br />
+                </td>
+            </tr>
+
+         }
+      
+         }
+     
+        <tr>
+            <td>&nbsp;</td>
+
+			<td> 
+                @*	<button class="btn-style" >Submit</button>*@
+                   <button class="btn btn-info" > Submit </button> 
+                
+                @* <input type="image" src="../../SiteImages/Submit.png" width="74px" height="28px" /> *@  </td>
+        </tr>
+
+    </table>
+</form>
+
+
+

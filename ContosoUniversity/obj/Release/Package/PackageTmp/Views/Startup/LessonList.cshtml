@@ -1,0 +1,4 @@
+﻿
+@*@-- @Html.ListBox("LessonId", (SelectList)ViewData["LessonList"], new { style = "width: 98%;Height:400px;font-weight:BOLD; bgcolor='#FFFFC'", onchange = "ShowSlide();" })  
+--*@
+ @Html.Raw(ViewData["LessonList"]  )

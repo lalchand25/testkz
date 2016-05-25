@@ -1,0 +1,19 @@
+﻿@{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+@using OLProject.Models;
+
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+	@Session["projectmetatags"]
+
+
+
+  <h2>@Html.Raw(ViewData["subjectname"]) /@Html.Raw(ViewData["classname"]) / @Html.Raw(ViewData["uname"]) / @Html.Raw(ViewData["LessionName"])</h2><br />
+ @Html.Raw(ViewData["printbutton"]) 
+
+
+   @Html.Raw(ViewData["slidedata"])
+
+
+    
+
+

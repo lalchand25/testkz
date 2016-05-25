@@ -1,0 +1,37 @@
+﻿@model OLProject.Models.tb_SubjectMaster
+       @{ Layout = "~/Views/Shared/adminsecurity.cshtml"; }
+
+
+    @Session["projectmetatags"]
+
+
+
+<fieldset>
+    <div class="display-label"><b>Subject Name</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubjectName) 
+    </div>
+    <br />
+<br />
+
+    <div class="display-label"><b>Description</b></div>
+    <div class="display-field">
+        
+         @Html.Raw(ViewData["desc"]) 
+    </div>
+<br />
+<br />
+ <div class="display-label"><b>Big Image</b></div>
+    <div class="display-field">
+        <img src='../../uploads/@Html.Raw(ViewData["bigimage"]' height='100px' width='100px' /> "
+    </div>
+
+    <div class="display-label"><b>Display Order</b></div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DisplayOrder) 
+    </div>
+
+</fieldset>
+ 
+
+

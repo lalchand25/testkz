@@ -1,0 +1,24 @@
+﻿@model OLProject.Models.tb_SubjectMaster
+       @{ Layout = "~/Views/Shared/adminPopup.cshtml"; }
+
+
+	@Session["projectmetatags"]
+
+   @if (ViewData["msgStatus"] == null)
+     { 
+	 <h2>
+    Edit Course
+</h2>
+
+        using (Html.BeginForm("edit", "subject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+   @Html.Partial("BaseSubject"); }
+ }
+     else
+     {
+
+     <h2>@Html.Raw(ViewData["errorMsg"])</h2>
+   
+   }
+
+

@@ -1,0 +1,64 @@
+﻿@@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/QuizSecurity.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<OLProject.Models.tb_QuizDetail>
+
+
+	@Session["projectmetatags"]
+
+
+
+   <script type="text/javascript" src="../../jquery-timer-demo/res/jquery.min.js"></script>
+    <script type="text/javascript" src="../../jquery-timer-demo/jquery.timer.js"></script>
+    <script type="text/javascript" src="../../jquery-timer-demo/res/demo.js"></script>
+    <script type="text/javascript">
+
+        var Example2 = new (function () {
+            var $countdown,
+        $form, // Form used to change the countdown time
+        incrementTime = 70,
+        currentTime = @Session["timerTime"] ,
+        updateTimer = function () {
+            $countdown.html(formatTime(currentTime));
+            if (currentTime == 0) {
+                Example2.Timer.stop();
+                timerComplete();
+                Example2.resetCountdown();
+                return;
+            }
+            currentTime -= incrementTime / 10;
+            if (currentTime < 0) currentTime = 0;
+        },
+        timerComplete = function () {
+
+            productSelectedCallback();
+
+        },
+        init = function () {
+            $countdown = $('#countdown');
+            Example2.Timer = $.timer(updateTimer, incrementTime, true);
+            $form = $('#example2form');
+            $form.bind('submit', function () {
+                Example2.resetCountdown();
+                return false;
+            });
+        };
+            this.resetCountdown = function () {
+                var newTime = parseInt($form.find('input[type=text]').val()) * 100;
+                if (newTime > 0) { currentTime = newTime; }
+                this.Timer.stop().once();
+            };
+            $(init);
+        });
+
+  function productSelectedCallback()
+ {
+            alert('Time is Over');
+            document.getElementById("myform").submit();
+            window.location.href="/TestFinal/results";
+ }
+ </script>
+<form id="myform" name="myform" action="/TestFinal/results">
+<h3>Time</h3>
+<span id="countdown">00:00:00</span>
+<iframe src="/TestFinal/Startup" width="98%" height="410px" id="frame1" frameborder="1">
+</iframe>
+</form>       
+

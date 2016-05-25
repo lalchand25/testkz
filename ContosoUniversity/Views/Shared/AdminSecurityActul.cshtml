@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Online </title>
+@*    @Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    @using OLProject.Models;
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+        }({
+            instrumentationKey: "615aadc5-8508-46e7-aa93-713181a155ae"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+    <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+      <script type="text/javascript">
+          function OpenPopup(url) {
+
+              window.open(url, 'Browser', 'width=1000,height=1200,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+          }
+    </script>
+
+
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=1160,height=730,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        function OpenPopup1(url, windoname) {
+            window.open(url, windoname, 'target=blank,width=900,height=500,top=250,screenY=250,left=350,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+        }
+    </script>
+
+</head>
+
+<body>
+
+    @Html.Partial("appHeaderNew");
+        <div id="body-text">
+
+            <marquee>     @Session["marqmessageNew"]  </marquee>
+            <div class="sidebar_left">
+                <h2>
+                    @Session["modulename"]</h2>
+                <br />
+                <ul>
+
+                    @if (Session["moduleid"] != null && Session["pmsuserid"] != null)
+                    {
+                        @Html.Raw(clsCommon.getTaskListNew(Convert.ToInt32(Session["moduleid"]), Convert.ToInt32(Session["pmsuserid"]), Convert.ToInt32(Session["menuid"])));
+                    }
+
+                </ul>
+                <br />
+                <br />
+
+            </div>
+
+
+            <div class="textBox_full">
+                @RenderBody()
+                <hr />
+                <footer>
+                     @Html.Partial("AppFooter");
+                </footer>
+            </div>
+
+        </div>
+
+   
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

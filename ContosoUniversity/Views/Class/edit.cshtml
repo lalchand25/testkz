@@ -1,0 +1,23 @@
+﻿@model OLProject.Models.tb_ClassMaster
+
+@{ Layout = "~/Views/Shared/adminPopup.cshtml"; }
+
+@Session["projectmetatags"]
+
+@if (ViewData["msgStatus"] == null)
+{
+<h2>Edit Class Information </h2>
+    using (Html.BeginForm("edit", "class", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.Partial("BaseClass");
+    }
+}
+else
+{
+
+    <h2>@Html.Raw(ViewData["errorMsg"])</h2>
+   
+}
+
+
+

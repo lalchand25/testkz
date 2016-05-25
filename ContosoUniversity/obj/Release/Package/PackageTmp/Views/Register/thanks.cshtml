@@ -1,0 +1,49 @@
+﻿<!--CONTANT START-->
+<!--BANNER START-->
+<div class="page-heading">
+    <div class="container">
+        <h2></h2>
+        <p></p>
+    </div>
+</div>
+<!--BANNER END-->
+
+<div class="contant">
+    <div class="container">
+        <div class="row">
+            <div class="span2">
+                &nbsp;
+            </div>
+
+            <div class="span8">
+                <div class="form-box2">
+                      <p style="margin: 18px 0 0 0px; text-align:center;"> <img src="~/Images/step-3.png" /> </p> 
+                    <h4>Registration Confirmation</h4>
+                    @Html.Raw(ViewData["emaildata"])
+
+                    @if (Convert.ToDecimal(Session["amt"]) > 0)
+                    { 
+
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                            <input id="Hidden3" type='hidden' name='Quantity' value="1">
+                            <input id='amount' type='hidden' name='amount' value='@Session["amt"] '>
+                            <input id='item_name' type='hidden' name='item_name' value='@Session["item"] ' />
+                            <input type="hidden" name="business" value="lmsosuccess@gmail.com">
+                            <input id="payer_id" type='hidden' name='payer_id' value='@Session["pmsuserid"]' />
+                            <input type="hidden" name="return" value="http://www.goonlineschool.com/paypal/thanks">
+                            <input type="hidden" name="cancel" value="http://www.goonlineschool.com/paypal/cancel">
+                            <input type='hidden' name='cmd' value='_xclick'>
+                            <input type='hidden' name='currency_code' value='USD'>
+                            <input id='Image1' type='image' runat='server' name='submit' border='0' src='https://www.paypal.com/en_US/i/btn/btn_buynow_LG.gif' alt='PayPal - The safer, easier way to pay online'>
+                            <img alt='' border='0' width='1' height='1' src='https://www.paypal.com/en_US/i/scr/pixel.gif' />
+                        </form>
+
+                    }
+                </div>
+            </div>
+            <div class="span2">
+                &nbsp;
+            </div>
+
+        </div>
+    </div>

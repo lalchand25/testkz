@@ -1,0 +1,90 @@
+﻿@model OLProject.Models.tb_TeacherHelp
+
+
+
+<table width="95%" align="center">
+
+    @Html.ValidationSummary(true)
+
+    <tr>
+        <td align="left" style="Width: 100%"><b>Subject</b></td>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.TextBoxFor(model => model.Subject, new { Style = "Width:50%;" })
+            <b><span style="color: Red">@Html.ValidationMessageFor(model => model.Subject)</span></b></td>
+    </tr>
+
+
+    <tr>
+        <td align="left"><b>Description</b></td>
+    </tr>
+
+    <tr>
+        <td>@Html.TextAreaFor(model => model.Description, new { Style = "Width:100%;Height:100px" })
+            <b><span style="color: Red">@Html.ValidationMessageFor(model => model.Description)</span></b></td>
+    </tr>
+
+    <tr>
+        <td align="left">
+            <b>Image Path</b></td>
+    </tr>
+
+    <tr>
+        <td align="left">
+            <div>
+                <input type="file" id="FileUpload0" name="file" />
+                <br />
+                Formats : png,jpg,gif,jpeg. 
+             Maximum Size : 2MB
+            </div>
+        </td>
+    </tr>
+
+
+
+
+    <tr>
+
+        <td align="left">
+            <br />
+            <br />
+            <br />
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+            { 
+                <input type="image" src="../../siteimages/submit.png" /><br />
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+            { 
+                <input type="image" src="../../siteimages/update.png" /><br />
+            }
+            @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+            { 
+                <input type="image" src="../../siteimages/Delete.png" /><br />
+            }
+
+
+
+        </td>
+    </tr>
+</table>
+
+<div class="editing">
+
+    <table >
+        <thead>
+            <tr>
+
+                <td>Subject </td>
+                <td style="width:40%;">Description </td>
+                <td>Teacher reply </td>
+                <td>Status</td>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.Raw(ViewData["data"])
+        </tbody>
+    </table>
+
+</div>

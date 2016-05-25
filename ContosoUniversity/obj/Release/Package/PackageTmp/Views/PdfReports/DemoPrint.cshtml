@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OLProject.Models.tb_LessionMaster>
+<br/>
+
+@*<img src="@Model.ImageUrl" width="64" height="64" /> *@
+<br/>
+<table cellpadding="3" cellspacing="3">
+    <tr border="1" bgcolor="#777777" color="#ffffff">
+        <td width="20%" align="center">
+            Name
+        </td>
+        <td width="50%" align="center">
+            Address
+        </td>
+        <td width="30%" align="center">
+            Place
+        </td>
+    </tr>
+    @{
+        var OddColor = "#DDEEEE";
+        var evenColor = "#EEFFFF";
+        var Odd = OddColor;
+    }
+    @foreach (var customer in Model)
+    {
+        <tr border="1" bgcolor="@Odd">
+        <td>@customer.LessionHeading</td>
+        <td>@customer.LessionDesc</td>
+           
+        </tr>
+        if (Odd == OddColor)
+        {
+            Odd = evenColor;
+        }
+        else
+        {
+            Odd = OddColor;
+        }
+
+    }
+</table>

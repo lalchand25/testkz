@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OLProject.Models.tb_FamilyUser>
+
+@{Layout = "~/views/shared/adminpopup.cshtml";}
+		@Session["projectmetatags"]
+
+
+
+
+    <h2>Family Information</h2>
+
+    <table width="100%">
+    
+     <tr>
+              <td colspan="4" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+        <tr>
+          
+            <td>
+                <b>User Name
+            </b>
+            </td>
+
+            <td align='center'><b style="text-align: center">Edit</b></td>
+            <td align='center'><b>Delete</b></td>
+            <td align='center'><b>Detail</b></td>
+        </tr>
+
+        <tr>
+              <td colspan="4" style="border-bottom:1px solid #c2c2c2;"><img src="../../Images/clr.gif" alt="" width="1" height="15" /></td>
+            </tr>
+
+
+         @Html.Raw(ViewData["data"])
+     
+    </table>
+ 
+ 
+
+
+

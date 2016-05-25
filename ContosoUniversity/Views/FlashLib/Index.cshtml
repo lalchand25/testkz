@@ -1,0 +1,52 @@
+﻿@model IEnumerable<OLProject.Models.tb_FlashLibMaster> 
+
+
+
+   @{ Layout = "~/Views/Shared/adminsecurity.cshtml";
+      }
+
+		@Session["projectmetatags"]
+
+
+
+
+    <h2>Category Information</h2>
+	
+	 <div class="panel-body">
+ 
+                            <div class="dataTable_wrapper">
+							
+							<div style="margin:0 0 10px 0;">
+														
+							<a href="javascript:OpenPopup('/flashLib/create/');" id='contract' runat='server'>
+            <button class="btn btn-success" type="button"><i class="fa fa-plus"></i>Create</button></a>
+			
+			</div>		
+
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+   
+
+   
+    <tr>
+
+        <th>Image</th>
+		<th>Clip Name</th>
+		<th>Edit</th>
+		<th>Delete</th>
+        </tr>
+ </thead>
+ 
+        <tbody>
+
+
+         @Html.Raw(ViewData["data"])
+		 </tbody>
+     
+    </table>
+	</div>
+	</div>
+ 
+
+
+

@@ -1,0 +1,71 @@
+﻿@@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+@@ Register src="PopHeader.ascx" tagname="PopHeader" tagprefix="uc1" 
+@@ Register src="PopFooter.ascx" tagname="PopFooter" tagprefix="uc3" 
+@@ Register src="CheckUser.ascx" tagname="CheckUser" tagprefix="uc2" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" /> 
+      <link href="../../Content/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
+  <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function OpenPopup(url) {
+
+            window.open(url, 'Browser', 'width=1000,height=1200,top=2,screenY=5,left=250,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+
+        }
+    </script>
+     <script type="text/javascript">
+         function OpenPopup1(url, windoname) 
+         {
+             window.open(url, windoname, 'target=blank,width=900,height=500,top=50,screenY=50,left=350,screenX=50,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes');
+         }
+    </script>
+ 
+</head>
+
+<body>
+    <uc2:CheckUser ID="CheckUser1" runat="server" />
+   <uc1:PopHeader ID="PopHeader2" runat="server" />
+        <div id="body-text">
+ 
+        	
+ <div class="Courses">
+     	 	<div class="topdiv">
+            <div class="bred">Slide Information</div>
+            <div class="buttons">      <a  style='float:right;' class='btn-grey' href='javascript:this.close()' /><img  width='60px' height='60px' src='../../uploads/t2kefek3_Quit.png' /><br />Quit</a>
+            @Html.Raw(ViewData["topbuttons"] 
+            @Html.Raw(ViewData["selectTheme"]</div>
+            <div class="clr"></div>
+        </div>
+           <div class="middiv1">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" >
+
+            
+               
+            </asp:ContentPlaceHolder>
+    </div>
+      <div class="bottomdiv" style="background:#9A0201;">
+          <div class="buttons">
+           @Html.Raw(ViewData["buttons"] 
+          @Html.Raw(ViewData["ShowSlide"]
+          
+          </div>
+        <div class="clr"></div>
+        </div>
+
+         
+    </div>             
+    </div>
+ 
+      
+    
+    <uc3:PopFooter ID="PopFooter1" runat="server" />
+      
+ 
+  
+      
+ 
+</body>
+</html>

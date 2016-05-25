@@ -1,0 +1,25 @@
+﻿@model OLProject.Models.tb_FlashLibMaster
+
+
+		@Session["projectmetatags"]
+
+
+
+ 
+
+   
+   
+   
+   @if (ViewData["msgStatus"] == null)
+     { 
+      
+   @Html.Partial("BaseCategory"); 
+ }
+     else
+     {
+
+     <h1>@Html.Raw(ViewData["errorMsg"])</h1>
+   
+   }
+
+

@@ -1,0 +1,265 @@
+﻿@model OLProject.Models.tb_UserMaster
+
+@using OLProject.Models;
+<script src="../../FileUploadJquery/jquery-1.4.min.js" type="text/javascript"></script>
+<script src="../../FileUploadJquery/jquery.MultiFile.pack.js" type="text/javascript"></script>
+
+<link type="text/css" href="../../Jquery_Date/themes/base/jquery.ui.all.css" rel="stylesheet" />
+<script src="../../FileUploadJquery/jquery-1.4.min.js" type="text/javascript"></script>
+<script src="../../FileUploadJquery/jquery.MultiFile.pack.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="../../Jquery_Date/jquery-1.5.1.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../../Jquery_Date/jquery.ui.datepicker.js"></script>
+<link rel="stylesheet" href="../../Jquery_Date/demos.css" />
+
+<script type="text/javascript">
+    $(function () {
+        $("#DOB").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+
+
+    function UpdateStateList() {
+        destElement = document.getElementById("CountryID");
+        id = destElement.value
+        var url = '/city/statelist/' + id;
+
+        $("#tasklistResult").load(url);
+    }
+
+    function UpdateDistList() {
+        destElement = document.getElementById("StateID");
+        id = destElement.value
+        var url = '/city/distlist/' + id;
+        $("#tasklistResult1").load(url);
+    }
+</script>
+
+<h2> User Profile</h2>  
+
+<fieldset>
+    <form method="post" runat="server">
+        <table width="95%" align="center">
+            <tr>
+                <td style="Width: 20%"></td>
+                <td style="Width: 80%"></td>
+
+            </tr>
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+         
+         
+                
+                string image = "BlankMan.png";
+                if (Model.Picture != "")
+                {
+                    image = Model.Picture;
+                }
+                    
+         
+     
+                <tr>
+                    <td width="20%" valign="top">Select or Change Profile Picture:</td>
+                    <td width="80%">
+
+
+                        <img src='../../uploads/@image ' alt='Profile Picture' width="100px" height="100px" />
+
+                        <div class="editor-field">
+                            <asp:fileupload id="FileUpload1" runat="server" class="multi" accept="png|jpg|gif" />
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Email ID:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.EmailID, new { style = "width: 240px;" })</td>
+                </tr>
+      
+                <tr>
+                    <td valign="top">Password:  </td>
+                    <td>@Html.TextBoxFor(model => model.UserPassword, new { style = "width:180px;" })@Html.ValidationMessageFor(model => model.UserPassword) </td>
+                </tr>
+                <tr>
+                    <td valign="top">Confirm Password:   </td>
+                    <td>@Html.TextBoxFor(model => model.ConfirmPassword, new { style = "width:180px;" })  @Html.ValidationMessageFor(model => model.ConfirmPassword) </td>
+                </tr>
+
+                <tr>
+                    <td>First Name:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.FirstName, new { style = "width: 240px;" })
+                        @Html.ValidationMessageFor(model => model.FirstName) </td>
+                </tr>
+        
+                <tr>
+                    <td>Middle Name:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.MiddleName, new { style = "width: 240px;" })
+                        @Html.ValidationMessageFor(model => model.MiddleName) </td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.LastName, new { style = "width: 240px;" })
+                        @Html.ValidationMessageFor(model => model.LastName) </td>
+                </tr>
+        
+                <tr>
+                    <td>Display Name:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.UserName, new { style = "width: 240px;" })
+                        @Html.ValidationMessageFor(model => model.UserName)</td>
+                </tr>
+        
+                <tr>
+                    <td>Contact No:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.ContactNo, new { style = "width: 240px;" })
+                        @Html.ValidationMessageFor(model => model.ContactNo)</td>
+                </tr>
+        
+     
+    
+                <tr>
+                    <td>Address:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.Address, new { style = "width: 340px;" })</td>
+                </tr>
+                <tr>
+                    <td>Street:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.Street, new { style = "width: 240px;" })</td>
+                </tr>
+
+
+                <tr>
+                    <td>TownCity:</td>
+                    <td>
+
+                        @Html.TextBoxFor(model => model.TownCity, new { style = "width: 240px;" })</td>
+                </tr>
+   
+                <tr>
+                    <td>Zip Code:</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.ZipCode, new { style = "width: 240px;" })</td>
+                </tr>
+        
+        
+                <tr>
+                    <td valign="top">Country:*</td>
+                    <td>@Html.DropDownList("CountryID", (SelectList)ViewData["countrylist"], "Select", new { style = "width: 150px;Height:25px", onchange = "UpdateStateList();" })
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">State / Province:*</td>
+                    <td>
+                        <div id="tasklistResult" title="Inner Container">
+                            <select id="StateID" style="width: 150px; Height: 25px">
+                                <option>Select</option>
+                            </select>
+                            <br />
+                            @clsCommon.getStateName(Convert.ToInt32(Model.StateID))
+                        </div>
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">&nbsp;City / District:*</td>
+                    <td>
+                        <div id="div1">
+                            <div id="tasklistResult1" title="Inner Container">
+                                <select id="DistrictId" style="width: 150px; Height: 25px">
+                                    <option>Select</option>
+                                </select>
+
+                                <br />
+                                @clsCommon.getDistrictName(Convert.ToInt32(Model.DistrictId))
+                            </div>
+
+                            <br />
+                    </td>
+                </tr>
+ 
+   
+
+                <tr>
+                    <td>School Name:</td>
+                    <td>
+                        @Html.TextBoxFor(model => model.SchoolName, new { style = "width: 240px;" })</td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td>
+
+                    @Html.TextBoxFor(model => model.DOB, new { Readonly = "Readonly", style = "Width:180px" })
+                </tr>
+   
+
+                <tr>
+                    <td width="20%" valign="top">Birth Proof:</td>
+                    <td width="80%">
+
+
+                        <img src='../../uploads/@Model.DOBProof ' alt='Profile Picture' width="100px" height="100px" />
+
+                        <div class="editor-field">
+                            <asp:fileupload id="FileUpload2" runat="server" class="multi" accept="png|jpg|gif" />
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="20%" valign="top">ID Proof:</td>
+                    <td width="80%">
+
+
+                        <img src='../../uploads/@Model.IDProof ' alt='Profile Picture' width="100px" height="100px" />
+
+                        <div class="editor-field">
+                            <asp:fileupload id="FileUpload3" runat="server" class="multi" accept="png|jpg|gif" />
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td></td>
+                    <td>
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 1)
+                        { 
+                            <input type="image" src="../../siteimages/submit.png" /><br />
+                        }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 2)
+                        { 
+                            <input type="image" src="../../siteimages/Update.png" /><br />
+                        }
+                        @if (Convert.ToInt32(ViewData["buttonname"]) == 3)
+                        { 
+                            <input type="image" src="../../siteimages/Delete.png" /><br />
+                        }
+                        &nbsp;</td>
+                </tr>                  
+            }
+        </table>
+    </form>
+</fieldset>

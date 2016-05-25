@@ -1,0 +1,133 @@
+﻿
+    @{Layout = "~/views/shared/adminpopup.cshtml"; }
+
+        @Session["projectmetatags"]
+
+<div class="Courses">
+<h2>&nbsp;</h2>
+<div class="topdiv">
+<div class="bred">Hello @Session["pmsusername"], @Html.Raw(ViewData["starstring"])     
+
+
+</div><div class="buttons">   <a style='float: right;' class='btn-grey' href='javascript:this.close()' >
+            <img width='40px' height='40px' src='../../uploads/t2kefek3_Quit.png' /> <br />
+            Quit</a></div>
+	<div class="clr"></div>
+	<div class="clr"></div>
+</div>
+<div class="middiv1">
+
+<div class="text_img1">
+@Html.Raw(ViewData["graphics"])<br />
+<div id="rt" name="rt"  style="display:none">
+@Html.Raw(ViewData["mp3"])
+ </div>
+</div>
+ <div class="text_img">
+ 
+   <table class="results_table" border="1">
+                    <tr>
+                        <td colspan="2">
+                            <h1>@Html.Raw(ViewData["resultsuser"])</td>
+                        
+                    </tr>
+                     
+                                                        
+                                      
+                    <tr>
+                        <td>
+                            <strong>Date of Completed</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["DateOfComplete"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Class / Course Name</strong>:</td>
+                        <td>
+                           @Html.Raw(ViewData["subject"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Semester Name / Course Type</strong></td>
+                        <td>
+                             @Html.Raw(ViewData["class"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>No. of Questions Attempt</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["total"])  </td>
+              
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Answered Correctly</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["totalcorrect"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Wrong Answer</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["totalWrong"]) </td>
+                        
+                    </tr>
+                     
+  
+                     
+                    <tr>
+                        <td>
+                            <strong>Your Score</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["totalScrore"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td style="width:50%; text-align: right;">
+                            &nbsp;</td>
+                        <td style="width:50%;">
+                            &nbsp;</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Want to learn again:?</strong></td>
+                        <td>
+                            @Html.Raw(ViewData["startSlideShow"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            <strong>Retake?</strong></td>
+                        <td>
+                              @Html.Raw(ViewData["startQuiz"])</td>
+                        
+                    </tr>
+                     
+                    <tr>
+                        <td>
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                        
+                    </tr>
+                     
+                </table>
+ </div>
+</div>
+  
+
+
+
